@@ -1,0 +1,2 @@
+.blind {position:absolute; left:-9999px;}
+.clear:after {content:""; clear:both; display:block;}

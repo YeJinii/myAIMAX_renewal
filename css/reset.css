@@ -1,0 +1,10 @@
+* {margin:0; padding:0; box-sizing:border-box;}
+h1,fieldset {margin:0; padding:0;}
+html {font-size:0.625em;}
+body,h1,h2,h3,h4,h5,h6,button { font-family: "SBAggroM","돋움", dotum, sans-serif; line-height: 1;}
+ul,ol,li {list-style:none;}
+a {text-decoration:none;}
+img,fieldset {border:none; vertical-align:middle;}
+strong,em,b,i,address {font-weight:normal; font-style:normal;}
+table {border-collapse:collapse;}
+button {border:none; background-color:transparent; cursor:pointer;}
