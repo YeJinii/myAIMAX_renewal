@@ -19,7 +19,7 @@ header {
     width: 100%;
     height: 80px;
     border-bottom: 1px solid rgba(255,255,255,.1);
-    transition: all .5s;
+    transition: background-color .5s;
 }
 .header_inner {
     width: 88%; /* 330 / 375 */
@@ -27,7 +27,7 @@ header {
     margin: 0 auto;
     padding-top: 18px;
 }
-.header_inner a {
+.header_inner > a {
     display: block;
     float: left;
     width: 165px;
@@ -65,14 +65,14 @@ header {
 header:hover {
     background-color: #ffffff;
 }
-header:hover .header_inner a {
+header:hover .header_inner > a {
     background-image: url(../img/logo/aimax_color.png);
 }
 header:hover .youtube_btn {
     background-image: url(../img/icon/youtube_color.png);
 }
 header:hover span {
-    background-color: #222222;
+    background-color: #333333;
 }
 /* end 375 */
 
@@ -86,10 +86,104 @@ header:hover span {
         margin-right: 5.917%; /* 40 / 676 */
     }
 }
+/* end 768 */
 
-/* 
-nav {}
-nav ul {}
-nav ul li {}
-nav ul li a {} 
-*/
+/* start 1024 */
+@media all and (min-width: 1024px) {
+    /* header 1024 */
+    .header_inner {
+        width: 91.016%; /* 932 / 1024 */
+        padding-top: 10px;
+    }
+    .header_inner > a {
+        display: block;
+        float: left;
+        width: 227px;
+        height: 60px;
+        margin-left: -9px;
+    }
+    .youtube_btn {
+        display: block;
+        float: right;
+        width: 45px;
+        height: 31px;
+        text-indent: -9999px;
+        overflow: hidden;
+        margin-top: 14.5px;
+        margin-right: 5.365%; /* 50 / 932 */
+        background: url(../img/icon/youtube_white.png) no-repeat center/contain;
+    }
+    .open_menu_btn {
+        display: block;
+        float: right;
+        width: 38px;
+        height: 31px;
+        margin-top: 14.5px;
+    }
+    .open_menu_btn span {
+        display: block;
+        width: 38px;
+        height: 5px;
+        background-color: #fff;
+        text-indent: -9999px;
+        margin-bottom: 8px;
+        border-radius: 2px;
+    }
+}
+/* end 1024 */
+
+/* start 1280 */
+@media all and (min-width: 1280px) {
+    .mobile { display: none; }
+    .desktop { display: block; }
+    /* header 1280 */
+    .header_inner {
+        width: 92.188%; /* 1188 / 1280 */
+    }
+    nav {
+        display: block;
+        float: right;
+    }
+    nav ul {
+        margin-top: 15px;
+        height: 30px;
+    }
+    nav ul li {
+        display: block;
+        float: right;
+        margin-left: 50px; 
+        transition: transform .5s;
+    }
+    nav ul li:hover {
+        transform: scale(1.02);
+    }
+    nav ul li a {
+        line-height: 30px;
+        font-size: 2.1rem;
+        font-weight: bold;
+        color: #fff;
+    } 
+    nav ul li:first-of-type a {
+        line-height: 1;
+        margin-top: 2px;
+        display: block;
+        width: 36px;
+        height: 26px;
+        background: url(../img/icon/youtube_white.png) no-repeat center/contain;
+    }
+    header:hover nav ul li a {
+        color: #333333;
+    }
+    header:hover nav ul li:first-of-type a {
+        background-image: url(../img/icon/youtube_color.png);
+    }
+}
+/* end 1280 */
+
+/* start 1920 */
+@media all and (min-width: 1920px) {
+    .header_inner {
+        width: 1828px;
+    }
+}
+/* end 1920 */

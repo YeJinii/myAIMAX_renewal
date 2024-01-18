@@ -15,35 +15,47 @@
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/style.css">
 
+    <!-- font: Noto Sans KR -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- jquery -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            alert("hello world!");
+        });
+    </script>
 </head>
 <body>
     <div id="wrap">
         <header>
             <div class="header_inner">
                 <a href="https://yejindin.mycafe24.com/aimax"></a>
-                <button class="open_menu_btn">
+                <button class="open_menu_btn mobile">
                     <span>메뉴열기</span>
                     <span></span>
                     <span></span>
                 </button>
-                <button class="youtube_btn">에이아이맥스 유튜브 바로가기</button>
+                <button class="youtube_btn mobile">에이아이맥스 유튜브 바로가기</button>
                 <nav class="desktop">
                     <ul>
                         <li>
-                            <a href="#">Company</a>
-                        </li>
-                        <li>
-                            <a href="#">Solution</a>
-                        </li>
-                        <li>
-                            <a href="#">Partner</a>
+                            <!-- youtube btn -->
+                            <a href="https://www.youtube.com/@aimax_winged" target="_blank"></a>
                         </li>
                         <li>
                             <a href="#">Contact</a>
                         </li>
                         <li>
-                            <!-- youtube btn -->
-                            <a href="#"></a>
+                            <a href="#">Partner</a>
+                        </li>
+                        <li>
+                            <a href="#">Performance</a>
+                        </li>
+                        <li>
+                            <a href="#">Solution</a>
                         </li>
                     </ul>
                 </nav>
