@@ -20,11 +20,23 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
+    <!-- slick slider -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
     <!-- jquery -->
     <script src="js/jquery-3.7.1.min.js"></script>
+
+    <!-- slick slider -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    
     <script>
         $(document).ready(function(){
-            alert("hello world!");
+            $('.slider').slick({
+                arrows: false,
+                infinite: true,
+                autoplay: true,
+                autoplaySpeed: 3000
+            });
         });
     </script>
 </head>
@@ -61,6 +73,15 @@
                 </nav>
             </div> <!-- e: header_inner -->
         </header>
+        <main>
+            <div id="main_banner" style="height: 100vh;">
+                <div class="slider" style="height: 100vh;">
+                    <div class="slide slide_1" style="height: 100vh;">1</div>
+                    <div class="slide slide_2" style="height: 100vh;">2</div>
+                    <div class="slide slide_3" style="height: 100vh;">3</div>
+                </div>
+            </div>
+        </main>
     </div>
 </body>
 </html>
