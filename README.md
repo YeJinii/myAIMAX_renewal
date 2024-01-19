@@ -1,7 +1,7 @@
 ### Commit Log
 
 * FEAT_240119
-  * main_banner (375)
+  * main_banner (375, 768, 1024, 1280, 1920)
     * auto sliding 기능 구현
     * play_n_stop 버튼 생성
     * pager click시 page 전환하는 기능 구현
