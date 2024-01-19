@@ -31,12 +31,37 @@
     
     <script>
         $(document).ready(function(){
+            
+            // main_banner sliding 기능
             $('.slider').slick({
                 arrows: false,
                 infinite: true,
                 autoplay: true,
                 autoplaySpeed: 3000
             });
+
+            let play_n_pause = true;
+
+            $('.play_n_pause_btn').click(function(){
+                
+                // if autoplay: true
+                if(play_n_pause){
+
+                    $('.slider').slick('slickPause');
+                    $('.play_n_pause_btn').addClass('pause');
+                
+                    play_n_pause = false;
+
+                } else { // if autoplay: false;
+
+                    $('.slider').slick('slickPlay');
+                    $('.play_n_pause_btn').removeClass('pause');
+                    play_n_pause = true;
+
+                }
+
+            });
+
         });
     </script>
 </head>
@@ -76,9 +101,51 @@
         <main>
             <div id="main_banner" style="height: 100vh;">
                 <div class="slider" style="height: 100vh;">
-                    <div class="slide slide_1" style="height: 100vh;">1</div>
-                    <div class="slide slide_2" style="height: 100vh;">2</div>
-                    <div class="slide slide_3" style="height: 100vh;">3</div>
+                    <div class="slide banner_1" style="height: 100vh;">
+                        <div class="content_wrap">
+                            <h2>초연결 시대 새로운 재앙 “디지털 블랙아웃”</h2>
+                            <span>‘윙드’는 초과도 연결하여 우리의 일상을 지켜줍니다.</span>
+                            <p>에이아이맥스는 ‘윙드’ 솔루션을 통해</br>보다 안정적이고 압도적인 퍼포먼스를 발휘할 수 있는</br>효율적인 해결방안을 제시합니다.</p>
+                            <div class="pager_wrap">
+                                <div class="pager">
+                                    <span class="on"></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <div class="play_n_pause_btn"></div>
+                            </div>
+                        </div> <!-- e: content_wrap -->
+                    </div> <!-- e: slide banner_1 -->
+                    <div class="slide banner_2" style="height: 100vh;">
+                        <div class="content_wrap">
+                            <h2>“과부하” 사고는 순간입니다.</h2>
+                            <span>서비스가 증가하면 장애도 증가합니다.</span>
+                            <p>서비스의 성장은 데이터의 증가, 다양한 서비스와 기능 확대,<br>일시적 동시접속의 증가 등 시스템의 성능문제를 가져옵니다.<br>이는 서비스의 응답속도 저하, 장애 발생 등으로<br>민원 발생 및 시스템 신뢰 하락으로 이어집니다.</p>
+                            <div class="pager_wrap">
+                                <div class="pager">
+                                    <span></span>
+                                    <span class="on"></span>
+                                    <span></span>
+                                </div>
+                                <div class="play_n_pause_btn"></div>
+                            </div>
+                        </div> <!-- e: content_wrap -->
+                    </div>
+                    <div class="slide banner_3" style="height: 100vh;">
+                        <div class="content_wrap">
+                            <h2>평균 20배 ~ 100배 과부하 해소</h2>
+                            <span>동적캐싱과 인공지능의 만남,<br>최고 미래기술 WINGed가 해결해드립니다.</span>
+                            <p>세계적인 과부하방지 시스템을 위하여<br>에이아이맥스는 세상으로 한 발짝 나아가도록 하겠습니다. </p>
+                            <div class="pager_wrap">
+                                <div class="pager">
+                                    <span></span>
+                                    <span></span>
+                                    <span class="on"></span>
+                                </div>
+                                <div class="play_n_pause_btn"></div>
+                            </div>
+                        </div> <!-- e: content_wrap -->
+                    </div>
                 </div>
             </div>
         </main>
