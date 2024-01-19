@@ -32,7 +32,7 @@
     <script>
         $(document).ready(function(){
             
-            // main_banner sliding 기능
+            // main_banner slick-slide
             $('.slider').slick({
                 arrows: false,
                 infinite: true,
@@ -40,8 +40,8 @@
                 autoplaySpeed: 3000
             });
 
+            // auto sliding control btn
             let play_n_pause = true;
-
             $('.play_n_pause_btn').click(function(){
                 
                 // if autoplay: true
@@ -60,6 +60,17 @@
 
                 }
 
+            });
+
+            // pager
+            $('.pager span:nth-of-type(1)').click(function(){
+                $('.slider').slick('slickGoTo', 0);
+            });
+            $('.pager span:nth-of-type(2)').click(function(){
+                $('.slider').slick('slickGoTo', 1);
+            });
+            $('.pager span:nth-of-type(3)').click(function(){
+                $('.slider').slick('slickGoTo', 2);
             });
 
         });

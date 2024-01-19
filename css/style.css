@@ -25,41 +25,41 @@ header {
     width: 88%; /* 330 / 375 */
     height: 100%;
     margin: 0 auto;
-    padding-top: 18px;
+    padding-top: 21px;
 }
 .header_inner > a {
     display: block;
     float: left;
-    width: 165px;
-    height: 44px;
+    width: 141px;
+    height: 38px;
     margin-left: -5px;
     background: url(../img/logo/aimax_white.png) no-repeat center/cover;
 }
 .youtube_btn {
     display: block;
     float: right;
-    width: 36px;
-    height: 26px;
+    width: 32px;
+    height: 24px;
     text-indent: -9999px;
     overflow: hidden;
-    margin-top: 9px;
+    margin-top: 7px;
     margin-right: 9.091%; /* 30 / 330 */
     background: url(../img/icon/youtube_white.png) no-repeat center/contain;
 }
 .open_menu_btn {
     display: block;
     float: right;
-    width: 30px;
-    height: 26px;
-    margin-top: 9px;
+    width: 28px;
+    height: 24px;
+    margin-top: 7px;
 }
 .open_menu_btn span {
     display: block;
-    width: 30px;
+    width: 28px;
     height: 4px;
     background-color: #fff;
     text-indent: -9999px;
-    margin-bottom: 7px;
+    margin-bottom: 6px;
     border-radius: 2px;
 }
 header:hover {
@@ -145,6 +145,7 @@ main {
     border-radius: 5px;
     margin-top: 7px;
     margin-right: 20px;
+    cursor: pointer;
 }
 .pager > span.on {
     border: none;
@@ -169,9 +170,29 @@ main {
     /* header 768 */
     .header_inner {
         width: 88.021%; /* 676 / 768 */
+        padding-top: 21px;
+    }
+    .header_inner > a {
+        width: 165px;
+        height: 44px;
+        margin-left: -5px;
     }
     .youtube_btn {
+        width: 36px;
+        height: 26px;
+        margin-top: 9px;
         margin-right: 5.917%; /* 40 / 676 */
+    }
+    .open_menu_btn {
+        width: 30px;
+        height: 26px;
+        margin-top: 9px;
+    }
+    .open_menu_btn span {
+        width: 30px;
+        height: 4px;
+        margin-bottom: 7px;
+        border-radius: 2px;
     }
 }
 /* end 768 */
