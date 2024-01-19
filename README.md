@@ -4,6 +4,7 @@
   * main_banner (375)
     * auto sliding 기능 구현
     * play_n_stop 버튼 생성
+    * pager click시 page 전환하는 기능 구현
   
 * FEAT_240118
   * header (1024, 1280, 1920)
