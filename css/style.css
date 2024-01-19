@@ -86,7 +86,6 @@ main {
 .slider {
     height: 100vh;
     display: block;
-    background-color: #dddddd;
 }
 .slide {
     position: relative;
@@ -123,8 +122,9 @@ main {
 .slide .content_wrap p {
     font-size: 1.2rem;
     line-height: 18px;
-    font-weight: 300;
+    font-weight: 400;
     margin-bottom: 20px;
+    opacity: .8;
 }
 .pager_wrap {
     position: relative;
@@ -194,6 +194,28 @@ main {
         margin-bottom: 7px;
         border-radius: 2px;
     }
+
+    /* main_banner 768 */
+    .content_wrap {
+        width: 88.021%; /* 676 / 768 */
+    }
+    .slide .content_wrap h2 {
+        font-size: 3rem;
+        line-height: 43px;
+        margin-bottom: 30px;
+    }
+    .slide .content_wrap span {
+        font-size: 1.8rem;
+        line-height: 26px;
+        margin-bottom: 20px;
+        font-weight: 500;
+    }
+    .slide .content_wrap p {
+        font-size: 1.4rem;
+        line-height: 18px;
+        font-weight: 300;
+        margin-bottom: 40px;
+    }
 }
 /* end 768 */
 
@@ -238,6 +260,23 @@ main {
         margin-bottom: 8px;
         border-radius: 2px;
     }
+
+    /* main_banner 1024 */
+    .content_wrap {
+        width: 91.016%; /* 932 / 1024 */
+    }
+    .slide .content_wrap h2 {
+        font-size: 3.5rem;
+        line-height: 51px;
+    }
+    .slide .content_wrap span {
+        font-size: 2rem;
+        line-height: 29px;
+    }
+    .slide .content_wrap p {
+        font-size: 1.5rem;
+        line-height: 23px;
+    }    
 }
 /* end 1024 */
 
@@ -286,6 +325,23 @@ main {
     header:hover nav ul li:first-of-type a {
         background-image: url(../img/icon/youtube_color.png);
     }
+
+    /* main_banner 1280 */
+    .content_wrap {
+        width: 92.188%; /* 1188 / 1280 */
+    }
+    .slide .content_wrap h2 {
+        font-size: 4.5rem;
+        line-height: 65px;
+    }
+    .slide .content_wrap span {
+        font-size: 2.5rem;
+        line-height: 36px;
+    }
+    .slide .content_wrap p {
+        font-size: 1.7rem;
+        line-height: 25px;
+    }     
 }
 /* end 1280 */
 
@@ -294,5 +350,21 @@ main {
     .header_inner {
         width: 1828px;
     }
+    /* main_banner 1920 */
+    .content_wrap {
+        width: 1828px;
+    }
+    .slide .content_wrap h2 {
+        font-size: 5rem;
+        line-height: 72px;
+    }
+    .slide .content_wrap span {
+        font-size: 3rem;
+        line-height: 43px;
+    }
+    .slide .content_wrap p {
+        font-size: 1.9rem;
+        line-height: 28px;
+    }      
 }
 /* end 1920 */
