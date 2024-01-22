@@ -1,5 +1,11 @@
 @charset "utf-8";
 
+/* animation */
+@keyframes marquee { 
+    0% { left: 0; } 
+    100% { left: -100%; }
+}
+
 /* start 375 */
 .mobile { display: block; }
 .desktop { display: none; }
@@ -163,6 +169,69 @@ main {
 .play_n_pause_btn.pause {
     background-image: url(../img/btn/play_btn.png);
 }
+
+/* winged_copy 375 */
+
+#winged_copy {
+    position: relative;
+    display: block;
+    width: 100%;
+    background-color: white;
+    padding-top: 54px;
+    padding-bottom: 122px;
+}
+
+.marquee {
+    height: 72px;
+    width: 1050px;
+
+    overflow: hidden;
+    position: relative;
+}
+.marquee div {
+    display: block;
+    width: 200%;
+    height: 72px;
+
+    position: absolute;
+    overflow: hidden;
+    
+    color: #EDEDED;
+
+    animation: marquee 25s linear infinite;
+}
+.marquee span {
+    float: left;
+    width: 50%;
+    font-size: 5rem;
+    font-weight: 900;
+    line-height: 72px;
+}
+
+.txt_wrap {
+    width: 88%; /* 330 / 375 */
+    text-align: center;
+    position: absolute;
+    top: 60px; left: 50%;
+    transform: translateX(-50%);
+}
+.txt_wrap h2 {
+    font-size: 1.6rem;
+    font-weight: bold;
+    line-height: 23px;
+    margin-bottom: 20px;
+}
+.txt_wrap p.mobile {
+    font-size: 1.2rem;
+    font-weight: 400px;
+    line-height: 17px;
+}
+span.bold {
+    font-weight: bold;
+}
+span.green {
+    color: #1E888A !important;
+}
 /* end 375 */
 
 /* start 768 */
@@ -215,6 +284,46 @@ main {
         line-height: 18px;
         font-weight: 300;
         margin-bottom: 40px;
+    }
+
+    /* winged_copy 768 */
+
+    #winged_copy {
+        padding-top: 80px;
+        padding-bottom: 107px;
+    }
+
+    .marquee {
+        height: 116px;
+        width: 1700px;
+    }
+    .marquee div {
+        height: 116px;
+        animation: marquee 30s linear infinite;
+    }
+    .marquee span {
+        font-size: 8rem;
+        font-weight: 900;
+        line-height: 116px;
+    }
+
+    .txt_wrap {
+        width: 88.021%; /* 676 / 768 */
+        top: 80px;
+    }
+    .txt_wrap h2 {
+        font-size: 3rem;
+        font-weight: bold;
+        line-height: 43px;
+        margin-bottom: 20px;
+    }
+    .txt_wrap p.mobile {
+        font-size: 1.4rem;
+        font-weight: 400px;
+        line-height: 20px;
+    }
+    .phone {
+        display: none;
     }
 }
 /* end 768 */
@@ -276,7 +385,24 @@ main {
     .slide .content_wrap p {
         font-size: 1.5rem;
         line-height: 23px;
-    }    
+    }
+    
+    /* winged_copy 1024 */
+
+    #winged_copy {
+        padding-top: 80px;
+        padding-bottom: 110px;
+    }
+    .txt_wrap {
+        width: 91.016%; /* 932 / 1024 */
+        top: 80px;
+    }
+    .txt_wrap h2 {
+        font-size: 3.5rem;
+        line-height: 51px;
+        margin-bottom: 20px;
+    }
+
 }
 /* end 1024 */
 
