@@ -467,7 +467,42 @@ span.green {
     .slide .content_wrap p {
         font-size: 1.7rem;
         line-height: 25px;
-    }     
+    }
+    
+    /* winged_copy 375 */
+
+    #winged_copy {
+        padding-top: 100px;
+        padding-bottom: 120px;
+    }
+
+    .marquee {
+        height: 150px;
+        width: 2500px;
+    }
+    .marquee div {
+        width: 200%;
+        height: 150px;
+        animation: marquee 35s linear infinite;
+    }
+    .marquee span {
+        font-size: 12rem;
+        line-height: 150px;
+    }
+
+    .txt_wrap {
+        width: 92.188%; /* 1188 / 1280 */
+        top: 110px;
+    }
+    .txt_wrap h2 {
+        font-size: 4.5rem;
+        line-height: 65px;
+        margin-bottom: 30px;
+    }
+    .txt_wrap p {
+        font-size: 2rem;
+        line-height: 30px;
+    }
 }
 /* end 1280 */
 
