@@ -1,5 +1,9 @@
 ### Commit Log
 
+* FEAT_240122
+  * winged_copy (375, 768, 1024)
+    * marquee background_text 구현
+
 * FEAT_240119
   * main_banner (375, 768, 1024, 1280, 1920)
     * auto sliding 기능 구현
