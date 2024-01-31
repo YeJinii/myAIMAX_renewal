@@ -1,5 +1,9 @@
 ### Commit Log
 
+* FEAT_240131
+  * winged_copy
+    * 가로 슬라이드 제한 (marquee로 인해 옆의 공간으로 이동되는 현상 수정)
+
 * FEAT_240122
   * winged_copy (375, 768, 1024)
     * marquee background_text 구현

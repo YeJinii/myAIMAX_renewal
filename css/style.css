@@ -10,8 +10,7 @@
 .mobile { display: block; }
 .desktop { display: none; }
 
-/* todo: delete */
-body {
+html, body {
     background-color: #000;
     overflow-x: hidden;
 }
