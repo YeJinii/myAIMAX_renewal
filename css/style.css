@@ -13,6 +13,7 @@
 /* todo: delete */
 body {
     background-color: #000;
+    overflow-x: hidden;
 }
 
 /* header 375 */
