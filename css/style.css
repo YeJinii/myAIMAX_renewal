@@ -253,12 +253,10 @@ span.green {
     width: 100%;
     height: 80px;
     margin-bottom: 30px;
-    transition: all .3s;
+    transition: all 1s;
     cursor: pointer;
-    opacity: .9;
 }
 .p_service_wrap > div:hover {
-    opacity: 1;
     transform: scale(1.01);
 }
 .p_service_wrap > div:hover .p_icon_wrap {
@@ -305,7 +303,7 @@ span.green {
     background-image: url(../img/icon/service_4_w.png);
 }
 
-.p_icon_wrap > .icon.icon_f {
+.p_icon_wrap > .icon_f {
     position: absolute;
     transform: translate(-50%, -50%) rotateY(0deg);
 }
@@ -454,6 +452,7 @@ span.green {
     .service_wrap > div {
         float: left;
         margin-right: 40px;
+        transition: all 1s;
     }
     .service_wrap > div:nth-of-type(1){
         width: 126px;
@@ -477,30 +476,65 @@ span.green {
         border-radius: 50%;
         margin: 0 auto 20px;
     }
-    .service_wrap > div .icon_wrap .icon {
+    .icon_wrap > .icon {
+        position: absolute;
         display: block;
         width: 80px;
         height: 80px;
-        position: absolute;
         top: 50%; left: 50%;
         transform: translate(-50%, -50%);
         background: url(../img/icon/service_1_w.png) no-repeat center/contain;
         background-size: 80px 80px;
+        backface-visibility: hidden;
+        transition: 1s;
     }
-    .icon_wrap .icon_f.icon2 {
+    .icon_wrap > .icon_f.icon_2 {
         background-image: url(../img/icon/service_2_w.png);
     }
-
-
-
-
-
+    .icon_wrap > .icon_f.icon_3 {
+        background-image: url(../img/icon/service_3_w.png);
+    }
+    .icon_wrap > .icon_f.icon_4 {
+        background-image: url(../img/icon/service_4_w.png);
+    }
+    .icon_wrap > .icon_b.icon_1 {
+        background-image: url(../img/icon/service_1_b.png);
+    }
+    .icon_wrap > .icon_b.icon_2 {
+        background-image: url(../img/icon/service_2_b.png);
+    }
+    .icon_wrap > .icon_b.icon_3 {
+        background-image: url(../img/icon/service_3_b.png);
+    }
+    .icon_wrap > .icon_b.icon_4 {
+        background-image: url(../img/icon/service_4_b.png);
+    }
+    .icon_wrap > .icon_f {
+        position: absolute;
+        transform: translate(-50%, -50%) rotateY(0deg);
+    }
+    .icon_wrap > .icon_b {
+        transform: translate(-50%, -50%) rotateY(-180deg);
+    }
+    .service_wrap > div:hover .icon_f {
+        transform: translate(-50%, -50%) rotateY(180deg);
+    }
+    .service_wrap > div:hover .icon_b {
+        transform: translate(-50%, -50%) rotateY(0deg);
+    }
+    .service_wrap > div:hover {
+        transform: scale(1.01);
+    }
+    .service_wrap > div:hover .icon_wrap {
+        border-color: #00166B;
+    }
     .service_wrap > div > span {
         display: block;
-        width: auto;
+        width: 100%;
         height: auto;
         font-size: 1.2rem;
         color: #ffffff;
+        text-align: center;
     }
 
 }
@@ -579,6 +613,43 @@ span.green {
         font-size: 3.5rem;
         line-height: 51px;
         margin-bottom: 20px;
+    }
+
+    /* service 1024 */
+    #service {
+        height: 314px;
+    }
+    .service_wrap {
+        width: 740px;
+    }
+    .service_wrap > div {
+        width: 125px;
+        margin-right: 80px;
+    }
+    .service_wrap > div:nth-of-type(1){
+        width: 126px;
+    }
+    .service_wrap > div:nth-of-type(2){
+        width: 124px;
+    }
+    .service_wrap > div:nth-of-type(3){
+        width: 125px;
+    }
+    .service_wrap > div:last-of-type {
+        width: 125px;
+        margin-right: 0;
+    }
+    .service_wrap > div .icon_wrap {
+        width: 120px;
+        height: 120px;
+        position: relative;
+        border: 1px solid rgba(255,255,255,.1);
+        border-radius: 50%;
+    }
+    .icon_wrap > .icon {
+        width: 90px;
+        height: 90px;
+        background-size: 90px 90px;
     }
 
 }
@@ -680,6 +751,42 @@ span.green {
     .txt_wrap p {
         font-size: 2rem;
         line-height: 30px;
+    }
+
+    /* service 1280 */
+    #service {
+        height: 342px;
+    }
+    .service_wrap {
+        width: 980px;
+    }
+    .service_wrap > div {
+        width: 155px;
+        margin-right: 120px;
+    }
+    .service_wrap > div:nth-of-type(1){
+        width: 155px;
+    }
+    .service_wrap > div:nth-of-type(2){
+        width: 155px;
+    }
+    .service_wrap > div:nth-of-type(3){
+        width: 155px;
+    }
+    .service_wrap > div:last-of-type {
+        width: 155px;
+    }
+    .service_wrap > div .icon_wrap {
+        width: 150px;
+        height: 150px;
+    }
+    .icon_wrap > .icon {
+        width: 120px;
+        height: 120px;
+        background-size: 120px 120px;
+    }
+    .service_wrap > div > span {
+        font-size: 1.4rem;
     }
 }
 /* end 1280 */
