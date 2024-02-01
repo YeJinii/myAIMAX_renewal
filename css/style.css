@@ -389,9 +389,9 @@ span.green {
 }
 
 .rates_wrap {
-    width: 100%;
+    width: 330px;
     height: 80px;
-    margin-top: 15px;
+    margin: 15px auto 0;
     padding-top: 3px;  
 }
 .rates_wrap .rate {
@@ -436,12 +436,12 @@ span.green {
 }
 
 .strengths_wrap {
-    width: 100%;
-    margin: 30px 0;
+    width: 330px;
+    margin: 30px auto;
 }
 .strength {
     float: left;
-    margin-right: 14px;
+    margin-right: 23px;
 }
 .strength:last-of-type {
     margin-right: 0;
@@ -463,15 +463,17 @@ span.green {
 }
 #performance h4 {
     text-align: left;
+    width: 330px;
     font-size: 1.3rem;
     color: #118183;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin: 0 auto 14px;
 }
 #performance .table_img {
     display: block;
     width: 330px;
     height: 126px;
+    margin: 0 auto;
     background: url(../img/table_img.png) no-repeat center/contain;
     background-size: 330px;
     overflow: hidden;
