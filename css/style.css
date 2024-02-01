@@ -342,6 +342,100 @@ span.green {
 .p_service_wrap > div:nth-of-type(2n) > p {
     float: right;
 }
+
+/* performance 375 */
+#performance {
+    width: 100%; /* 330 / 375 */
+    padding: 60px 6%;
+    background: linear-gradient(180deg, #ffffff, #ffffff 80%, #dddddd);
+    text-align: center;
+}
+#performance h2 {
+    color: #1E888A;
+    font-size: 2.6rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+#performance .span_1 {
+    display: block;
+    width: 300px;
+    height: 25px;
+    margin: 0 auto 10px;
+    font-size: 1.7rem;
+    font-weight: bold;
+    line-height: 25px;
+
+    background: url(../img/background/span_bg.png) no-repeat center/contain;
+    background-size: 300px 25px;
+
+    color: #ffffff;
+}
+#performance .span_2 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #EDEDED;
+    line-height: 36px;
+}
+#performance h3 {
+    font-size: 1.6rem;
+    font-weight: 900;
+    margin: 10px 0 5px;
+}
+#performance p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 17px;
+    margin-bottom: 15px;
+}
+
+.rates_wrap {
+    width: 100%;
+    height: 80px;
+    margin-top: 15px;
+    padding-top: 3px;  
+}
+.rates_wrap .rate {
+    /* todo: delete */
+    border: 1px solid #efefef;
+}
+.rate_wrap {
+    color: #1E888A;
+}
+.rate_wrap .num {
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: 51px;
+}
+.rate_wrap .unit {
+    font-size: 3rem;
+    font-weight: bold;
+    line-height: 43px;
+    padding-top: 6px;
+}
+.rate_1 {
+    float: left;
+    width: 177px;
+    height: 80px;
+    margin-right: 10px;
+}
+.rate_1 .rate_wrap .unit {
+    font-weight: 900;
+}
+.rate_2 {
+    float: left;
+    width: 143px;
+    height: 80px;
+}
+.rates_wrap .rate > span {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 17px;
+    margin-top: -2px;
+    color: #333333;
+}
+
+
 /* end 375 */
 
 /* start 768 */
@@ -758,23 +852,23 @@ span.green {
         height: 342px;
     }
     .service_wrap {
-        width: 980px;
+        width: 1120px;
     }
     .service_wrap > div {
-        width: 155px;
+        width: 190px;
         margin-right: 120px;
     }
     .service_wrap > div:nth-of-type(1){
-        width: 155px;
+        width: 190px;
     }
     .service_wrap > div:nth-of-type(2){
-        width: 155px;
+        width: 190px;
     }
     .service_wrap > div:nth-of-type(3){
-        width: 155px;
+        width: 190px;
     }
     .service_wrap > div:last-of-type {
-        width: 155px;
+        width: 190px;
     }
     .service_wrap > div .icon_wrap {
         width: 150px;
@@ -786,7 +880,7 @@ span.green {
         background-size: 120px 120px;
     }
     .service_wrap > div > span {
-        font-size: 1.4rem;
+        font-size: 1.8rem;
     }
 }
 /* end 1280 */
@@ -811,6 +905,7 @@ span.green {
     .slide .content_wrap p {
         font-size: 1.9rem;
         line-height: 28px;
-    }      
+    }
+   
 }
 /* end 1920 */
