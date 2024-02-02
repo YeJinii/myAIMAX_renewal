@@ -347,7 +347,7 @@ span.green {
 #performance {
     width: 100%; /* 330 / 375 */
     padding: 60px 6%;
-    background: linear-gradient(180deg, #ffffff, #ffffff 80%, #dddddd);
+    background: linear-gradient(180deg, #ffffff, #ffffff 95%, #eeeeee);
     text-align: center;
 }
 #performance h2 {
@@ -379,7 +379,7 @@ span.green {
 #performance h3 {
     font-size: 1.6rem;
     font-weight: 900;
-    margin: 30px 0 5px;
+    margin: 50px 0 5px;
 }
 #performance > p {
     font-size: 1.2rem;
@@ -395,13 +395,15 @@ span.green {
     padding-top: 3px;  
 }
 .rates_wrap .rate {
-    /* todo: delete */
-    border: 1px solid #efefef;
+    box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.17);
 }
 .rate_wrap {
     color: #1E888A;
+    
 }
-.rate_wrap .num {
+.rate_wrap .count_num, 
+.rate_wrap .count_num2 {
+    display: inline;
     font-size: 3.5rem;
     font-weight: 900;
     line-height: 51px;
@@ -435,9 +437,10 @@ span.green {
     color: #333333;
 }
 
+
 .strengths_wrap {
     width: 330px;
-    margin: 30px auto;
+    margin: 30px auto 50px;
 }
 .strength {
     float: left;
@@ -479,7 +482,37 @@ span.green {
     overflow: hidden;
     text-indent: -9999px;
 }
+table {
+    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid #f2f2f2;
 
+    box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.17);
+}
+caption {
+    text-align: left;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #118183;
+}
+tr {
+    height: 18px !important;
+}
+th {
+    padding-left: 5px;
+}
+.tr_parent {
+    height: 30px !important;
+    background-color: #f2f2f2;
+}
+.tr_child {
+    height: 15px;
+    line-height: 15px;
+}
+.text_align_left {
+    text-align: left;
+}
 /* end 375 */
 
 /* start 768 */
