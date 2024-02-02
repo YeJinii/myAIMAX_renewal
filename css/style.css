@@ -671,10 +671,9 @@ span.green {
         width: 100%;
         height: auto;
         font-size: 1.2rem;
-        color: #ffffff;
+        color: #fff;
         text-align: center;
     }
-
 }
 /* end 768 */
 
@@ -814,6 +813,7 @@ span.green {
         float: right;
         margin-left: 50px; 
         transition: transform .5s;
+
     }
     nav ul li:hover {
         transform: scale(1.02);

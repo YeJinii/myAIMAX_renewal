@@ -1,5 +1,10 @@
 ### Commit Log
 
+* FEAT_240201
+  * performance
+    * background gradient 적용
+    * html 구현
+
 * FEAT_240131
   * winged_copy (1280, 1920)
     * 가로 슬라이드 제한 (marquee로 인해 옆의 공간으로 이동되는 현상 수정)
