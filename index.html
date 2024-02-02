@@ -32,9 +32,9 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     
     <script>
-        let check_1 = true;
+        let check = true;
         $(document).ready(function(){
-            
+
             // main_banner slick-slide
             $('.slider').slick({
                 arrows: false,
@@ -76,28 +76,84 @@
                 $('.slider').slick('slickGoTo', 2);
             });
 
-            const $counters = $(".count_num");
-            
-            // 노출 비율(%)과 애니메이션 반복 여부(true/false)를 설정합니다.
-            const exposurePercentage = 100; // ex) 스크롤 했을 때 $counters 컨텐츠가 화면에 100% 노출되면 숫자가 올라갑니다.
-            const loop = true; // 애니메이션 반복 여부를 설정합니다. (true로 설정할 경우, 요소가 화면에서 사라질 때 다시 숨겨집니다.)
+            // performance
+            const $counters = $('.count_num');
+            const $chars = $('.span_2');
+            const $highlight = $('.highlight_box');
 
-            // 윈도우의 스크롤 이벤트를 모니터링합니다.
+            const exposurePercentage = 100;
+            const loop = true;
+
             $(window).on('scroll', function() {
-                // 각 "scroll_on" 클래스를 가진 요소에 대해 반복합니다.
+                // header
+                if($(window).scrollTop()){
+                    $('header').addClass('on');
+                }else{
+                    $('header').removeClass('on');
+                }
+
+                // performance EXCELLENT AND STABLE
+                $chars.each(function() {
+                    const $el = $(this);
+            
+                    const rect = $el[0].getBoundingClientRect();
+                    const winHeight = window.innerHeight;
+                    const contentHeight = rect.bottom - rect.top;
+                    
+                    if (rect.top <= winHeight - (contentHeight * exposurePercentage / 100) && rect.bottom >= (contentHeight * exposurePercentage / 100)) {
+                       $('span.char:nth-of-type(1)').addClass('on');
+                       $('span.char:nth-of-type(2)').addClass('on');
+                       $('span.char:nth-of-type(3)').addClass('on');
+                       $('span.char:nth-of-type(4)').addClass('on');
+                       $('span.char:nth-of-type(5)').addClass('on');
+                       $('span.char:nth-of-type(6)').addClass('on');
+                       $('span.char:nth-of-type(7)').addClass('on');
+                       $('span.char:nth-of-type(8)').addClass('on');
+                       $('span.char:nth-of-type(9)').addClass('on');
+                       $('span.char:nth-of-type(10)').addClass('on');
+                       $('span.char:nth-of-type(11)').addClass('on');
+                       $('span.char:nth-of-type(12)').addClass('on');
+                       $('span.char:nth-of-type(13)').addClass('on');
+                       $('span.char:nth-of-type(14)').addClass('on');
+                       $('span.char:nth-of-type(15)').addClass('on');
+                       $('span.char:nth-of-type(16)').addClass('on');
+                       $('span.char:nth-of-type(17)').addClass('on');
+                       $('span.char:nth-of-type(18)').addClass('on');
+                    }
+                    if (loop && (rect.bottom <= 0 || rect.top >= window.innerHeight)) {
+                        $('span.char:nth-of-type(1)').removeClass('on');
+                       $('span.char:nth-of-type(2)').removeClass('on');
+                       $('span.char:nth-of-type(3)').removeClass('on');
+                       $('span.char:nth-of-type(4)').removeClass('on');
+                       $('span.char:nth-of-type(5)').removeClass('on');
+                       $('span.char:nth-of-type(6)').removeClass('on');
+                       $('span.char:nth-of-type(7)').removeClass('on');
+                       $('span.char:nth-of-type(8)').removeClass('on');
+                       $('span.char:nth-of-type(9)').removeClass('on');
+                       $('span.char:nth-of-type(10)').removeClass('on');
+                       $('span.char:nth-of-type(11)').removeClass('on');
+                       $('span.char:nth-of-type(12)').removeClass('on');
+                       $('span.char:nth-of-type(13)').removeClass('on');
+                       $('span.char:nth-of-type(14)').removeClass('on');
+                       $('span.char:nth-of-type(15)').removeClass('on');
+                       $('span.char:nth-of-type(16)').removeClass('on');
+                       $('span.char:nth-of-type(17)').removeClass('on');
+                       $('span.char:nth-of-type(18)').removeClass('on');
+                    }
+                });
+
+                // performance number counting
                 $counters.each(function() {
                     const $el = $(this);
             
-                    // 요소의 위치 정보를 가져옵니다.
                     const rect = $el[0].getBoundingClientRect();
-                    const winHeight = window.innerHeight; // 현재 브라우저 창의 높이
-                    const contentHeight = rect.bottom - rect.top; // 요소의 높이
+                    const winHeight = window.innerHeight;
+                    const contentHeight = rect.bottom - rect.top;
                     
-                    // 요소가 화면에 특정 비율만큼 노출될 때 처리합니다.
                     if (rect.top <= winHeight - (contentHeight * exposurePercentage / 100) && rect.bottom >= (contentHeight * exposurePercentage / 100)) {
-                        if(check_1){
+                        if(check){
                             $({ val : 0 }).animate({ val : 7352 }, {
-                            duration: 1000,
+                            duration: 1700,
                             step: function() {
                                 var num = numberWithCommas(Math.floor(this.val));
                                 $(".count_num").text(num);
@@ -109,7 +165,7 @@
                             });
 
                             $({ val : 0 }).animate({ val : 73 }, {
-                            duration: 1000,
+                            duration: 1700,
                             step: function() {
                                 var num = numberWithCommas(Math.floor(this.val));
                                 $(".count_num2").text(num);
@@ -119,18 +175,39 @@
                                 $(".count_num2").text(num);
                             }
                             });
-                            check_1 = false;
-                        }
-                        
+                            check = false;
+                        } 
                     }
-                    
+                    if (loop && (rect.bottom <= 0 || rect.top >= window.innerHeight)) {
+                       check = true;
+                    }  
                 });
+
+                // performance highlight_box
+                $highlight.each(function() {
+
+                    const $el = $(this);
+
+                    const rect = $el[0].getBoundingClientRect();
+                    const winHeight = window.innerHeight;
+                    const contentHeight = rect.bottom - rect.top;
+                            
+                    if (rect.top <= winHeight - (contentHeight * exposurePercentage / 100) && rect.bottom >= (contentHeight * exposurePercentage / 100)) {
+                        $('.highlight_box').delay(1000).addClass('on');
+                    }
+                    if (loop && (rect.bottom <= 0 || rect.top >= window.innerHeight)) {
+                        $('.highlight_box').removeClass('on');
+                    }
+
+                });
+
             }).scroll();
         });
 
         function numberWithCommas(x) {
             return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         }
+
     </script>
 </head>
 <body>
@@ -341,7 +418,7 @@
                     </div>
                 </div> <!-- e: strengths_wrap -->
                 <table border="1" width="330" summery="윙드 비교분석표">
-                    <caption>주요 경쟁제품군</caption>
+                    <caption style="margin-left: 5px;">주요 경쟁제품군</caption>
                     <colgroup>
                         <col width="50%">
                         <col width="10%">
@@ -362,58 +439,58 @@
 
                     <tbody>
                         <tr class="tr_child">
-                            <th scope="row" class="text_align_left">실시간 동적데이터 처리</th>
+                            <th scope="row" class="text_align_left check_list">실시간 동적데이터 처리</th>
                             <td><span class="yes">O</span></td>
                             <td></td>
                             <td></td>
                             <td><span class="yes winged_yes">O</span></td>
                         </tr>
                         <tr class="tr_child">
-                            <th scope="row" class="text_align_left">AP서버, DB서버 동시처리</th>
+                            <th scope="row" class="text_align_left check_list">AP서버, DB서버 동시처리</th>
                             <td><span class="yes">O</span></td>
                             <td><span class="yes">O</span></td>
                             <td></td>
                             <td><span class="yes winged_yes">O</span></td>
                         </tr>
                         <tr class="tr_child">
-                            <th scope="row" class="text_align_left">IN-MEMORY 방식</th>
+                            <th scope="row" class="text_align_left check_list">IN-MEMORY 방식</th>
                             <td></td>
                             <td><span class="yes">O</span></td>
                             <td><span class="yes">O</span></td>
                             <td><span class="yes winged_yes">O</span></td>
                         </tr>
                         <tr class="tr_child">
-                            <th scope="row" class="text_align_left">설치시 시스템 무중단<span class="desktop">장애발생 영향</span></th>
+                            <th scope="row" class="text_align_left check_list">설치시 시스템 무중단<span class="desktop">장애발생 영향</span></th>
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td><span class="ye winged_yess">O</span></td>
+                            <td><span class="yes winged_yes">O</span></td>
                         </tr>
                         <tr class="tr_child">
-                            <th scope="row" class="text_align_left">장비증설 없음<span class="desktop">장애발생 영향</span></th>
+                            <th scope="row" class="text_align_left check_list">장비증설 없음<span class="desktop">장애발생 영향</span></th>
                             <td><span class="yes">O</span></td>
                             <td></td>
                             <td></td>
                             <td><span class="yes winged_yes">O</span></td>
                         </tr>
                         <tr class="tr_child">
-                            <th scope="row" class="text_align_left">인공지능 플랫폼 적용<span class="desktop">장애발생 영향</span></th>
+                            <th scope="row" class="text_align_left check_list">인공지능 플랫폼 적용<span class="desktop">장애발생 영향</span></th>
                             <td></td>
                             <td></td>
                             <td></td>
                             <td><span class="yes winged_yes">O</span></td>
                         </tr>
                         <tr class="tr_child">
-                            <th scope="row" class="text_align_left">SOURCE 수정없는 매니지먼트<span class="desktop">장애발생 영향</span></th>
-                            <td></td>
+                            <th scope="row" class="text_align_left check_list">SOURCE 수정없는 매니지먼트<span class="desktop">장애발생 영향</span></th>
+                            <td><span class="yes">O</span></td>
                             <td></td>
                             <td></td>
                             <td><span class="yes winged_yes">O</span></td>
                         </tr>
                     </tbody>
-
                     
                 </table>
+                <span class="highlight_box"></span>
             </div> <!-- e: performance -->
         </main>
     </div>

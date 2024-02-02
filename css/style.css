@@ -5,6 +5,11 @@
     0% { left: 0; } 
     100% { left: -100%; }
 }
+@keyframes coloron {
+    to {
+        color: #00166B;
+    }
+}
 
 /* start 375 */
 .mobile { display: block; }
@@ -26,8 +31,9 @@ header {
     width: 100%;
     height: 80px;
     border-bottom: 1px solid rgba(255,255,255,.1);
-    transition: background-color .5s;
+    transition: all .5s;
 }
+
 .header_inner {
     width: 88%; /* 330 / 375 */
     height: 100%;
@@ -42,6 +48,18 @@ header {
     margin-left: -5px;
     background: url(../img/logo/aimax_white.png) no-repeat center/cover;
 }
+header.on {
+    height: 60px;
+    background-color: black;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+header.on .header_inner {
+    padding-top: 16px;
+}
+header.on .header_inner > a {
+    width: 104px;
+    height: 28px;
+}
 .youtube_btn {
     display: block;
     float: right;
@@ -53,12 +71,24 @@ header {
     margin-right: 9.091%; /* 30 / 330 */
     background: url(../img/icon/youtube_white.png) no-repeat center/contain;
 }
+header.on .youtube_btn {
+    width: 25px;
+    height: 18px;
+    margin-top: 5px;
+    margin-right: 6%;
+    background-image: url(../img/icon/youtube_color.png);
+}
 .open_menu_btn {
     display: block;
     float: right;
     width: 28px;
     height: 24px;
     margin-top: 7px;
+}
+header.on .open_menu_btn {
+    width: 20px;
+    height: 19px;
+    margin-top: 4.5px;
 }
 .open_menu_btn span {
     display: block;
@@ -68,6 +98,12 @@ header {
     text-indent: -9999px;
     margin-bottom: 6px;
     border-radius: 2px;
+}
+header.on .open_menu_btn span {
+    width: 20px;
+    height: 3px;
+    background-color: #ffffff;
+    margin-bottom: 5px;
 }
 header:hover {
     background-color: #ffffff;
@@ -379,7 +415,7 @@ span.green {
 #performance h3 {
     font-size: 1.6rem;
     font-weight: 900;
-    margin: 50px 0 5px;
+    margin: 40px 0 5px;
 }
 #performance > p {
     font-size: 1.2rem;
@@ -444,7 +480,7 @@ span.green {
 }
 .strength {
     float: left;
-    margin-right: 23px;
+    margin-right: 20px;
 }
 .strength:last-of-type {
     margin-right: 0;
@@ -493,26 +529,114 @@ caption {
     text-align: left;
     font-size: 1.3rem;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     color: #118183;
 }
 tr {
     height: 18px !important;
 }
-th {
-    padding-left: 5px;
-}
+th {}
 .tr_parent {
     height: 30px !important;
     background-color: #f2f2f2;
 }
 .tr_child {
-    height: 15px;
-    line-height: 15px;
+    height: 18px;
+    line-height: 18px;
 }
 .text_align_left {
     text-align: left;
+    padding-left: 5px;
 }
+span.yes {
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+    background-color: #595959;
+    margin: 0 auto;
+    text-indent: -9999px;
+    overflow: hidden;
+}
+span.winged_yes {
+    background-color: #1E888A;
+}
+.check_list {
+    font-size: 0.8rem;
+    font-weight: medium;
+    color: #333333;
+}
+span.char:nth-of-type(1).on {
+    animation: coloron .1s forwards;
+}
+span.char:nth-of-type(2).on {
+    animation: coloron .1s .1s forwards;
+}
+span.char:nth-of-type(3).on {
+    animation: coloron .1s .2s forwards;
+}
+span.char:nth-of-type(4).on {
+    animation: coloron .1s .3s forwards;
+}
+span.char:nth-of-type(5).on {
+    animation: coloron .1s .4s forwards;
+}
+span.char:nth-of-type(6).on {
+    animation: coloron .1s .5s forwards;
+}
+span.char:nth-of-type(7).on {
+    animation: coloron .1s .6s forwards;
+}
+span.char:nth-of-type(8).on {
+    animation: coloron .1s .7s forwards;
+}
+span.char:nth-of-type(9).on {
+    animation: coloron .1s .8s forwards;
+}
+span.char:nth-of-type(10).on {
+    animation: coloron .1s .9s forwards;
+}
+span.char:nth-of-type(11).on {
+    animation: coloron .1s 1s forwards;
+}
+span.char:nth-of-type(12).on {
+    animation: coloron .1s 1.1s forwards;
+}
+span.char:nth-of-type(13).on {
+    animation: coloron .1s 1.2s forwards;
+}
+span.char:nth-of-type(14).on {
+    animation: coloron .1s 1.3s forwards;
+}
+span.char:nth-of-type(15).on {
+    animation: coloron .1s 1.4s forwards;
+}
+span.char:nth-of-type(16).on {
+    animation: coloron .1s 1.5s forwards;
+}
+span.char:nth-of-type(17).on {
+    animation: coloron .1s 1.6s forwards;
+}
+span.char:nth-of-type(18).on {
+    animation: coloron .1s 1.7s forwards;
+}
+
+.highlight_box {
+    display: block;
+    float: right;
+    width: 66px;
+    height: 170px;
+    border: 2px solid #ffffff;
+    z-index: 100;
+    margin-top: -167px;
+
+    transition: border 1s;
+}
+.highlight_box.on {
+    border: 2px solid #ff0000;
+
+}
+
 /* end 375 */
 
 /* start 768 */
