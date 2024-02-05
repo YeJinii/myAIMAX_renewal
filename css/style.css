@@ -1205,6 +1205,136 @@ span.char:nth-of-type(18).on {
     .service_wrap > div > span {
         font-size: 1.8rem;
     }
+
+    /* performance 1280 */
+    #performance {
+        width: 100%;
+        padding: 100px 46px;
+    }
+    #performance h2 {
+        font-size: 4.5rem;
+        margin-bottom: 20px;
+    }
+    #performance .span_1 {
+        margin: 0 auto 40px;
+    }
+    #performance .span_2 {
+        font-size: 8rem;
+        line-height: 72px;
+    }
+    .pm_wrap {}
+    .pm_left {
+        float: left;
+        width: 420px;
+        
+    }
+    .pm_right {
+        float: left;
+    }
+
+    /* todo:  */
+    /* #performance h3 {
+        font-size: 3rem;
+        margin: 80px 0 10px;
+    }
+    #performance > p {
+        font-size: 1.5rem;
+        line-height: 22px;
+        margin-bottom: 60px;
+    }
+
+    .rates_wrap {
+        width: 676px;
+        height: 196px;
+        margin: 20px auto 0;
+        padding-top: 0;  
+    }
+    .rate_wrap .count_num, 
+    .rate_wrap .count_num2 {
+        font-size: 8rem;
+        font-weight: 900;
+        line-height: 116px;
+    }
+    .rate_wrap .unit {
+        font-size: 6rem;
+        font-weight: bold;
+        line-height: 87px;
+        padding-top: 23px;
+    }
+    .rate { padding-top: 12px; }
+    .rate_1 {
+        width: 360px;
+        height: 196px;
+        margin-right: 24px;
+    }
+    .rate_1 .rate_wrap .unit {
+        font-weight: 900;
+    }
+    .rate_2 {
+        width: 292px;
+        height: 196px;
+    }
+    .rates_wrap .rate > span {
+        font-size: 2.5rem;
+        line-height: 36px;
+        margin-top: 2px;
+    }
+
+    .strengths_wrap {
+        width: 637px;
+        margin: 30px auto 80px;
+    }
+    .strength {
+        margin-right: 80px;
+    }
+    .strength > span {
+        width: 25px;
+        height: 25px;
+        background-size: 25px 25px;
+        margin-top: 0px;
+        margin-right: 10px;
+    }
+    .strength > p {
+        font-size: 1.5rem;
+        line-height: 25px;
+    }
+    table {
+        width: 676px;
+    }
+    caption {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+    tr {
+        height: 20px !important;
+    }
+    .tr_parent {
+        height: 30px !important;
+        background-color: #f2f2f2;
+    }
+    .tr_child {
+        height: 25px;
+        line-height: 25px;
+    }
+    .text_align_left {
+        text-align: left;
+        padding-left: 10px;
+    }
+    span.yes {
+        width: 10px;
+        height: 10px;
+        border-radius: 5px;
+        margin: 0 auto;
+    }
+    .check_list {
+        font-size: 1rem;
+    }
+    .hl_box_wrap {
+        width: 676px;
+        height: 213px;
+        left: 50%;
+        margin-top: 45px;
+    } */
 }
 /* end 1280 */
 
