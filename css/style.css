@@ -223,7 +223,6 @@ main {
 .marquee {
     height: 72px;
     width: 1050px;
-
     overflow: hidden;
     position: relative;
 }
@@ -500,25 +499,8 @@ span.green {
     font-size: 1.05rem;
     line-height: 15px;
 }
-#performance h4 {
-    text-align: left;
-    width: 330px;
-    font-size: 1.3rem;
-    color: #118183;
-    font-weight: bold;
-    margin: 0 auto 14px;
-}
-#performance .table_img {
-    display: block;
-    width: 330px;
-    height: 126px;
-    margin: 0 auto;
-    background: url(../img/table_img.png) no-repeat center/contain;
-    background-size: 330px;
-    overflow: hidden;
-    text-indent: -9999px;
-}
 table {
+    position: relative;
     margin: 0 auto;
     background-color: #fff;
     border: 1px solid #f2f2f2;
@@ -621,26 +603,41 @@ span.char:nth-of-type(18).on {
     animation: coloron .1s 1.7s forwards;
 }
 
-.highlight_box {
-    display: block;
-    float: right;
-    width: 66px;
-    height: 170px;
-    border: 2px solid #ffffff;
-    z-index: 100;
-    margin-top: -167px;
 
+.hl_box_wrap {
+    position: absolute;
+    display: block;
+    width: 330px;
+    height: 163px;
+    left: 50%;
+    margin-top: 28px;
+    transform: translateX(-50%);
+    
+    z-index: 100;
+}
+.hl_box_wrap > div {
+    width: 80%;
+    height: 100%;
+    float: left;
+}
+.hl_box_wrap > .hl_box {
+    display: block;
+    float: left;
+    width: 20%;
+    height: 100%;
+    border: 2px solid #ffffff;
     transition: border 1s;
 }
-.highlight_box.on {
+.hl_box_wrap > .hl_box.on {
     border: 2px solid #ff0000;
-
 }
 
 /* end 375 */
 
 /* start 768 */
 @media all and (min-width: 768px) {
+    
+
     /* header 768 */
     .header_inner {
         width: 88.021%; /* 676 / 768 */
@@ -830,6 +827,131 @@ span.char:nth-of-type(18).on {
         font-size: 1.2rem;
         color: #fff;
         text-align: center;
+    }
+
+    /* performance 768 */
+    #performance {
+        width: 100%;
+        padding: 100px 46px;
+    }
+    #performance h2 {
+        font-size: 4.5rem;
+        margin-bottom: 20px;
+    }
+    #performance .span_1 {
+        width: 528px;
+        height: 50px;
+        margin: 0 auto 80px;
+        font-size: 3rem;
+        line-height: 50px;
+
+        background-size: 528px 50px;
+    }
+    #performance .span_2 {
+        font-size: 5rem;
+        line-height: 72px;
+    }
+    #performance h3 {
+        font-size: 3rem;
+        margin: 80px 0 10px;
+    }
+    #performance > p {
+        font-size: 1.5rem;
+        line-height: 22px;
+        margin-bottom: 60px;
+    }
+
+    .rates_wrap {
+        width: 676px;
+        height: 196px;
+        margin: 20px auto 0;
+        padding-top: 0;  
+    }
+    .rate_wrap .count_num, 
+    .rate_wrap .count_num2 {
+        font-size: 8rem;
+        font-weight: 900;
+        line-height: 116px;
+    }
+    .rate_wrap .unit {
+        font-size: 6rem;
+        font-weight: bold;
+        line-height: 87px;
+        padding-top: 23px;
+    }
+    .rate { padding-top: 12px; }
+    .rate_1 {
+        width: 360px;
+        height: 196px;
+        margin-right: 24px;
+    }
+    .rate_1 .rate_wrap .unit {
+        font-weight: 900;
+    }
+    .rate_2 {
+        width: 292px;
+        height: 196px;
+    }
+    .rates_wrap .rate > span {
+        font-size: 2.5rem;
+        line-height: 36px;
+        margin-top: 2px;
+    }
+
+    .strengths_wrap {
+        width: 637px;
+        margin: 30px auto 80px;
+    }
+    .strength {
+        margin-right: 80px;
+    }
+    .strength > span {
+        width: 25px;
+        height: 25px;
+        background-size: 25px 25px;
+        margin-top: 0px;
+        margin-right: 10px;
+    }
+    .strength > p {
+        font-size: 1.5rem;
+        line-height: 25px;
+    }
+    table {
+        width: 676px;
+    }
+    caption {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+    tr {
+        height: 20px !important;
+    }
+    .tr_parent {
+        height: 30px !important;
+        background-color: #f2f2f2;
+    }
+    .tr_child {
+        height: 25px;
+        line-height: 25px;
+    }
+    .text_align_left {
+        text-align: left;
+        padding-left: 10px;
+    }
+    span.yes {
+        width: 10px;
+        height: 10px;
+        border-radius: 5px;
+        margin: 0 auto;
+    }
+    .check_list {
+        font-size: 1rem;
+    }
+    .hl_box_wrap {
+        width: 676px;
+        height: 213px;
+        left: 50%;
+        margin-top: 45px;
     }
 }
 /* end 768 */

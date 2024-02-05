@@ -79,7 +79,7 @@
             // performance
             const $counters = $('.count_num');
             const $chars = $('.span_2');
-            const $highlight = $('.highlight_box');
+            const $highlight = $('.hl_box');
 
             const exposurePercentage = 100;
             const loop = true;
@@ -193,10 +193,10 @@
                     const contentHeight = rect.bottom - rect.top;
                             
                     if (rect.top <= winHeight - (contentHeight * exposurePercentage / 100) && rect.bottom >= (contentHeight * exposurePercentage / 100)) {
-                        $('.highlight_box').delay(1000).addClass('on');
+                        $('.hl_box').delay(1000).addClass('on');
                     }
                     if (loop && (rect.bottom <= 0 || rect.top >= window.innerHeight)) {
-                        $('.highlight_box').removeClass('on');
+                        $('.hl_box').removeClass('on');
                     }
 
                 });
@@ -382,7 +382,7 @@
                     <span class="char">S</span><span class="char">T</span><span class="char">A</span><span class="char">B</span><span class="char">L</span><span class="char">E</span>
                 </span>
                 <h3>PERFORMANCE RATE</h3>
-                <p>세계적인 과부하방지시스템을 위하여<br>세상으로 한 발짝 나아가도록 하겠습니다.</p>
+                <p>세계적인 과부하방지시스템을 위하여<br class="phone">세상으로 한 발짝 나아가도록 하겠습니다.</p>
                 <div class="rates_wrap">
                     <div class="rate rate_1">
                         <div class="rate_wrap clear">
@@ -488,9 +488,13 @@
                             <td><span class="yes winged_yes">O</span></td>
                         </tr>
                     </tbody>
-                    
+                    <!-- highlight_box -->
+                    <span class="hl_box_wrap">
+                        <div></div>
+                        <span class="hl_box"></span>
+                    </span>
                 </table>
-                <span class="highlight_box"></span>
+                
             </div> <!-- e: performance -->
         </main>
     </div>
