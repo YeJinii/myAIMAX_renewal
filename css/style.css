@@ -472,7 +472,6 @@ span.green {
     color: #333333;
 }
 
-
 .strengths_wrap {
     width: 330px;
     margin: 30px auto 50px;
@@ -603,7 +602,6 @@ span.char:nth-of-type(18).on {
     animation: coloron .1s 1.7s forwards;
 }
 
-
 .hl_box_wrap {
     position: absolute;
     display: block;
@@ -637,7 +635,6 @@ span.char:nth-of-type(18).on {
 /* start 768 */
 @media all and (min-width: 768px) {
     
-
     /* header 768 */
     .header_inner {
         width: 88.021%; /* 676 / 768 */
@@ -1209,7 +1206,9 @@ span.char:nth-of-type(18).on {
     /* performance 1280 */
     #performance {
         width: 100%;
-        padding: 100px 46px;
+        /* todo:  */
+        height: 850px;
+        padding: 100px 131px;
     }
     #performance h2 {
         font-size: 4.5rem;
@@ -1222,119 +1221,127 @@ span.char:nth-of-type(18).on {
         font-size: 8rem;
         line-height: 72px;
     }
-    .pm_wrap {}
+
+    .pm_wrap {
+        width: 1018px;
+        height: 404px;
+        margin: 0 auto;
+    }
     .pm_left {
         float: left;
-        width: 420px;
-        
+        width: 430px;
+        margin-right: 50px;
     }
-    .pm_right {
-        float: left;
-    }
-
-    /* todo:  */
-    /* #performance h3 {
+    #performance h3 {
+        padding-left: 5px;
+        text-align: left;
         font-size: 3rem;
+        line-height: 43px;
         margin: 80px 0 10px;
     }
-    #performance > p {
-        font-size: 1.5rem;
-        line-height: 22px;
-        margin-bottom: 60px;
+    .pm_left > p {
+        margin-left: 5px;
+        text-align: left;
+        font-size: 2rem;
+        line-height: 29px;
+        margin-bottom: 30px;
     }
 
     .rates_wrap {
-        width: 676px;
-        height: 196px;
-        margin: 20px auto 0;
+        width: 420px;
+        height: 118px;
+        margin: 0 auto;
         padding-top: 0;  
     }
     .rate_wrap .count_num, 
     .rate_wrap .count_num2 {
-        font-size: 8rem;
-        font-weight: 900;
-        line-height: 116px;
+        font-size: 5rem;
+        line-height: 72px;
     }
     .rate_wrap .unit {
-        font-size: 6rem;
-        font-weight: bold;
-        line-height: 87px;
+        font-size: 3rem;
+        line-height: 43px;
         padding-top: 23px;
     }
-    .rate { padding-top: 12px; }
-    .rate_1 {
-        width: 360px;
-        height: 196px;
-        margin-right: 24px;
+    .rate { 
+        padding-top: 8px; 
     }
-    .rate_1 .rate_wrap .unit {
-        font-weight: 900;
+    .rate_1 {
+        width: 238px;
+        height: 118px;
+        margin-right: 20px;
     }
     .rate_2 {
-        width: 292px;
-        height: 196px;
+        width: 162px;
+        height: 118px;
     }
     .rates_wrap .rate > span {
-        font-size: 2.5rem;
-        line-height: 36px;
-        margin-top: 2px;
+        font-size: 1.5rem;
+        line-height: 22px;
+        margin-top: 0px;
     }
 
     .strengths_wrap {
-        width: 637px;
-        margin: 30px auto 80px;
+        width: 420px;
+        margin: 40px auto 0;
     }
     .strength {
-        margin-right: 80px;
+        margin-right: 14px;
     }
     .strength > span {
-        width: 25px;
-        height: 25px;
-        background-size: 25px 25px;
-        margin-top: 0px;
+        width: 20px;
+        height: 20px;
+        background-size: 20px 20px;
+        margin-top: 5px;
         margin-right: 10px;
     }
     .strength > p {
         font-size: 1.5rem;
         line-height: 25px;
     }
+    .table_wrap {
+        display: block;
+        width: 538px;
+        float: left;
+        padding-top: 80px;
+    }
     table {
-        width: 676px;
+        width: 538px;
     }
     caption {
-        font-size: 2.5rem;
+        font-size: 2rem;
         margin-bottom: 20px;
     }
+    th {
+        font-size: 1.5rem;
+        line-height: 35px;
+    }
     tr {
-        height: 20px !important;
+        height: 30px !important;
     }
     .tr_parent {
-        height: 30px !important;
+        height: 35px !important;
         background-color: #f2f2f2;
     }
     .tr_child {
-        height: 25px;
-        line-height: 25px;
-    }
-    .text_align_left {
-        text-align: left;
-        padding-left: 10px;
+        height: 30px;
+        line-height: 30px;
     }
     span.yes {
-        width: 10px;
-        height: 10px;
-        border-radius: 5px;
+        width: 12px;
+        height: 12px;
+        border-radius: 6px;
         margin: 0 auto;
     }
     .check_list {
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
     .hl_box_wrap {
-        width: 676px;
-        height: 213px;
-        left: 50%;
-        margin-top: 45px;
-    } */
+        width: 538px;
+        height: 289px;
+        left: auto;
+        margin: 40px 0 0 269px;
+    }
 }
 /* end 1280 */
 
@@ -1358,6 +1365,146 @@ span.char:nth-of-type(18).on {
     .slide .content_wrap p {
         font-size: 1.9rem;
         line-height: 28px;
+    }
+
+    /* performance 1920 */
+    #performance {
+        height: 1000px;
+        padding: 100px 131px;
+    }
+    #performance h2 {
+        font-size: 4.5rem;
+        margin-bottom: 30px;
+    }
+    #performance .span_1 {
+        margin: 0 auto 60px;
+    }
+    #performance .span_2 {
+        font-size: 10rem;
+        line-height: 156px;
+    }
+
+    .pm_wrap {
+        width: 1300px;
+        height: 404px;
+        margin: 0 auto;
+    }
+    .pm_left {
+        float: left;
+        width: 680px;
+        margin-right: 50px;
+    }
+    #performance h3 {
+        padding-left: 5px;
+        text-align: left;
+        font-size: 3rem;
+        line-height: 43px;
+        margin: 80px 0 10px;
+    }
+    .pm_left > p {
+        margin-left: 5px;
+        text-align: left;
+        font-size: 2rem;
+        line-height: 29px;
+        margin-bottom: 30px;
+    }
+
+    .rates_wrap {
+        width: 680px;
+        height: 180px;
+        margin: 0 auto;
+        padding-top: 0px;  
+    }
+    .rate_wrap .count_num, 
+    .rate_wrap .count_num2 {
+        font-size: 8rem;
+        line-height: 116px;
+    }
+    .rate_wrap .unit {
+        font-size: 6rem;
+        line-height: 110px;
+        padding-top: 23px;
+    }
+    .rate { 
+        padding-top: 5px; 
+    }
+    .rate_1 {
+        width: 410px;
+        height: 180px;
+        margin-right: 30px;
+    }
+    .rate_2 {
+        width: 240px;
+        height: 180px;
+    }
+    .rates_wrap .rate > span {
+        font-size: 2rem;
+        line-height: 29px;
+        margin-top: 0px;
+    }
+
+    .strengths_wrap {
+        width: 680px;
+        margin: 40px auto 0;
+    }
+    .strength {
+        margin-right: 75px;
+    }
+    .strength > span {
+        width: 25px;
+        height: 25px;
+        background-size: 25px 25px;
+        margin-top: 2px;
+        margin-right: 10px;
+    }
+    .strength > p {
+        font-size: 1.8rem;
+        line-height: 25px;
+        font-weight: bold;
+    }
+    .table_wrap {
+        display: block;
+        width: 538px;
+        float: left;
+        padding-top: 80px;
+    }
+    table {
+        margin-top: 25px;
+        width: 560px;
+    }
+    caption {
+        font-size: 2.8rem;
+        margin-bottom: 20px;
+    }
+    th {
+        font-size: 1.5rem;
+        line-height: 35px;
+    }
+    tr {
+        height: 30px !important;
+    }
+    .tr_parent {
+        height: 35px !important;
+        background-color: #f2f2f2;
+    }
+    .tr_child {
+        height: 30px;
+        line-height: 30px;
+    }
+    span.yes {
+        width: 12px;
+        height: 12px;
+        border-radius: 6px;
+        margin: 0 auto;
+    }
+    .check_list {
+        font-size: 1.2rem;
+    }
+    .hl_box_wrap {
+        width: 560px;
+        height: 289px;
+        left: auto;
+        margin: 73px 0 0 281px;
     }
    
 }

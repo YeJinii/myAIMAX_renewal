@@ -62,7 +62,6 @@
                     play_n_pause = true;
 
                 }
-
             });
 
             // pager
@@ -156,11 +155,11 @@
                             duration: 1700,
                             step: function() {
                                 var num = numberWithCommas(Math.floor(this.val));
-                                $(".count_num").text(num);
+                                $('.count_num').text(num);
                             },
                             complete: function() {
                                 var num = numberWithCommas(Math.floor(this.val));
-                                $(".count_num").text(num);
+                                $('.count_num').text(num);
                             }
                             });
 
@@ -168,11 +167,11 @@
                             duration: 1700,
                             step: function() {
                                 var num = numberWithCommas(Math.floor(this.val));
-                                $(".count_num2").text(num);
+                                $('.count_num2').text(num);
                             },
                             complete: function() {
                                 var num = numberWithCommas(Math.floor(this.val));
-                                $(".count_num2").text(num);
+                                $('.count_num2').text(num);
                             }
                             });
                             check = false;
@@ -381,9 +380,11 @@
                     <span class="char">A</span><span class="char">N</span><span class="char">D</span>
                     <span class="char">S</span><span class="char">T</span><span class="char">A</span><span class="char">B</span><span class="char">L</span><span class="char">E</span>
                 </span>
-                <h3>PERFORMANCE RATE</h3>
-                <p>세계적인 과부하방지시스템을 위하여<br>세상으로 한 발짝 나아가도록 하겠습니다.</p>
-                <div class="rates_wrap">
+
+                <h3 class="mobile">PERFORMANCE RATE</h3>
+                <p class="mobile phone">세계적인 과부하방지시스템을 위하여<br>세상으로 한 발짝 나아가도록 하겠습니다.</p>
+                <p class="mobile not_phone">세계적인 과부하방지시스템을 위하여 세상으로 한 발짝 나아가도록 하겠습니다.</p>
+                <div class="rates_wrap mobile">
                     <div class="rate rate_1">
                         <div class="rate_wrap clear">
                             <div class="count_num"></div>
@@ -399,7 +400,7 @@
                         <span>성능향상</span>
                     </div> 
                 </div> <!-- e: performance_rates_wrap -->
-                <div class="strengths_wrap clear">
+                <div class="strengths_wrap clear mobile">
                     <div class="strength">
                         <span></span>
                         <p>성능향상</p>
@@ -417,84 +418,128 @@
                         <p>안정적 운영</p>
                     </div>
                 </div> <!-- e: strengths_wrap -->
-                <table border="1" width="330" summery="윙드 비교분석표">
-                    <caption style="margin-left: 5px;">주요 경쟁제품군</caption>
-                    <colgroup>
-                        <col width="50%">
-                        <col width="10%">
-                        <col width="10%">
-                        <col width="10%">
-                        <col width="20%">
-                    </colgroup>
-                    
-                    <thread>
-                        <tr class="tr_parent">
-                            <th scope="col" class="text_align_left">Technology Type</th>
-                            <th scope="col">A</th>
-                            <th scope="col">B</th>
-                            <th scope="col">C</th>
-                            <th scope="col" style="background-color: #fff;">WINGed</th>
-                        </tr>
-                    </thread>
 
-                    <tbody>
-                        <tr class="tr_child">
-                            <th scope="row" class="text_align_left check_list">실시간 동적데이터 처리</th>
-                            <td><span class="yes">O</span></td>
-                            <td></td>
-                            <td></td>
-                            <td><span class="yes winged_yes">O</span></td>
-                        </tr>
-                        <tr class="tr_child">
-                            <th scope="row" class="text_align_left check_list">AP서버, DB서버 동시처리</th>
-                            <td><span class="yes">O</span></td>
-                            <td><span class="yes">O</span></td>
-                            <td></td>
-                            <td><span class="yes winged_yes">O</span></td>
-                        </tr>
-                        <tr class="tr_child">
-                            <th scope="row" class="text_align_left check_list">IN-MEMORY 방식</th>
-                            <td></td>
-                            <td><span class="yes">O</span></td>
-                            <td><span class="yes">O</span></td>
-                            <td><span class="yes winged_yes">O</span></td>
-                        </tr>
-                        <tr class="tr_child">
-                            <th scope="row" class="text_align_left check_list">설치시 시스템 무중단<span class="desktop">장애발생 영향</span></th>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><span class="yes winged_yes">O</span></td>
-                        </tr>
-                        <tr class="tr_child">
-                            <th scope="row" class="text_align_left check_list">장비증설 없음<span class="desktop">장애발생 영향</span></th>
-                            <td><span class="yes">O</span></td>
-                            <td></td>
-                            <td></td>
-                            <td><span class="yes winged_yes">O</span></td>
-                        </tr>
-                        <tr class="tr_child">
-                            <th scope="row" class="text_align_left check_list">인공지능 플랫폼 적용<span class="desktop">장애발생 영향</span></th>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><span class="yes winged_yes">O</span></td>
-                        </tr>
-                        <tr class="tr_child">
-                            <th scope="row" class="text_align_left check_list">SOURCE 수정없는 매니지먼트<span class="desktop">장애발생 영향</span></th>
-                            <td><span class="yes">O</span></td>
-                            <td></td>
-                            <td></td>
-                            <td><span class="yes winged_yes">O</span></td>
-                        </tr>
-                    </tbody>
-                    <!-- highlight_box -->
-                    <span class="hl_box_wrap">
-                        <div></div>
-                        <span class="hl_box"></span>
-                    </span>
-                </table>
-                
+                <div class="pm_wrap">
+                    <div class="pm_left desktop">
+                        <h3 class="desktop">PERFORMANCE RATE</h3>
+                        <p class="desktop">세계적인 과부하방지시스템을 위하여 세상으로 한 발짝 나아가도록 하겠습니다.</p>
+                        <div class="rates_wrap desktop">
+                            <div class="rate rate_1">
+                                <div class="rate_wrap clear">
+                                    <div class="count_num"></div>
+                                    <span class="unit">%</span>
+                                </div>
+                                <span>초당데이터처리량</span>
+                            </div> 
+                            <div class="rate rate_2">
+                                <div class="rate_wrap clear">
+                                    <div class="count_num2"></div>
+                                    <span class="unit">배</span>
+                                </div>
+                                <span>성능향상</span>
+                            </div> 
+                        </div> <!-- e: performance_rates_wrap -->
+                        <div class="strengths_wrap clear desktop">
+                            <div class="strength">
+                                <span></span>
+                                <p>성능향상</p>
+                            </div>
+                            <div class="strength">
+                                <span></span>
+                                <p>비용절감</p>
+                            </div>
+                            <div class="strength">
+                                <span></span>
+                                <p>간편한 설치</p>
+                            </div>
+                            <div class="strength">
+                                <span></span>
+                                <p>안정적 운영</p>
+                            </div>
+                        </div> <!-- e: strengths_wrap -->
+                    </div> <!-- e: pm_left -->
+    
+                    <div class="table_wrap">
+                        <table border="1" width="330" summery="윙드 비교분석표">
+                            <caption style="margin-left: 5px;">주요 경쟁제품군</caption>
+                            <colgroup>
+                                <col width="50%">
+                                <col width="10%">
+                                <col width="10%">
+                                <col width="10%">
+                                <col width="20%">
+                            </colgroup>
+                            
+                            <thread>
+                                <tr class="tr_parent">
+                                    <th scope="col" class="text_align_left">Technology Type</th>
+                                    <th scope="col">A</th>
+                                    <th scope="col">B</th>
+                                    <th scope="col">C</th>
+                                    <th scope="col" style="background-color: #fff;">WINGed</th>
+                                </tr>
+                            </thread>
+        
+                            <tbody>
+                                <tr class="tr_child">
+                                    <th scope="row" class="text_align_left check_list">실시간 동적데이터 처리</th>
+                                    <td><span class="yes">O</span></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><span class="yes winged_yes">O</span></td>
+                                </tr>
+                                <tr class="tr_child">
+                                    <th scope="row" class="text_align_left check_list">AP서버, DB서버 동시처리</th>
+                                    <td><span class="yes">O</span></td>
+                                    <td><span class="yes">O</span></td>
+                                    <td></td>
+                                    <td><span class="yes winged_yes">O</span></td>
+                                </tr>
+                                <tr class="tr_child">
+                                    <th scope="row" class="text_align_left check_list">IN-MEMORY 방식</th>
+                                    <td></td>
+                                    <td><span class="yes">O</span></td>
+                                    <td><span class="yes">O</span></td>
+                                    <td><span class="yes winged_yes">O</span></td>
+                                </tr>
+                                <tr class="tr_child">
+                                    <th scope="row" class="text_align_left check_list">설치시 시스템 무중단<span class="desktop" style="display: inline;"> (장애발생 영향)</span></th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><span class="yes winged_yes">O</span></td>
+                                </tr>
+                                <tr class="tr_child">
+                                    <th scope="row" class="text_align_left check_list">장비증설 없음</th>
+                                    <td><span class="yes">O</span></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><span class="yes winged_yes">O</span></td>
+                                </tr>
+                                <tr class="tr_child">
+                                    <th scope="row" class="text_align_left check_list">인공지능 플랫폼 적용</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><span class="yes winged_yes">O</span></td>
+                                </tr>
+                                <tr class="tr_child">
+                                    <th scope="row" class="text_align_left check_list">SOURCE 수정없는 매니지먼트</th>
+                                    <td><span class="yes">O</span></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><span class="yes winged_yes">O</span></td>
+                                </tr>
+                            </tbody>
+                            <!-- highlight_box -->
+                            <span class="hl_box_wrap">
+                                <div></div>
+                                <span class="hl_box"></span>
+                            </span>
+                        </table>
+                    </div> <!-- e: table_wrap -->
+                </div>
+
             </div> <!-- e: performance -->
         </main>
     </div>
