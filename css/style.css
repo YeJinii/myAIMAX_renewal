@@ -611,7 +611,7 @@ span.char:nth-of-type(18).on {
     margin-top: 28px;
     transform: translateX(-50%);
     
-    z-index: 100;
+    z-index: 50;
 }
 .hl_box_wrap > div {
     width: 80%;
@@ -628,6 +628,88 @@ span.char:nth-of-type(18).on {
 }
 .hl_box_wrap > .hl_box.on {
     border: 2px solid #ff0000;
+}
+
+/* partners 375 */
+#partners {
+    background: #fff;
+}
+.partners_wrap {
+    width: 88%;
+    margin: 0px auto;
+    padding: 60px 0;
+    text-align: center;
+}
+.partners_wrap > h2 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    font-weight: 900;
+}
+.partners_wrap > p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 22px;
+    margin-bottom: 40px;
+}
+.p_logo_slider {
+    width: 100%;
+    height: 40px;
+}
+.p_logo {
+    width: 100px;
+    height: 40px;
+    float: left;
+    margin: 0 7.5px;
+}
+.p_logo_img {
+    display: block;
+    width: 100px;
+    height: 40px;
+    margin: 0 auto;
+
+    text-indent: -9999px;
+    overflow: hidden;
+    
+    background: url(../img/logo/p_logo_1.png) no-repeat center/contain;
+    background-size: 100px 40px;
+}
+
+/* 로고 추가시 여기에 코드 추가 */
+.p_logo_1 .p_logo_img {
+    background-image: url(../img/logo/p_logo_1.png);
+}
+.p_logo_2 .p_logo_img {
+    background-image: url(../img/logo/p_logo_2.png);
+}
+.p_logo_3 .p_logo_img {
+    background-image: url(../img/logo/p_logo_3.png);
+}
+.p_logo_4 .p_logo_img {
+    background-image: url(../img/logo/p_logo_4.png);
+}
+.p_logo_5 .p_logo_img {
+    background-image: url(../img/logo/p_logo_5.png);
+}
+.p_logo_6 .p_logo_img {
+    background-image: url(../img/logo/p_logo_6.png);
+}
+.p_logo_7 .p_logo_img {
+    background-image: url(../img/logo/p_logo_7.png);
+}
+.p_logo_33 .p_logo_img {
+    background-image: url(../img/logo/p_logo_33.png);
+}
+.p_logo_35 .p_logo_img {
+    background-image: url(../img/logo/p_logo_35.png);
+}
+.p_logo_36 .p_logo_img {
+    background-image: url(../img/logo/p_logo_36.png);
+}
+.p_logo_38 .p_logo_img {
+    background-image: url(../img/logo/p_logo_38.png);
+}
+.p_logo_39 .p_logo_img {
+    background-image: url(../img/logo/p_logo_39.png);
 }
 
 /* end 375 */
@@ -949,6 +1031,36 @@ span.char:nth-of-type(18).on {
         height: 213px;
         left: 50%;
         margin-top: 45px;
+    }
+
+    /* partners 768 */
+    .partners_wrap {
+        width: 88.021%; /* 676 / 768 */
+        margin: 0px auto;
+        padding: 80px 0;
+    }
+    .partners_wrap > h2 {
+        font-size: 4.5rem;
+        margin-bottom: 10px;
+    }
+    .partners_wrap > p {
+        font-size: 1.7rem;
+        line-height: 25px;
+        margin-bottom: 40px;
+    }
+    .p_logo_slider {
+        width: 100%;
+        height: 60px;
+    }
+    .p_logo {
+        width: 150px;
+        height: 60px;
+        margin: 0 25px;
+    }
+    .p_logo_img {
+        width: 150px;
+        height: 60px;
+        background-size: 150px 60px;
     }
 }
 /* end 768 */

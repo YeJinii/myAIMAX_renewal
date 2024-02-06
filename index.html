@@ -201,6 +201,31 @@
                 });
 
             }).scroll();
+
+            // partners_logo slider 
+            $('.p_logo_slider').slick({
+                slidesToShow: 4,
+                infinite: true,
+                dots: false,
+                arrows: false,
+                autoplay: true,
+                autoplaySpeed : 2000,
+                responsive: [
+                    
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 4
+                        }
+                    },
+                    {
+                        breakpoint: 375,
+                        settings: {
+                            slidesToShow: 3
+                        }
+                    }
+                ]
+            });
         });
 
         function numberWithCommas(x) {
@@ -308,7 +333,7 @@
             </div> <!-- e: winged_copy -->
             <div id="solution" style="height: 300px; font-size: 4rem; color: #fff; background-color: skyblue">
                 개발 예정
-            </div>
+            </div> <!-- e: solution -->
             <div id="service">
                 <div class="p_service_wrap phone">
                     <div>
@@ -371,7 +396,7 @@
                         <span class="icon_4_text">노후장비 / 대용량시스템</span>
                     </div>
                 </div>
-            </div>
+            </div> <!-- e: service -->
             <div id="performance">
                 <h2>Absolute Performance</h2>
                 <span class="span_1">WINGed 퍼포먼스 데이터 현장검증!</span>
@@ -541,6 +566,51 @@
                 </div>
 
             </div> <!-- e: performance -->
+            <div id="partners">
+                <div class="partners_wrap">
+                    <h2>Partners</h2>
+                    <p class="phone">에이아이맥스(주)는<br>고객의 만족과 기업의 퀄리티를 중시합니다.</p>
+                    <p class="not_phone">에이아이맥스(주)는고객의 만족과 기업의 퀄리티를 중시합니다.</p>
+                    <div class="p_logo_slider">
+                        <div class="p_logo p_logo_39">
+                            <span class="p_logo_img">학교체육포털</span>
+                        </div>
+                        <div class="p_logo p_logo_38">
+                            <span class="p_logo_img">한국벤처캐피탈협회</span>
+                        </div>
+                        <div class="p_logo p_logo_36">
+                            <span class="p_logo_img">국립대전현충원</span>
+                        </div>
+                        <div class="p_logo p_logo_35">
+                            <span class="p_logo_img">인천항만공사</span>
+                        </div>
+                        <div class="p_logo p_logo_33">
+                            <span class="p_logo_img">한국발명진흥회</span>
+                        </div>
+                        <div class="p_logo p_logo_7">
+                            <span class="p_logo_img">포스코DX</span>
+                        </div>
+                        <div class="p_logo p_logo_6">
+                            <span class="p_logo_img">포스코이앤씨</span>
+                        </div>
+                        <div class="p_logo p_logo_5">
+                            <span class="p_logo_img">포스코</span>
+                        </div>
+                        <div class="p_logo p_logo_4">
+                            <span class="p_logo_img">SK하이닉스</span>
+                        </div>
+                        <div class="p_logo p_logo_3">
+                            <span class="p_logo_img">삼성생명</span>
+                        </div>
+                        <div class="p_logo p_logo_2">
+                            <span class="p_logo_img">삼성SDS</span>
+                        </div>
+                        <div class="p_logo p_logo_1">
+                            <span class="p_logo_img">삼성전자</span>
+                        </div>
+                    </div> <!-- e: p_logo_slider -->
+                </div> <!-- e: partners_wrap -->
+            </div> <!-- e: partners -->
         </main>
     </div>
 </body>
