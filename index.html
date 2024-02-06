@@ -31,6 +31,9 @@
     <!-- slick slider -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     
+    <!-- 카카오 지도 script -->
+    <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+
     <script>
         let check = true;
         $(document).ready(function(){
@@ -237,11 +240,53 @@
                     },
                 ]
             });
+
+            // map_375
+            new daum.roughmap.Lander({
+                "timestamp" : "1707204764881",
+                "key" : "2izr8",
+                "mapWidth" : "330",
+                "mapHeight" : "200"
+            }).render();
+
+            // map_768
+            new daum.roughmap.Lander({
+                "timestamp" : "1707205237950",
+                "key" : "2izrh",
+                "mapWidth" : "580",
+                "mapHeight" : "360"
+            }).render();
+
+            // map_1024
+            new daum.roughmap.Lander({
+                "timestamp" : "1707205808909",
+                "key" : "2izrr",
+                "mapWidth" : "768",
+                "mapHeight" : "450"
+            }).render();
+
+            // map_1280
+            new daum.roughmap.Lander({
+                "timestamp" : "1707206549615",
+                "key" : "2izsa",
+                "mapWidth" : "480",
+                "mapHeight" : "280"
+            }).render();
+
+            // map_1920
+            new daum.roughmap.Lander({
+                "timestamp" : "1707206712520",
+                "key" : "2izsd",
+                "mapWidth" : "632",
+                "mapHeight" : "302"
+            }).render();
+
         });
 
         function numberWithCommas(x) {
             return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         }
+
 
     </script>
 </head>
@@ -279,14 +324,14 @@
             </div> <!-- e: header_inner -->
         </header>
         <main>
-            <div id="main_banner" style="height: 100vh;">
-                <div class="slider" style="height: 100vh;">
-                    <div class="slide banner_1" style="height: 100vh;">
+            <div id="main_banner" class="mb_height" >
+                <div class="slider mb_height" >
+                    <div class="slide banner_1 mb_height" >
                         <div class="content_wrap">
                             <h2>초연결 시대 새로운 재앙 “디지털 블랙아웃”</h2>
                             <span>‘윙드’는 초과도 연결하여 우리의 일상을 지켜줍니다.</span>
                             <p>에이아이맥스는 ‘윙드’ 솔루션을 통해</br>보다 안정적이고 압도적인 퍼포먼스를 발휘할 수 있는</br>효율적인 해결방안을 제시합니다.</p>
-                            <div class="pager_wrap">
+                            <div class="pager_wrap not_phone">
                                 <div class="pager">
                                     <span class="on"></span>
                                     <span></span>
@@ -296,13 +341,13 @@
                             </div>
                         </div> <!-- e: content_wrap -->
                     </div> <!-- e: slide banner_1 -->
-                    <div class="slide banner_2" style="height: 100vh;">
+                    <div class="slide banner_2 mb_height" >
                         <div class="content_wrap">
                             <h2>“과부하” 사고는 순간입니다.</h2>
                             <span>서비스가 증가하면 장애도 증가합니다.</span>
                             <p class="mobile">서비스의 성장은 데이터의 증가, 다양한 서비스와 기능 확대,<br>일시적 동시접속의 증가 등 시스템의 성능문제를 가져옵니다.<br>이는 서비스의 응답속도 저하, 장애 발생 등으로<br>민원 발생 및 시스템 신뢰 하락으로 이어집니다.</p>
                             <p class="desktop">서비스의 성장은 데이터의 증가, 다양한 서비스와 기능 확대, 일시적 동시접속의 증가 등 시스템의 성능문제를 가져옵니다.<br>이는 서비스의 응답속도 저하, 장애 발생 등으로 민원 발생 및 시스템 신뢰 하락으로 이어집니다.</p>
-                            <div class="pager_wrap">
+                            <div class="pager_wrap not_phone">
                                 <div class="pager">
                                     <span></span>
                                     <span class="on"></span>
@@ -312,12 +357,12 @@
                             </div>
                         </div> <!-- e: content_wrap -->
                     </div>
-                    <div class="slide banner_3" style="height: 100vh;">
+                    <div class="slide banner_3 mb_height" >
                         <div class="content_wrap">
                             <h2>평균 20배 ~ 100배 과부하 해소</h2>
                             <span>동적캐싱과 인공지능의 만남,<br>최고 미래기술 WINGed가 해결해드립니다.</span>
                             <p>세계적인 과부하방지 시스템을 위하여<br>에이아이맥스는 세상으로 한 발짝 나아가도록 하겠습니다. </p>
-                            <div class="pager_wrap">
+                            <div class="pager_wrap not_phone">
                                 <div class="pager">
                                     <span></span>
                                     <span></span>
@@ -622,6 +667,49 @@
                     </div> <!-- e: p_logo_slider -->
                 </div> <!-- e: partners_wrap -->
             </div> <!-- e: partners -->
+            <div id="contact">
+                <div class="contact_wrap">
+                    <h2>Contact</h2>
+                    <p class="phone">파트너쉽을 위한 문의사항은<br>전화상담을 통해 답변 드리도록 하겠습니다.</p>
+                    <p class="not_phone">파트너쉽을 위한 문의사항은 전화상담을 통해 답변 드리도록 하겠습니다.</p>
+                    <h3>Directions</h3>
+                    <div class="map_wrap">
+                        <!-- 375 -->
+                        <div id="daumRoughmapContainer1707204764881" class="root_daum_roughmap root_daum_roughmap_landing map_375"></div>
+                    
+                        <!-- 768 -->
+                        <div id="daumRoughmapContainer1707205237950" class="root_daum_roughmap root_daum_roughmap_landing map_768"></div>
+                        
+                        <!-- 1024 -->
+                        <div id="daumRoughmapContainer1707205808909" class="root_daum_roughmap root_daum_roughmap_landing map_1024"></div>
+
+                        <!-- 1280 -->
+                        <div id="daumRoughmapContainer1707206549615" class="root_daum_roughmap root_daum_roughmap_landing map_1280"></div>
+
+                        <!-- 1920 -->
+                        <div id="daumRoughmapContainer1707206712520" class="root_daum_roughmap root_daum_roughmap_landing map_1920"></div>
+                    </div>
+                    <h3>Contact us</h3>
+                    <div class="cu_text phone">
+                        솔루션 관련 상담이나 견적 문의는<br>아래의 연락처를 통해 문의주시기 바랍니다.<br>클라이언트의 만족과 에이아이맥스(주)의<br>효율적인 솔루션 제시를 통해,<br>고객에게 최고의 비지니스 가치를 창출하겠습니다. 
+                    </div>
+                    <div class="info_box">
+                        <div class="text_wrap">
+                            <div class="contact_tel clear">
+                                <span></span>
+                                <p>Tel. 02-597-0785</p>
+                            </div>
+                            <div class="contact_email clear">
+                                <span></span>
+                                <p>info@ai-max.co.kr</p>
+                            </div>
+                            <div class="contact_address clear">
+                                <p>[본 사] 서울시 금천구 가산디지털2로 98, 1동 1201호</p>
+                            </div>
+                        </div> <!-- e: text_wrap -->
+                    </div> <!-- e: info_box -->
+                </div>
+            </div>
         </main>
     </div>
 </body>

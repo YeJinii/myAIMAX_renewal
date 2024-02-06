@@ -7,6 +7,9 @@
   * partners_list 문서 추가
   * partners (375, 768, 1024, 1280, 1920)
     * 협업사 로고 슬라이드 구현
+  * contact (375)
+    * 지도 스크립트 적용
+    * 아이콘 이미지 추가 (tel_num, email)
 
 * FEAT_240205
   * performance (768, 1024, 1280, 1920)

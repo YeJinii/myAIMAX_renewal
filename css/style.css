@@ -124,15 +124,18 @@ main {
     height: 100%;
 }
 #main_banner {
-    height: 100vh;
+    height: 600px;
+}
+.mb_height {
+    height: 100vh !important;
 }
 .slider {
-    height: 100vh;
+    height: 600px;
     display: block;
 }
 .slide {
     position: relative;
-    height: 100vh;
+    height: 600px;
     display: block;
 }
 
@@ -644,6 +647,7 @@ span.char:nth-of-type(18).on {
     font-size: 3rem;
     margin-bottom: 10px;
     font-weight: 900;
+    line-height: 43px;
 }
 .partners_wrap > p {
     font-size: 1.5rem;
@@ -709,6 +713,101 @@ span.char:nth-of-type(18).on {
 }
 .p_logo_39 .p_logo_img {
     background-image: url(../img/logo/p_logo_39.png);
+}
+
+/* contact 375 */
+#contact {
+    background: #272727;
+    color: #ffffff;
+    text-align: center;
+}
+.contact_wrap {
+    padding: 60px 0;
+    margin: 0 auto;
+}
+.contact_wrap > h2 {
+    font-size: 3rem;
+    line-height: 43px;
+    margin-bottom: 10px;
+}
+.contact_wrap > p {
+    font-size: 1.5rem;
+    line-height: 22px;
+}
+.contact_wrap > h3 {
+    font-size: 1.8rem;
+    line-height: 26px;
+    margin: 40px 0 20px;
+}
+.map_375 {
+    display: block;
+}
+.map_768, .map_1024, .map_1280, .map_1920 {
+    display: none;
+}
+.map_wrap {
+    width: 330px;
+    margin: 0 auto;
+}
+.hide {
+    display: none;
+}
+.cu_text {
+    font-size: 1.4rem;
+    line-height: 20px;
+    margin-bottom: 20px;
+}
+.info_box {
+    width: 330px;
+    height: 135px;
+    margin: 0 auto;
+    border: 1px solid rgba(255, 255, 255, .8);
+}
+.text_wrap {
+    margin: 20px auto;
+    text-align: left;
+}
+.contact_tel {
+    margin-bottom: 16px;
+}
+.contact_tel > span {
+    display: block;
+    float: left;
+    width: 24px;
+    height: 24px;
+    background: url(../img/icon/tel_num.png) no-repeat center/contain;
+    background-size: 24px 24px;
+    margin: 7px 10px 0 48px;
+}
+.contact_tel > p {
+    display: block;
+    float: left;
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 36px;
+}
+.contact_email {
+    margin-left: 21px;
+    margin-bottom: 5px;
+}
+.contact_email > span {
+    display: block;
+    float: left;
+    width: 15px;
+    height: 13px;
+    background: url(../img/icon/email.png) no-repeat center/contain;
+    margin: 3px 10px 0 0;
+}
+.contact_email > p {
+    font-size: 1.3rem;
+    line-height: 19px;
+}
+.contact_address {
+    margin-left: 21px;
+}
+.contact_address > p {
+    font-size: 1.3rem;
+    line-height: 19px;
 }
 
 /* end 375 */
@@ -1041,6 +1140,7 @@ span.char:nth-of-type(18).on {
     .partners_wrap > h2 {
         font-size: 4.5rem;
         margin-bottom: 10px;
+        line-height: 65px;
     }
     .partners_wrap > p {
         font-size: 1.7rem;
@@ -1059,6 +1159,18 @@ span.char:nth-of-type(18).on {
         width: 150px;
         height: 60px;
         background-size: 150px 60px;
+    }
+
+    /* contact 768 */
+    .map_768 {
+        display: block;
+    }
+    .map_375, .map_1024, .map_1280, .map_1920 {
+        display: none;
+    }
+    .map_wrap {
+        width: 580px;
+        margin: 0 auto;
     }
 }
 /* end 768 */
@@ -1184,11 +1296,24 @@ span.char:nth-of-type(18).on {
     .partners_wrap > h2 {
         font-size: 4.5rem;
         margin-bottom: 10px;
+        line-height: 65px;
     }
     .partners_wrap > p {
         font-size: 1.7rem;
         line-height: 25px;
         margin-bottom: 70px;
+    }
+
+    /* contact 1024 */
+    .map_1024 {
+        display: block;
+    }
+    .map_375, .map_768, .map_1280, .map_1920 {
+        display: none;
+    }
+    .map_wrap {
+        width: 768px;
+        margin: 0 auto;
     }
 
 }
@@ -1477,12 +1602,25 @@ span.char:nth-of-type(18).on {
     }
     .partners_wrap > h2 {
         font-size: 4.5rem;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
+        line-height: 65px;
     }
     .partners_wrap > p {
         font-size: 1.7rem;
         line-height: 25px;
         margin-bottom: 70px;
+    }
+
+    /* contact 1280 */
+    .map_1280 {
+        display: block;
+    }
+    .map_375, .map_768, .map_1024, .map_1920 {
+        display: none;
+    }
+    .map_wrap {
+        width: 480px;
+        margin: 0 auto;
     }
 }
 /* end 1280 */
@@ -1650,6 +1788,18 @@ span.char:nth-of-type(18).on {
     }
 
     /* partners 1920 */
+
+    /* contact 1280 */
+    .map_1920 {
+        display: block;
+    }
+    .map_375, .map_768, .map_1024, .map_1280 {
+        display: none;
+    }
+    .map_wrap {
+        width: 632px;
+        margin: 0 auto;
+    }
    
 }
 /* end 1920 */
