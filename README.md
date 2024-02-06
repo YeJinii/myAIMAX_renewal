@@ -1,5 +1,23 @@
 ### Commit Log
 
+* FEAT_240206
+  * header 의 z-index 수정
+    hl_box가 header 위에 위치하고 있는 오류 해결
+  * partners 샘플 img파일 추가
+  * partners_list 문서 추가
+  * partners (375, 768, 1024, 1280, 1920)
+    * 협업사 로고 슬라이드 구현
+
+* FEAT_240205
+  * performance (768, 1024, 1280, 1920)
+    * 윙드 비교분석표 -> table 태그로 변경 (유지보수 용이와 품질 향상 효과)
+
+* FEAT_240202
+  * performance (375)
+    * counting num 구현
+    * 화면에 나타나면 애니메이션 동작하는 js 구현
+    * 글자 하나씩 색이 변하는 애니메이션 적용
+
 * FEAT_240201
   * performance
     * background gradient 적용
