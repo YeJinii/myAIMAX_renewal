@@ -36,6 +36,7 @@
 
     <script>
         let check = true;
+        let check_2 = true;
         $(document).ready(function(){
 
             // main_banner slick-slide
@@ -103,44 +104,48 @@
                     const contentHeight = rect.bottom - rect.top;
                     
                     if (rect.top <= winHeight - (contentHeight * exposurePercentage / 100) && rect.bottom >= (contentHeight * exposurePercentage / 100)) {
-                       $('span.char:nth-of-type(1)').addClass('on');
-                       $('span.char:nth-of-type(2)').addClass('on');
-                       $('span.char:nth-of-type(3)').addClass('on');
-                       $('span.char:nth-of-type(4)').addClass('on');
-                       $('span.char:nth-of-type(5)').addClass('on');
-                       $('span.char:nth-of-type(6)').addClass('on');
-                       $('span.char:nth-of-type(7)').addClass('on');
-                       $('span.char:nth-of-type(8)').addClass('on');
-                       $('span.char:nth-of-type(9)').addClass('on');
-                       $('span.char:nth-of-type(10)').addClass('on');
-                       $('span.char:nth-of-type(11)').addClass('on');
-                       $('span.char:nth-of-type(12)').addClass('on');
-                       $('span.char:nth-of-type(13)').addClass('on');
-                       $('span.char:nth-of-type(14)').addClass('on');
-                       $('span.char:nth-of-type(15)').addClass('on');
-                       $('span.char:nth-of-type(16)').addClass('on');
-                       $('span.char:nth-of-type(17)').addClass('on');
-                       $('span.char:nth-of-type(18)').addClass('on');
+                        if(check_2){
+                            $('span.char:nth-of-type(1)').addClass('on');
+                            $('span.char:nth-of-type(2)').addClass('on');
+                            $('span.char:nth-of-type(3)').addClass('on');
+                            $('span.char:nth-of-type(4)').addClass('on');
+                            $('span.char:nth-of-type(5)').addClass('on');
+                            $('span.char:nth-of-type(6)').addClass('on');
+                            $('span.char:nth-of-type(7)').addClass('on');
+                            $('span.char:nth-of-type(8)').addClass('on');
+                            $('span.char:nth-of-type(9)').addClass('on');
+                            $('span.char:nth-of-type(10)').addClass('on');
+                            $('span.char:nth-of-type(11)').addClass('on');
+                            $('span.char:nth-of-type(12)').addClass('on');
+                            $('span.char:nth-of-type(13)').addClass('on');
+                            $('span.char:nth-of-type(14)').addClass('on');
+                            $('span.char:nth-of-type(15)').addClass('on');
+                            $('span.char:nth-of-type(16)').addClass('on');
+                            $('span.char:nth-of-type(17)').addClass('on');
+                            $('span.char:nth-of-type(18)').addClass('on');
+
+                            check_2 = false;
+                        }                       
                     }
                     if (loop && (rect.bottom <= 0 || rect.top >= window.innerHeight)) {
-                        $('span.char:nth-of-type(1)').removeClass('on');
-                       $('span.char:nth-of-type(2)').removeClass('on');
-                       $('span.char:nth-of-type(3)').removeClass('on');
-                       $('span.char:nth-of-type(4)').removeClass('on');
-                       $('span.char:nth-of-type(5)').removeClass('on');
-                       $('span.char:nth-of-type(6)').removeClass('on');
-                       $('span.char:nth-of-type(7)').removeClass('on');
-                       $('span.char:nth-of-type(8)').removeClass('on');
-                       $('span.char:nth-of-type(9)').removeClass('on');
-                       $('span.char:nth-of-type(10)').removeClass('on');
-                       $('span.char:nth-of-type(11)').removeClass('on');
-                       $('span.char:nth-of-type(12)').removeClass('on');
-                       $('span.char:nth-of-type(13)').removeClass('on');
-                       $('span.char:nth-of-type(14)').removeClass('on');
-                       $('span.char:nth-of-type(15)').removeClass('on');
-                       $('span.char:nth-of-type(16)').removeClass('on');
-                       $('span.char:nth-of-type(17)').removeClass('on');
-                       $('span.char:nth-of-type(18)').removeClass('on');
+                        // $('span.char:nth-of-type(1)').removeClass('on');
+                        // $('span.char:nth-of-type(2)').removeClass('on');
+                        // $('span.char:nth-of-type(3)').removeClass('on');
+                        // $('span.char:nth-of-type(4)').removeClass('on');
+                        // $('span.char:nth-of-type(5)').removeClass('on');
+                        // $('span.char:nth-of-type(6)').removeClass('on');
+                        // $('span.char:nth-of-type(7)').removeClass('on');
+                        // $('span.char:nth-of-type(8)').removeClass('on');
+                        // $('span.char:nth-of-type(9)').removeClass('on');
+                        // $('span.char:nth-of-type(10)').removeClass('on');
+                        // $('span.char:nth-of-type(11)').removeClass('on');
+                        // $('span.char:nth-of-type(12)').removeClass('on');
+                        // $('span.char:nth-of-type(13)').removeClass('on');
+                        // $('span.char:nth-of-type(14)').removeClass('on');
+                        // $('span.char:nth-of-type(15)').removeClass('on');
+                        // $('span.char:nth-of-type(16)').removeClass('on');
+                        // $('span.char:nth-of-type(17)').removeClass('on');
+                        // $('span.char:nth-of-type(18)').removeClass('on');
                     }
                 });
 
@@ -155,7 +160,7 @@
                     if (rect.top <= winHeight - (contentHeight * exposurePercentage / 100) && rect.bottom >= (contentHeight * exposurePercentage / 100)) {
                         if(check){
                             $({ val : 0 }).animate({ val : 7352 }, {
-                            duration: 1700,
+                            duration: 3000,
                             step: function() {
                                 var num = numberWithCommas(Math.floor(this.val));
                                 $('.count_num').text(num);
@@ -167,7 +172,7 @@
                             });
 
                             $({ val : 0 }).animate({ val : 73 }, {
-                            duration: 1700,
+                            duration: 3000,
                             step: function() {
                                 var num = numberWithCommas(Math.floor(this.val));
                                 $('.count_num2').text(num);
@@ -181,8 +186,8 @@
                         } 
                     }
                     if (loop && (rect.bottom <= 0 || rect.top >= window.innerHeight)) {
-                       check = true;
                     }  
+                
                 });
 
                 // performance highlight_box
@@ -212,7 +217,7 @@
                 dots: false,
                 arrows: false,
                 autoplay: true,
-                autoplaySpeed : 2000,
+                autoplaySpeed : 2500,
                 responsive: [
                     {
                         breakpoint: 1920,
@@ -245,40 +250,40 @@
             new daum.roughmap.Lander({
                 "timestamp" : "1707204764881",
                 "key" : "2izr8",
-                "mapWidth" : "330",
-                "mapHeight" : "200"
+                "mapWidth" : "320",
+                "mapHeight" : "190"
             }).render();
 
             // map_768
             new daum.roughmap.Lander({
                 "timestamp" : "1707205237950",
                 "key" : "2izrh",
-                "mapWidth" : "580",
-                "mapHeight" : "360"
+                "mapWidth" : "570",
+                "mapHeight" : "350"
             }).render();
 
             // map_1024
             new daum.roughmap.Lander({
                 "timestamp" : "1707205808909",
                 "key" : "2izrr",
-                "mapWidth" : "768",
-                "mapHeight" : "450"
+                "mapWidth" : "758",
+                "mapHeight" : "440"
             }).render();
 
             // map_1280
             new daum.roughmap.Lander({
                 "timestamp" : "1707206549615",
                 "key" : "2izsa",
-                "mapWidth" : "480",
-                "mapHeight" : "280"
+                "mapWidth" : "470",
+                "mapHeight" : "260"
             }).render();
 
             // map_1920
             new daum.roughmap.Lander({
                 "timestamp" : "1707206712520",
                 "key" : "2izsd",
-                "mapWidth" : "632",
-                "mapHeight" : "302"
+                "mapWidth" : "622",
+                "mapHeight" : "292"
             }).render();
 
         });
@@ -692,6 +697,12 @@
                     <h3>Contact us</h3>
                     <div class="cu_text phone">
                         솔루션 관련 상담이나 견적 문의는<br>아래의 연락처를 통해 문의주시기 바랍니다.<br>클라이언트의 만족과 에이아이맥스(주)의<br>효율적인 솔루션 제시를 통해,<br>고객에게 최고의 비지니스 가치를 창출하겠습니다. 
+                    </div>
+                    <div class="cu_text tablet">
+                        솔루션 관련 상담이나 견적 문의는 아래의 연락처를 통해 문의주시기 바랍니다.<br>클라이언트의 만족과 에이아이맥스(주)의 효율적인 솔루션 제시를 통해,<br>고객에게 최고의 비지니스 가치를 창출하겠습니다. 
+                    </div>
+                    <div class="cu_text notebook">
+                        솔루션 관련 상담이나 견적 문의는 아래의 연락처를 통해 문의주시기 바랍니다.<br>클라이언트의 만족과 에이아이맥스(주)의 효율적인 솔루션 제시를 통해, 고객에게 최고의 비지니스 가치를 창출하겠습니다. 
                     </div>
                     <div class="info_box">
                         <div class="text_wrap">
