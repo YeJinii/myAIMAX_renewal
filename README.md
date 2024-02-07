@@ -1,5 +1,9 @@
 ### Commit Log
 
+* FEAT_240207
+  * contact (375, 768, 1024, 1280, 1920)
+    * 반응형 구현
+
 * FEAT_240206
   * header 의 z-index 수정
     hl_box가 header 위에 위치하고 있는 오류 해결

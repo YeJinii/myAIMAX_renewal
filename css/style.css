@@ -734,7 +734,7 @@ span.char:nth-of-type(18).on {
     font-size: 1.5rem;
     line-height: 22px;
 }
-.contact_wrap > h3 {
+.contact_wrap > div > h3 {
     width: 330px;
     text-align: left;
     font-size: 1.8rem;
@@ -1203,7 +1203,7 @@ span.char:nth-of-type(18).on {
         font-size: 1.7rem;
         line-height: 25px;
     }
-    .contact_wrap > h3 {
+    .contact_wrap > div > h3 {
         width: 580px;
         text-align: left;
         font-size: 3rem;
@@ -1429,7 +1429,7 @@ span.char:nth-of-type(18).on {
         font-size: 1.7rem;
         line-height: 25px;
     }
-    .contact_wrap > h3 {
+    .contact_wrap > div > h3 {
         width: 768px;
         text-align: left;
         font-size: 3rem;
@@ -1803,16 +1803,102 @@ span.char:nth-of-type(18).on {
     }
 
     /* contact 1280 */
+    .contact_wrap {
+        width: 1024px;
+        padding: 100px 0;
+        margin: 0 auto;
+    }
+    .contact_wrap > h2 {
+        font-size: 4.5rem;
+        line-height: 65px;
+        margin-bottom: 10px;
+    }
+    .contact_wrap > p {
+        font-size: 1.7rem;
+        line-height: 25px;
+    }
+
+    .contact_wrap > .left {
+        float: left;
+        width: 480px;
+    }
+    .contact_wrap > .right {
+        float: right;
+        width: 502px;
+    }
+
+    .contact_wrap > div > h3 {
+        width: 100%;
+        text-align: left;
+        font-size: 3rem;
+        line-height: 26px;
+        margin: 80px auto 20px;
+    }
+    
     .map_1280 {
         display: block;
     }
-    .map_375, .map_768, .map_1024, .map_1920 {
+    .map_1920 {
         display: none;
     }
     .map_wrap {
         width: 480px;
         height: 270px;
         margin: 0 auto;
+    }
+
+    .cu_text {
+        width: 502px;
+        padding-left: 0;
+        font-size: 1.5rem;
+        font-weight: 500;
+        line-height: 22px;
+        text-align: left;
+        margin: 0 auto 19px;
+    }
+    .info_box {
+        width: 100%;
+        height: 185px;
+        margin: 0 auto;
+    }
+    .text_wrap {
+        margin: 18px 0 0 23px;
+        text-align: left;
+    }
+    .contact_tel {
+        margin-bottom: 20px;
+    }
+    .contact_tel > span {
+        width: 63px;
+        height: 63px;
+        background-size: 63px 63px;
+        margin: 5px 20px 0 0;
+    }
+    .contact_tel > p {
+        font-size: 4rem;
+        font-weight: 800;
+        line-height: 72px;
+    }
+    .contact_email {
+        margin-left: 0;
+        margin-bottom: 5px;
+    }
+    .contact_email > span {
+        width: 17px;
+        height: 14px;
+        background-size: 17px 14px;
+        margin: 5px 10px 0 0;
+    }
+    .contact_email > p {
+        font-size: 1.5rem;
+        line-height: 22px;
+    }
+    .contact_address {
+        margin-left: 0;
+    }
+    .contact_address > p {
+        font-size: 1.5rem;
+        line-height: 22px;
     }
 }
 /* end 1280 */
@@ -1981,17 +2067,105 @@ span.char:nth-of-type(18).on {
 
     /* partners 1920 */
 
-    /* contact 1280 */
+    /* contact 1920 */
+    .contact_wrap {
+        width: 1269px;
+        height: 745px;
+        padding: 100px 0;
+        margin: 0 auto;
+    }
+    .contact_wrap > h2 {
+        font-size: 4.5rem;
+        line-height: 65px;
+        margin-bottom: 10px;
+    }
+    .contact_wrap > p {
+        font-size: 1.7rem;
+        line-height: 25px;
+    }
+
+    .contact_wrap > .left {
+        float: left;
+        width: 635px;
+        height: 365px;
+    }
+    .contact_wrap > .right {
+        float: right;
+        width: 554px;
+        height: 365px;
+    }
+
+    .contact_wrap > div > h3 {
+        width: 100%;
+        text-align: left;
+        font-size: 3rem;
+        line-height: 26px;
+        margin: 80px auto 20px;
+    }
+
+    .map_1280 {
+        display: none;
+    }
     .map_1920 {
         display: block;
-    }
-    .map_375, .map_768, .map_1024, .map_1280 {
-        display: none;
     }
     .map_wrap {
         width: 632px;
         height: 302px;
         margin: 0 auto;
+    }
+
+    .cu_text {
+        width: 554px;
+        height: 75px;
+        line-height: 25px;
+        font-size: 1.5rem;
+        margin: 0 auto 40px;
+        padding-top: 11px;
+    }
+    .info_box {
+        width: 100%;
+        height: 185px;
+        margin: 0 auto;
+    }
+    .text_wrap {
+        margin: 18px 0 0 23px;
+        text-align: left;
+    }
+    .contact_tel {
+        margin-bottom: 20px;
+    }
+    .contact_tel > span {
+        width: 63px;
+        height: 63px;
+        background-size: 63px 63px;
+        margin: 5px 20px 0 0;
+    }
+    .contact_tel > p {
+        font-size: 4rem;
+        font-weight: 800;
+        line-height: 72px;
+    }
+    .contact_email {
+        margin-left: 0;
+        margin-bottom: 5px;
+    }
+    .contact_email > span {
+        width: 17px;
+        height: 14px;
+        background-size: 17px 14px;
+        margin: 5px 10px 0 0;
+    }
+    .contact_email > p {
+        font-size: 1.5rem;
+        line-height: 22px;
+    }
+    .contact_address {
+        margin-left: 0;
+    }
+    .contact_address > p {
+        font-size: 1.5rem;
+        line-height: 22px;
     }
    
 }
