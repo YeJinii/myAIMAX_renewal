@@ -43,22 +43,11 @@ header {
 .header_inner > a {
     display: block;
     float: left;
-    width: 141px;
-    height: 38px;
-    margin-left: -5px;
-    background: url(../img/logo/aimax_white.png) no-repeat center/cover;
-}
-header.on {
-    height: 60px;
-    background-color: black;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-header.on .header_inner {
-    padding-top: 16px;
-}
-header.on .header_inner > a {
-    width: 104px;
-    height: 28px;
+    width: 125px;
+    height: 40px;
+    margin-left: -4px;
+    background: url(../img/logo/aimax_header_white.png) no-repeat center/cover;
+    background-size: 125px 40px;
 }
 .youtube_btn {
     display: block;
@@ -71,24 +60,12 @@ header.on .header_inner > a {
     margin-right: 9.091%; /* 30 / 330 */
     background: url(../img/icon/youtube_white.png) no-repeat center/contain;
 }
-header.on .youtube_btn {
-    width: 25px;
-    height: 18px;
-    margin-top: 5px;
-    margin-right: 6%;
-    background-image: url(../img/icon/youtube_color.png);
-}
 .open_menu_btn {
     display: block;
     float: right;
     width: 28px;
     height: 24px;
     margin-top: 7px;
-}
-header.on .open_menu_btn {
-    width: 20px;
-    height: 19px;
-    margin-top: 4.5px;
 }
 .open_menu_btn span {
     display: block;
@@ -99,23 +76,53 @@ header.on .open_menu_btn {
     margin-bottom: 6px;
     border-radius: 2px;
 }
-header.on .open_menu_btn span {
-    width: 20px;
-    height: 3px;
-    background-color: #ffffff;
-    margin-bottom: 5px;
-}
+
 header:hover {
     background-color: #ffffff;
+    border-bottom: none;
+    box-shadow: 0 2px 4px -4px rgba(0, 0, 0, 0.17);
+
 }
 header:hover .header_inner > a {
-    background-image: url(../img/logo/aimax_color.png);
+    background-image: url(../img/logo/aimax_header_color.png);
 }
 header:hover .youtube_btn {
     background-image: url(../img/icon/youtube_color.png);
 }
 header:hover span {
     background-color: #333333;
+}
+
+header.on {
+    height: 60px;
+    background-color: #000;
+    box-shadow: 0 2px 4px -4px rgba(0, 0, 0, 1);
+}
+header.on .header_inner {
+    padding-top: 16px;
+}
+header.on .header_inner > a {
+    width: 100px;
+    height: 32px;
+    background-size: 100px 32px;
+}
+header.on .youtube_btn {
+    width: 25px;
+    height: 18px;
+    margin-top: 5px;
+    margin-right: 30px;
+    background-image: url(../img/icon/youtube_color.png);
+}
+header.on .open_menu_btn {
+    width: 20px;
+    height: 19px;
+    margin-top: 4.5px;
+}
+header.on .open_menu_btn span {
+    width: 20px;
+    height: 3px;
+    background-color: #ffffff;
+    margin-bottom: 5px;
 }
 
 /* main_banner 375 */
@@ -835,6 +842,39 @@ span.char:nth-of-type(18).on {
     line-height: 19px;
 }
 
+/* footer 375 */
+.f_ver_2 {
+    display: none;
+}
+footer {}
+.f_wrap {
+    width: 330px;
+    margin: 30px auto;
+    color: #ffffff;
+    text-align: center;
+}
+.f_wrap > a {
+    display: block;
+    width: 125px;
+    height: 40px;
+    margin: 0 auto 20px;
+
+    text-indent: -9999px;
+    overflow: hidden;
+    background: url(../img/logo/aimax_footer.png) no-repeat center/contain;
+    background-size: 125px 40px;
+}
+.f_wrap > p {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 18px;
+    color: #cccccc;
+}
+.f_wrap > p > span {
+    font-weight: 500;
+    color: #ffffff;
+}
+
 /* end 375 */
 
 /* start 768 */
@@ -843,29 +883,64 @@ span.char:nth-of-type(18).on {
     /* header 768 */
     .header_inner {
         width: 88.021%; /* 676 / 768 */
-        padding-top: 21px;
+        padding-top: 15px;
     }
     .header_inner > a {
-        width: 165px;
-        height: 44px;
+        display: block;
+        float: left;
+        width: 150px;
+        height: 48px;
         margin-left: -5px;
+        background-size: 150px 48px;
     }
     .youtube_btn {
         width: 36px;
         height: 26px;
-        margin-top: 9px;
-        margin-right: 5.917%; /* 40 / 676 */
+        margin-top: 11px;
+        margin-right: 40px;
     }
     .open_menu_btn {
         width: 30px;
         height: 26px;
-        margin-top: 9px;
+        margin-top: 11px;
     }
     .open_menu_btn span {
         width: 30px;
         height: 4px;
         margin-bottom: 7px;
         border-radius: 2px;
+    }
+
+    header.on {
+        height: 60px;
+        background-color: #000;
+        box-shadow: 0 2px 4px -4px rgba(0, 0, 0, 1);
+    }
+    header.on .header_inner {
+        padding-top: 16px;
+    }
+    header.on .header_inner > a {
+        width: 100px;
+        height: 32px;
+        background-size: 100px 32px;
+    }
+    header.on .youtube_btn {
+        width: 25px;
+        height: 18px;
+        margin-top: 5px;
+        margin-right: 40px;
+        background-image: url(../img/icon/youtube_color.png);
+    }
+    header.on .open_menu_btn {
+        width: 20px;
+        height: 19px;
+        margin-top: 4.5px;
+    }
+    header.on .open_menu_btn span {
+        width: 20px;
+        height: 3px;
+        background-color: #ffffff;
+        margin-bottom: 5px;
     }
 
     /* main_banner 768 */
@@ -1283,6 +1358,21 @@ span.char:nth-of-type(18).on {
         font-size: 1.4rem;
         line-height: 20px;
     }
+    /* footer 768 */
+    .f_wrap {
+        width: 676px;
+        margin: 60px auto;
+    }
+    .f_wrap > a {
+        width: 200px;
+        height: 64px;
+        margin: 0 auto 20px;
+        background-size: 200px 64px;
+    }
+    .f_wrap > p {
+        font-size: 1.5rem;
+        line-height: 25px;
+    }
 }
 /* end 768 */
 
@@ -1296,9 +1386,10 @@ span.char:nth-of-type(18).on {
     .header_inner > a {
         display: block;
         float: left;
-        width: 227px;
-        height: 60px;
-        margin-left: -9px;
+        width: 200px;
+        height: 64px;
+        margin-left: -5px;
+        background-size: 200px 64px;
     }
     .youtube_btn {
         display: block;
@@ -1307,7 +1398,7 @@ span.char:nth-of-type(18).on {
         height: 31px;
         text-indent: -9999px;
         overflow: hidden;
-        margin-top: 14.5px;
+        margin-top: 15px;
         margin-right: 5.365%; /* 50 / 932 */
         background: url(../img/icon/youtube_white.png) no-repeat center/contain;
     }
@@ -1316,7 +1407,7 @@ span.char:nth-of-type(18).on {
         float: right;
         width: 38px;
         height: 31px;
-        margin-top: 14.5px;
+        margin-top: 15px;
     }
     .open_menu_btn span {
         display: block;
@@ -1325,7 +1416,39 @@ span.char:nth-of-type(18).on {
         background-color: #fff;
         text-indent: -9999px;
         margin-bottom: 8px;
-        border-radius: 2px;
+        border-radius: 4px;
+    }
+
+    header.on {
+        height: 60px;
+        background-color: #000;
+        box-shadow: 0 2px 4px -4px rgba(0, 0, 0, 1);
+    }
+    header.on .header_inner {
+        padding-top: 16px;
+    }
+    header.on .header_inner > a {
+        width: 100px;
+        height: 32px;
+        background-size: 100px 32px;
+    }
+    header.on .youtube_btn {
+        width: 25px;
+        height: 18px;
+        margin-top: 5px;
+        margin-right: 50px;
+        background-image: url(../img/icon/youtube_color.png);
+    }
+    header.on .open_menu_btn {
+        width: 20px;
+        height: 19px;
+        margin-top: 4.5px;
+    }
+    header.on .open_menu_btn span {
+        width: 20px;
+        height: 3px;
+        background-color: #ffffff;
+        margin-bottom: 5px;
     }
 
     /* main_banner 1024 */
@@ -1507,6 +1630,40 @@ span.char:nth-of-type(18).on {
         font-size: 1.8rem;
         line-height: 26px;
     }
+
+    /* footer 1024 */
+    .f_ver_1 {
+        display: none;
+    }
+    .f_ver_2 {
+        display: block;
+    }
+    .f_wrap {
+        width: 768px;
+        margin: 60px auto;
+    }
+    .f_wrap > a {
+        display: block;
+        float: left;
+        width: 150px;
+        height: 48px;
+        margin: 0 30px 0 0;
+        background-size: 150px 48px;
+    }
+    .p_wrap {
+        float: left;
+        text-align: left;
+    }
+    .p_wrap > p {
+        font-size: 1.6rem;
+        line-height: 28px;
+        font-weight: 400;
+        color: #cccccc;
+    }
+    .p_wrap > p > span {
+        font-weight: 500;
+        color: #ffffff;
+    }
 }
 /* end 1024 */
 
@@ -1517,6 +1674,14 @@ span.char:nth-of-type(18).on {
     /* header 1280 */
     .header_inner {
         width: 92.188%; /* 1188 / 1280 */
+    }
+    .header_inner > a {
+        display: block;
+        float: left;
+        width: 200px;
+        height: 64px;
+        margin-left: -5px;
+        background-size: 200px 64px;
     }
     nav {
         display: block;
@@ -1900,6 +2065,18 @@ span.char:nth-of-type(18).on {
         font-size: 1.5rem;
         line-height: 22px;
     }
+
+    /* footer 1280 */
+    .f_wrap {
+        width: 1024px;
+        margin: 60px auto;
+    }
+    .f_wrap > a {
+        width: 200px;
+        height: 64px;
+        margin: 0 60px 0 0;
+        background-size: 200px 64px;
+    }
 }
 /* end 1280 */
 
@@ -2167,6 +2344,20 @@ span.char:nth-of-type(18).on {
         font-size: 1.5rem;
         line-height: 22px;
     }
-   
+    
+    /* footer 1920 */
+    .f_wrap {
+        width: 1269px;
+        margin: 60px auto;
+    }
+    .f_wrap > a {
+        width: 250px;
+        height: 80px;
+        margin: 0 80px 0 0;
+        background-size: 250px 80px;
+    }
+    .p_wrap {
+        padding-top: 10px;
+    }
 }
 /* end 1920 */
