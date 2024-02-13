@@ -49,6 +49,25 @@
                 $('header').addClass('on');
             });
 
+            // quick menu folding btn
+            let quick_menu_btn = true;
+            $('#quick_menu').click(function(){
+                if(quick_menu_btn){
+                    
+                    $('#quick_menu').addClass('on');
+                    $('#quick_menu .menu_0 p').text('Quick 메뉴 닫기');
+                    quick_menu_btn = false;
+
+                } else {
+
+                    $('#quick_menu').removeClass('on');
+                    $('#quick_menu .menu_0 p').text('윙드 바로가기');
+                    quick_menu_btn = true;
+
+                }
+
+            });
+
             // main_banner slick-slide
             $('.slider').slick({
                 arrows: false,
@@ -350,12 +369,12 @@
                     <span></span>
                     <span></span>
                 </button>
-                <button class="youtube_btn mobile">에이아이맥스 유튜브 바로가기</button>
+                <button class="youtube_btn mobile" type="button" onclick="location.href='https://www.youtube.com/@aimax_winged'">에이아이맥스 유튜브 바로가기</button>
                 <nav class="desktop">
                     <ul>
                         <li>
                             <!-- youtube btn -->
-                            <a href="https://www.youtube.com/watch?v=axRh-ZJJ-7s" target="_blank" class="for_add_margin_top"></a>
+                            <a href="https://www.youtube.com/@aimax_winged" target="_blank" class="for_add_margin_top"></a>
                         </li>
                         <li>
                             <a href="#contact">Contact</a>
@@ -373,6 +392,30 @@
                 </nav>
             </div> <!-- e: header_inner -->
         </header>
+        <div id="quick_menu" class="clear">
+            <span class="menu menu_0">
+                <span></span>
+                <p>윙드 바로가기</p>
+            </span>
+            <div class="after">
+                <i></i>
+                <a href="" class="menu menu_1">
+                    <span></span>
+                    <p>윙드 소개 영상</p>
+                </a>
+                <i></i>
+                <a href="" class="menu menu_2">
+                    <span></span>
+                    <p>윙드 시연 영상</p>
+                </a>
+                <i></i>
+                <a href="" class="menu menu_3">
+                    <!-- 자료 다운로드 -->
+                    <span></span>
+                    <p>자료 다운로드</p>
+                </a>
+            </div>
+        </div>
         <main>
             <div id="main_banner" class="mb_height" >
                 <div class="slider mb_height" >

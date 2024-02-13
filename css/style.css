@@ -135,6 +135,118 @@ header.on .open_menu_btn span {
     margin-bottom: 5px;
 }
 
+/* quick_menu 375 */
+#quick_menu {
+    position: fixed;
+    right: 0;
+    bottom: 10%;
+    z-index: 100;
+    width: 80px;
+    height: 80px;
+    border-radius: 15px 0 0 15px;
+    background-color: rgba(255, 255, 255, .6);
+    box-shadow: 0 2px 10px 4px rgba(0, 0, 0, 0.1);
+}
+#quick_menu:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 1);
+}
+#quick_menu .after {
+    display: none;
+}
+#quick_menu .menu {
+    display: block;
+    float: left;
+    width: 80px;
+    height: 80px;
+    text-align :center;
+    margin: 0 5px;
+
+    transition: transform 1s;
+}
+#quick_menu .menu_0 {
+    margin-left: 0;
+}
+#quick_menu .menu_3 {
+    margin-right: 0;
+}
+#quick_menu .menu_0 span {
+    display: block;
+    width: 64px;
+    height: 29px;
+    background: url(../img/logo/winged.png) no-repeat center/contain;
+    margin: 14px auto 10px;
+}
+#quick_menu .menu_0 p {
+    margin: 0 auto;
+    text-align: center;
+    font-weight: bold;
+    color : #333333;
+}
+#quick_menu .after .menu span {
+    display: block;
+    margin: 0 auto;
+}
+#quick_menu .after .menu p {
+    margin-top: 10px;
+    font-weight: 600;
+    color: #333333;
+}
+#quick_menu .after .menu_1 span {
+    width: 33px;
+    height: 32px;
+    background: url(../img/icon/qm_icon_1.png) no-repeat center/contain;
+    background-size: 32px 33px;
+    margin: 12px auto 0;
+}
+#quick_menu .after .menu_2 span {
+    width: 39px;
+    height: 29px;
+    background: url(../img/icon/qm_icon_2.png) no-repeat center/contain;
+    background-size: 39px 29px;
+    margin: 17px auto 0;
+}
+#quick_menu .after .menu_3 span {
+    width: 40px;
+    height: 34px;
+    background: url(../img/icon/qm_icon_3.png) no-repeat center/contain;
+    background-size: 40px 34px;
+    margin: 12px auto 0;
+}
+#quick_menu.on .after i {
+    display: block;
+    float: left;
+    width: 1px;
+    height: 56px;
+    margin-top: 12px;
+    background-color: #eeeeee;
+}
+
+
+#quick_menu.on {
+    background-color: rgba(255, 255, 255, 1);
+    width: 353px;
+}
+#quick_menu.on:hover {
+    transform: none;
+}
+#quick_menu.on .menu {
+    transform: scale(1.05);
+}
+#quick_menu.on .menu:hover p {
+    color: #2F4187;
+    font-weight: bold;
+}
+#quick_menu.on .after {
+    display: block;
+}
+#quick_menu.on .menu_0 {
+    float: left;
+}
+
+
+
 /* main_banner 375 */
 main {
     width: 100%;
@@ -320,7 +432,7 @@ span.green {
     width: 375px;
     height: 798.75px;
     margin: 0 auto;
-    background: url(../img/winged_illust_bg_v.png) no-repeat center/contain;
+    background: url(../img/winged/winged_illust_bg_v.png) no-repeat center/contain;
 }
 .winged_img {
     position: absolute;
@@ -341,7 +453,7 @@ span.green {
     top: 171px;
     left: 190px;
 
-    background: url(../img/winged_txt_1.png) no-repeat center/contain;
+    background: url(../img/winged/winged_txt_1.png) no-repeat center/contain;
 }
 .winged_img_2 {
     display: block;
@@ -352,7 +464,7 @@ span.green {
     top: 357px;
     left: 15px;
 
-    background: url(../img/winged_txt_2.png) no-repeat center/contain;
+    background: url(../img/winged/winged_txt_2.png) no-repeat center/contain;
 }
 .winged_img_3 {
     display: block;
@@ -363,17 +475,17 @@ span.green {
     top: 524px;
     left: 214px;
 
-    background: url(../img/winged_txt_3.png) no-repeat center/contain;
+    background: url(../img/winged/winged_txt_3.png) no-repeat center/contain;
 }
 .winged_img_1.on {
-    animation: fadein .5s ease-in-out forwards;
+    animation: fadein .8s ease-in-out forwards;
 }
 .winged_img_2.on {
-    animation: fadein .5s ease-in-out forwards;
+    animation: fadein .8s ease-in-out forwards;
     animation-delay: .5s;
 }
 .winged_img_3.on {
-    animation: fadein .5s ease-in-out forwards;
+    animation: fadein .8s ease-in-out forwards;
     animation-delay: 1s;
 }
 
