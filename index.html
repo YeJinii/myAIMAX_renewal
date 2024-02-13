@@ -39,6 +39,15 @@
         let check_2 = true;
         $(document).ready(function(){
 
+            // header hover event -> white mode on
+            $('header').hover(function(){
+                // when mouse over
+                $('header').removeClass('on');
+            },function(){
+                // when mouse out
+                $('header').addClass('on');
+            });
+
             // main_banner slick-slide
             $('.slider').slick({
                 arrows: false,
@@ -128,24 +137,29 @@
                         }                       
                     }
                     if (loop && (rect.bottom <= 0 || rect.top >= window.innerHeight)) {
-                        // $('span.char:nth-of-type(1)').removeClass('on');
-                        // $('span.char:nth-of-type(2)').removeClass('on');
-                        // $('span.char:nth-of-type(3)').removeClass('on');
-                        // $('span.char:nth-of-type(4)').removeClass('on');
-                        // $('span.char:nth-of-type(5)').removeClass('on');
-                        // $('span.char:nth-of-type(6)').removeClass('on');
-                        // $('span.char:nth-of-type(7)').removeClass('on');
-                        // $('span.char:nth-of-type(8)').removeClass('on');
-                        // $('span.char:nth-of-type(9)').removeClass('on');
-                        // $('span.char:nth-of-type(10)').removeClass('on');
-                        // $('span.char:nth-of-type(11)').removeClass('on');
-                        // $('span.char:nth-of-type(12)').removeClass('on');
-                        // $('span.char:nth-of-type(13)').removeClass('on');
-                        // $('span.char:nth-of-type(14)').removeClass('on');
-                        // $('span.char:nth-of-type(15)').removeClass('on');
-                        // $('span.char:nth-of-type(16)').removeClass('on');
-                        // $('span.char:nth-of-type(17)').removeClass('on');
-                        // $('span.char:nth-of-type(18)').removeClass('on');
+                        // IF you want "color_on motion" once,
+                        // comment out the code below. 
+                        $('span.char:nth-of-type(1)').removeClass('on');
+                        $('span.char:nth-of-type(2)').removeClass('on');
+                        $('span.char:nth-of-type(3)').removeClass('on');
+                        $('span.char:nth-of-type(4)').removeClass('on');
+                        $('span.char:nth-of-type(5)').removeClass('on');
+                        $('span.char:nth-of-type(6)').removeClass('on');
+                        $('span.char:nth-of-type(7)').removeClass('on');
+                        $('span.char:nth-of-type(8)').removeClass('on');
+                        $('span.char:nth-of-type(9)').removeClass('on');
+                        $('span.char:nth-of-type(10)').removeClass('on');
+                        $('span.char:nth-of-type(11)').removeClass('on');
+                        $('span.char:nth-of-type(12)').removeClass('on');
+                        $('span.char:nth-of-type(13)').removeClass('on');
+                        $('span.char:nth-of-type(14)').removeClass('on');
+                        $('span.char:nth-of-type(15)').removeClass('on');
+                        $('span.char:nth-of-type(16)').removeClass('on');
+                        $('span.char:nth-of-type(17)').removeClass('on');
+                        $('span.char:nth-of-type(18)').removeClass('on');
+
+                        check_2 = true;
+                        // : end
                     }
                 });
 
@@ -160,7 +174,7 @@
                     if (rect.top <= winHeight - (contentHeight * exposurePercentage / 100) && rect.bottom >= (contentHeight * exposurePercentage / 100)) {
                         if(check){
                             $({ val : 0 }).animate({ val : 7352 }, {
-                            duration: 3000,
+                            duration: 1700,
                             step: function() {
                                 var num = numberWithCommas(Math.floor(this.val));
                                 $('.count_num').text(num);
@@ -172,7 +186,7 @@
                             });
 
                             $({ val : 0 }).animate({ val : 73 }, {
-                            duration: 3000,
+                            duration: 1700,
                             step: function() {
                                 var num = numberWithCommas(Math.floor(this.val));
                                 $('.count_num2').text(num);
@@ -186,6 +200,10 @@
                         } 
                     }
                     if (loop && (rect.bottom <= 0 || rect.top >= window.innerHeight)) {
+                        // IF you want "num_counting motion" once,
+                        // comment out the code below. 
+                        check = true;
+                        // : end
                     }  
                 
                 });
@@ -310,7 +328,7 @@
                     <ul>
                         <li>
                             <!-- youtube btn -->
-                            <a href="https://www.youtube.com/@aimax_winged" target="_blank"></a>
+                            <a href="https://www.youtube.com/watch?v=axRh-ZJJ-7s" target="_blank" class="for_add_margin_top"></a>
                         </li>
                         <li>
                             <a href="#contact">Contact</a>

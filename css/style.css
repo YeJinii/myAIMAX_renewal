@@ -80,7 +80,7 @@ header {
 header:hover {
     background-color: #ffffff;
     border-bottom: none;
-    box-shadow: 0 2px 4px -4px rgba(0, 0, 0, 0.17);
+    box-shadow: 0 2px 4px -4px rgba(0, 0, 0, 1);
 
 }
 header:hover .header_inner > a {
@@ -642,7 +642,7 @@ span.char:nth-of-type(18).on {
 
 /* partners 375 */
 #partners {
-    background: #fff;
+    background: #ffffff;
 }
 .partners_wrap {
     width: 100%;
@@ -1683,31 +1683,31 @@ footer {}
         margin-left: -5px;
         background-size: 200px 64px;
     }
-    nav {
+    header nav {
         display: block;
         float: right;
     }
-    nav ul {
+    header nav ul {
         margin-top: 15px;
         height: 30px;
     }
-    nav ul li {
+    header nav ul li {
         display: block;
         float: right;
         margin-left: 50px; 
         transition: transform .5s;
 
     }
-    nav ul li:hover {
+    header nav ul li:hover {
         transform: scale(1.02);
     }
-    nav ul li a {
+    header nav ul li a {
         line-height: 30px;
         font-size: 2.1rem;
         font-weight: bold;
         color: #fff;
     } 
-    nav ul li:first-of-type a {
+    header nav ul li:first-of-type a {
         line-height: 1;
         margin-top: 2px;
         display: block;
@@ -1720,6 +1720,17 @@ footer {}
     }
     header:hover nav ul li:first-of-type a {
         background-image: url(../img/icon/youtube_color.png);
+    }
+
+    header.on nav ul {
+        margin-top: -3px;
+    }
+    header.on nav ul li a {
+        font-size: 1.8rem;
+        line-height: 32px;
+    }
+    header.on .for_add_margin_top {
+        margin-top: 4px;
     }
 
     /* main_banner 1280 */
