@@ -37,6 +37,7 @@
     <script>
         let check = true;
         let check_2 = true;
+        let check_3 = true;
         $(document).ready(function(){
 
             // header hover event -> white mode on
@@ -88,10 +89,10 @@
                 $('.slider').slick('slickGoTo', 2);
             });
 
-            // performance
             const $counters = $('.count_num');
             const $chars = $('.span_2');
             const $highlight = $('.hl_box');
+            const $winged_txt = $('.winged_img');
 
             const exposurePercentage = 100;
             const loop = true;
@@ -104,6 +105,32 @@
                     $('header').removeClass('on');
                 }
 
+                // solution
+                $winged_txt.each(function() {
+
+                    const $el = $(this);
+
+                    const rect = $el[0].getBoundingClientRect();
+                    const winHeight = window.innerHeight;
+                    const contentHeight = rect.bottom - rect.top;
+                            
+                    if (rect.top <= winHeight - (contentHeight * exposurePercentage / 100) && rect.bottom >= (contentHeight * exposurePercentage / 100)) {
+                        if(check_2){
+                            $('.winged_img_1').delay(1000).addClass('on');
+                            $('.winged_img_2').delay(1000).addClass('on');
+                            $('.winged_img_3').delay(1000).addClass('on');
+                            
+                            check_2=false;
+                        }
+                    }
+                    if (loop && (rect.bottom <= 0 || rect.top >= window.innerHeight)) {
+                        // $('.winged_img_1').removeClass('on');
+                        // $('.winged_img_2').removeClass('on');
+                        // $('.winged_img_3').removeClass('on');
+                    
+                    }
+                });
+
                 // performance EXCELLENT AND STABLE
                 $chars.each(function() {
                     const $el = $(this);
@@ -113,7 +140,7 @@
                     const contentHeight = rect.bottom - rect.top;
                     
                     if (rect.top <= winHeight - (contentHeight * exposurePercentage / 100) && rect.bottom >= (contentHeight * exposurePercentage / 100)) {
-                        if(check_2){
+                        if(check_3){
                             $('span.char:nth-of-type(1)').addClass('on');
                             $('span.char:nth-of-type(2)').addClass('on');
                             $('span.char:nth-of-type(3)').addClass('on');
@@ -133,7 +160,7 @@
                             $('span.char:nth-of-type(17)').addClass('on');
                             $('span.char:nth-of-type(18)').addClass('on');
 
-                            check_2 = false;
+                            check_3 = false;
                         }                       
                     }
                     if (loop && (rect.bottom <= 0 || rect.top >= window.innerHeight)) {
@@ -158,7 +185,7 @@
                         $('span.char:nth-of-type(17)').removeClass('on');
                         $('span.char:nth-of-type(18)').removeClass('on');
 
-                        check_2 = true;
+                        check_3 = true;
                         // : end
                     }
                 });
@@ -235,7 +262,7 @@
                 dots: false,
                 arrows: false,
                 autoplay: true,
-                autoplaySpeed : 2500,
+                autoplaySpeed : 2000,
                 responsive: [
                     {
                         breakpoint: 1920,
@@ -410,8 +437,14 @@
                     <p class="mobile"><span class="bold">윙드(WINGed)</span> 는 예기치 못한 이벤트로 인하여<br class="phone"> 동시 사용자가 급속하게 폭주해도<br>원활한 접속과 일관된 응답시간을 보장(유지)합니다.<br><span class="bold">윙드(WINGed)</span> 는 <span class="bold green">시스템 부하를 초래하는 어떠한 상황에서도</span><br><span class="bold green">CPU 및 메모리 사용률을 안정적으로 유지</span>해주는 솔루션입니다.</p>
                 </div>
             </div> <!-- e: winged_copy -->
-            <div id="solution" style="height: 300px; font-size: 4rem; color: #fff; background-color: skyblue">
-                개발 예정
+            <div id="solution">
+                <h2>Solution</h2>
+                <p>인공지능 과부하방지 솔루션 "윙드"</p>
+                <span class="winged_illustration">
+                    <span class="winged_img winged_img_1">언제 어디서든지 대용량의 데이터를 손실 없이 빠르게!</span>
+                    <span class="winged_img winged_img_2">WINGed Agent</span>
+                    <span class="winged_img winged_img_3">WINGed Caching Server</span>
+                </span>
             </div> <!-- e: solution -->
             <div id="service">
                 <div class="p_service_wrap phone">
