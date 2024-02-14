@@ -25,7 +25,12 @@
   * [footer]
     * fax 정보 수정
 
+  * 최상위로 이동하는 버튼 구현
+
 ## 커밋 히스토리
+  * FIX_240214
+    * Quick Menu [desktop mode]에서 클릭시 태그가 안넘어가는 이슈 해결
+
   * FEAT_240214
     * href="#id" 부드럽게 이동하기 
     * Quick Menu 구현 (mobile, desktop)
