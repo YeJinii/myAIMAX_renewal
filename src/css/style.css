@@ -395,7 +395,7 @@ main {
     width: 100%;
     height: 185.625px;
     background-color: #000;
-    border: 1px solid rgba(255, 255, 255, .05);
+    border: 1px solid rgba(255, 255, 255, .5);
 }
 .video_wrap iframe {
     position: absolute;
@@ -930,6 +930,7 @@ span.char:nth-of-type(18).on {
 .p_logo_slider {
     width: 100%;
     height: 40px;
+    cursor: pointer;
 }
 .p_logo {
     width: 100px;
@@ -2405,6 +2406,7 @@ footer {}
 
     /* winged_video 1280 */
     .videos_wrap {
+        position: relative;
         width: 1024px;
         padding: 80px 0;
     }
@@ -2412,7 +2414,9 @@ footer {}
         margin-bottom: 80px;
     }
     .video_tag {
-        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
     }
     .winged_video {
         float: left;
