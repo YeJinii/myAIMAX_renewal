@@ -4,7 +4,11 @@
   * [partners] 기업 목록 계열사별 노출 여부
 
 ## 고도화 목록
+  * [header]
+    * header.on 적용시 text-color #fff로 변경
+
   * [main_banner]
+    * 마우스 이모지 추가
     * 이미지 처리
     * 타이핑 모션 추가
     * pager
@@ -21,6 +25,10 @@
     * fax 정보 수정
 
 ## 커밋 히스토리
+  * FEAT_240214
+    * href="#id" 부드럽게 이동하기 
+    * Quick Menu 구현 (mobile, desktop)
+
   * FEAT_240213
     * contact 고도화
     * Footer (375, 768, 1024, 1280, 1920)

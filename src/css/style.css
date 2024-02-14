@@ -138,17 +138,15 @@ header.on .open_menu_btn span {
     margin-bottom: 5px;
 }
 
-/* quick_menu 375 */
+/* quick_menu 375 ~ 1024 */
 #quick_menu {
     position: fixed;
-    right: 0;
-    bottom: 10%;
-    z-index: 100;
-    width: 80px;
-    height: 80px;
+    right: 0; bottom: 10%;
+    width: 80px; height: 80px;
     border-radius: 15px 0 0 15px;
     background-color: rgba(255, 255, 255, .6);
     box-shadow: 0 2px 10px 4px rgba(0, 0, 0, 0.1);
+    z-index: 100;
 }
 #quick_menu:hover {
     cursor: pointer;
@@ -159,17 +157,17 @@ header.on .open_menu_btn span {
     display: none;
 }
 #quick_menu .menu {
+    position: relative;
     display: block;
     float: left;
     width: 80px;
     height: 80px;
     text-align :center;
     margin: 0 5px;
-
     transition: transform 1s;
 }
 #quick_menu .menu_0 {
-    margin-left: 0;
+    margin: 0;
 }
 #quick_menu .menu_3 {
     margin-right: 0;
@@ -192,31 +190,36 @@ header.on .open_menu_btn span {
     margin: 0 auto;
 }
 #quick_menu .after .menu p {
-    margin-top: 10px;
+    position: absolute;
+    width: 100%;
+    left: 50%; bottom: 14px;
+    transform: translateX(-50%);
     font-weight: 600;
     color: #333333;
 }
+
 #quick_menu .after .menu_1 span {
     width: 33px;
     height: 32px;
     background: url(../img/icon/qm_icon_1.png) no-repeat center/contain;
     background-size: 32px 33px;
-    margin: 12px auto 0;
+    margin: 13px auto 0;
 }
 #quick_menu .after .menu_2 span {
     width: 39px;
     height: 29px;
     background: url(../img/icon/qm_icon_2.png) no-repeat center/contain;
     background-size: 39px 29px;
-    margin: 17px auto 0;
+    margin: 15px auto 0;
 }
 #quick_menu .after .menu_3 span {
     width: 40px;
     height: 34px;
     background: url(../img/icon/qm_icon_3.png) no-repeat center/contain;
     background-size: 40px 34px;
-    margin: 12px auto 0;
+    margin: 10px auto 0;
 }
+
 #quick_menu.on .after i {
     display: block;
     float: left;
@@ -225,7 +228,6 @@ header.on .open_menu_btn span {
     margin-top: 12px;
     background-color: #eeeeee;
 }
-
 
 #quick_menu.on {
     background-color: rgba(255, 255, 255, 1);
@@ -247,8 +249,6 @@ header.on .open_menu_btn span {
 #quick_menu.on .menu_0 {
     float: left;
 }
-
-
 
 /* main_banner 375 */
 main {
@@ -349,8 +349,34 @@ main {
     background-image: url(../img/btn/play_btn.png);
 }
 
-/* winged_copy 375 */
+/* winged_video 375 */
+.winged_video {
+    width: 100%;
+    height: 257.625px;
+    padding-top: 20px;
+}
+.winged_video > h2 {
+    color: #fff;
+    width: 330px;
+    line-height: 22px;
+    margin: 0 auto 10px;
+    font-weight: bold;
+}
+.video_wrap {
+    position: relative;
+    margin: 0 auto;
+    width: 330px;
+    height: 185.625px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, .1);
+}
+.video_wrap iframe {
+    position: absolute;
+    width: calc(100% - 10px); height: calc(100% - 10px);
+    top: 5px; left: 5px;
+}
 
+/* winged_copy 375 */
 #winged_copy {
     position: relative;
     display: block;
@@ -1178,7 +1204,6 @@ footer {}
     }
 
     /* winged_copy 768 */
-
     #winged_copy {
         padding-top: 80px;
         padding-bottom: 107px;
@@ -1985,10 +2010,6 @@ footer {}
     header:hover nav ul li:first-of-type a {
         background-image: url(../img/icon/youtube_color.png);
     }
-
-    header.on .header_inner > a {
-
-    }
     header.on nav ul {
         margin-top: -3px;
     }
@@ -1998,6 +2019,61 @@ footer {}
     }
     header.on .for_add_margin_top {
         margin-top: 4px;
+    }
+
+    /* quick_menu 1280 ~ 1920 */
+    #quick_menu {
+        width: 120px; height: 120px;
+        border-radius: 20px 0 0 20px;
+    }
+    #quick_menu .menu {
+        width: 120px;
+        height: 120px;
+        text-align : center;
+        margin: 0 10px;
+        transition: transform 1s;
+    }
+    #quick_menu .menu p {
+        font-size: 1.5rem;
+        line-height: 22px;
+    }
+
+    #quick_menu .menu_0 {
+        margin: 0 10px 0 0;
+    }
+    #quick_menu .menu_0 span {
+        width: 96px;
+        height: 43px;
+        margin: 23px auto 10px;
+    }
+    #quick_menu .after .menu p {
+        bottom: 14px;
+    }
+    #quick_menu .after .menu_1 span {
+        width: 50px;
+        height: 52px;
+        background-size: 50px 52px;
+        margin: 17px auto 0;
+    }
+    #quick_menu .after .menu_2 span {
+        width: 61px;
+        height: 45px;
+        background-size: 61px 45px;
+        margin: 24px auto 0;
+    }
+    #quick_menu .after .menu_3 span {
+        width: 60px;
+        height: 53px;
+        background-size: 60px 53px;
+        margin: 16px auto 0;
+    }
+
+    #quick_menu.on {
+        width: 553px;
+    }
+    #quick_menu.on .after i {
+        height: 60px;
+        margin-top: 30px;
     }
 
     /* main_banner 1280 */
@@ -2017,7 +2093,7 @@ footer {}
         line-height: 25px;
     }
     
-    /* winged_copy 375 */
+    /* winged_copy 1280 */
     #winged_copy {
         padding-top: 100px;
         padding-bottom: 120px;
