@@ -342,7 +342,6 @@ main {
     width: 44px;
     height: 24px;
     background: url(../img/btn/pause_btn.png) no-repeat center/contain;
-
     cursor: pointer;
 }
 .play_n_pause_btn.pause {
@@ -350,29 +349,58 @@ main {
 }
 
 /* winged_video 375 */
+#winged_videos {
+    width: 100%;
+    background-color: #00000c;
+}
+.videos_wrap {
+    width: 330px;
+    padding: 60px 0;
+    margin: 0 auto;
+}
+.videos_wrap h2 {
+    text-indent: -9999px;
+    overflow: hidden;
+    width: 160px;
+    height: 72px;
+    background: url(../img/logo/winged_white.png) no-repeat center/contain;
+    background-size: 160px 72px;
+    margin: 0 auto 10px;
+}
+.videos_wrap > p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, .8);
+    text-align: center;
+}
+.video_tag {
+    width: 100%;
+    height: 10px;
+    margin-bottom: 50px;
+}
 .winged_video {
     width: 100%;
-    height: 257.625px;
-    padding-top: 20px;
+    text-align: center;
 }
-.winged_video > h2 {
+.winged_video > h3 {
+    font-size: 1.2rem;
+    font-weight: 500;
     color: #fff;
-    width: 330px;
-    line-height: 22px;
-    margin: 0 auto 10px;
-    font-weight: bold;
+    text-align: left;
+    padding-left: 5px;
+    margin-bottom: 5px;
 }
 .video_wrap {
     position: relative;
-    margin: 0 auto;
-    width: 330px;
+    width: 100%;
     height: 185.625px;
-    text-align: center;
-    border: 1px solid rgba(255, 255, 255, .1);
+    background-color: #000;
+    border: 1px solid rgba(255, 255, 255, .05);
 }
 .video_wrap iframe {
     position: absolute;
-    width: calc(100% - 10px); height: calc(100% - 10px);
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
     top: 5px; left: 5px;
 }
 
@@ -1507,6 +1535,36 @@ footer {}
         margin-top: 45px;
     }
 
+    /* winged_video 768 */
+    .videos_wrap {
+        width: 676px;
+        padding: 80px 0;
+    }
+    .videos_wrap h2 {
+        width: 160px;
+        height: 72px;
+        background-size: 160px 72px;
+        margin: 0 auto 20px;
+    }
+    .videos_wrap > p {
+        font-size: 1.7rem;
+        line-height: 25px;
+    }
+    .video_tag {
+        width: 100%;
+        height: 10px;
+        margin-bottom: 50px;
+    }
+    .winged_video > h3 {
+        font-size: 1.4rem;
+        padding-left: 5px;
+        margin-bottom: 10px;
+    }
+    .video_wrap {
+        width: 100%;
+        height: 380.25px;
+    }
+
     /* partners 768 */
     .partners_wrap {
         width: 100%;
@@ -1808,6 +1866,34 @@ footer {}
         width: 90px;
         height: 90px;
         background-size: 90px 90px;
+    }
+
+    /* winged_video 1024 */
+    .videos_wrap {
+        width: 768px;
+        padding: 80px 0;
+    }
+    .videos_wrap h2 {
+        width: 242px;
+        height: 109px;
+        background-size: 242px 109px;
+        margin: 0 auto 20px;
+    }
+    .videos_wrap > p {
+        font-size: 1.7rem;
+        line-height: 25px;
+    }
+    .video_tag {
+        width: 100%;
+        height: 10px;
+        margin-bottom: 90px;
+    }
+    .winged_video > h3 {
+        font-size: 1.5rem;
+    }
+    .video_wrap {
+        width: 100%;
+        height: 432px;
     }
 
     /* partners 1024 */
@@ -2317,6 +2403,35 @@ footer {}
         margin: 40px 0 0 269px;
     }
 
+    /* winged_video 1280 */
+    .videos_wrap {
+        width: 1024px;
+        padding: 80px 0;
+    }
+    .videos_wrap > p {
+        margin-bottom: 80px;
+    }
+    .video_tag {
+        display: none;
+    }
+    .winged_video {
+        float: left;
+        width: 492px;
+        height: 294.75px;
+        margin-bottom: 0px;
+    }
+    .winged_video.intro {
+        margin-right: 40px;
+    }
+    .winged_video > h3 {
+        font-size: 1.5rem;
+        line-height: 22px;
+    }
+    .video_wrap {
+        width: 492px;
+        height: 267.75px;
+    }
+
     /* partners 1280 */
     .partners_wrap {
         width: 100%;
@@ -2607,6 +2722,32 @@ footer {}
         height: 289px;
         left: auto;
         margin: 73px 0 0 281px;
+    }
+
+    /* winged_video 1920 */
+    .videos_wrap {
+        width: 1280px;
+        padding: 100px 0;
+    }
+    .videos_wrap > p {
+        margin-bottom: 80px;
+    }
+    .winged_video {
+        float: left;
+        width: 610px;
+        height: 370.125px;
+        margin-bottom: 0px;
+    }
+    .winged_video.intro {
+        margin-right: 60px;
+    }
+    .winged_video > h3 {
+        font-size: 1.5rem;
+        line-height: 22px;
+    }
+    .video_wrap {
+        width: 610px;
+        height: 343.125px;
     }
 
     /* partners 1920 */

@@ -2,6 +2,7 @@
 
 ## 고려 사항
   * [partners] 기업 목록 계열사별 노출 여부
+  * GS 인증 마크 추가
 
 ## 고도화 목록
   * [header]
@@ -28,6 +29,7 @@
   * FEAT_240214
     * href="#id" 부드럽게 이동하기 
     * Quick Menu 구현 (mobile, desktop)
+    * winged_video 구현 (1920, 1280, 1024, 768, 375)
 
   * FEAT_240213
     * contact 고도화
