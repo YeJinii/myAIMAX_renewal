@@ -38,7 +38,7 @@
         let check = true;
         let check_2 = true;
         let check_3 = true;
-        $(document).ready(function(){
+        $(document).ready(function(){ 
 
             // header hover event -> white mode on
             $('header').hover(function(){
@@ -55,7 +55,7 @@
                 if(quick_menu_btn){
                     
                     $('#quick_menu').addClass('on');
-                    $('#quick_menu .menu_0 p').text('Quick 메뉴 닫기');
+                    $('#quick_menu .menu_0 p').text('닫기');
                     quick_menu_btn = false;
 
                 } else {
@@ -363,7 +363,7 @@
     <div id="wrap">
         <header>
             <div class="header_inner">
-                <a href="https://yejindin.mycafe24.com/aimax"></a>
+                <a href="#main_banner"></a>
                 <button class="open_menu_btn mobile">
                     <span>메뉴열기</span>
                     <span></span>

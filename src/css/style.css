@@ -27,6 +27,9 @@
 .phone { display: block; }
 .not_phone { display: none; }
 
+html {
+    scroll-behavior: smooth;
+}
 html, body {
     background-color: #000;
     overflow-x: hidden;
