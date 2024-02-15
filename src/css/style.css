@@ -114,7 +114,6 @@ header .open_menu_btn span:nth-child(3).trans {
         background-color: #ffffff;
         border-bottom: none;
         box-shadow: 0 2px 4px -4px rgba(0, 0, 0, 1);
-    
     }
     header:hover .header_inner > a {
         background-image: url(../img/logo/aimax_header_color.png);
@@ -126,7 +125,6 @@ header .open_menu_btn span:nth-child(3).trans {
         background-color: #333333;
     }
 }
-
 
 header.on {
     height: 60px;
@@ -383,6 +381,7 @@ main {
     font-weight: bold;
     line-height: 26px;
     margin-bottom: 20px;
+    opacity: 0;
 }
 .slide .content_wrap span {
     display: block;
@@ -390,13 +389,27 @@ main {
     line-height: 20px;
     margin-bottom: 15px;
     font-weight: 400;
+    opacity: 0;
 }
 .slide .content_wrap p {
     font-size: 1.2rem;
     line-height: 18px;
     font-weight: 400;
     margin-bottom: 20px;
-    opacity: .8;
+    opacity: 0;
+    color: rgba(255, 255, 255, .8);
+}
+
+.slide.slick-active .content_wrap h2 {
+    animation: fadein 1s ease-in-out forwards;
+}
+.slide.slick-active .content_wrap span {
+    animation: fadein 1s ease-in-out forwards;
+    animation-delay: 1s;
+}
+.slide.slick-active .content_wrap p {
+    animation: fadein 1s ease-in-out forwards;
+    animation-delay: 2s;
 }
 
 .slick-dots {
@@ -587,6 +600,8 @@ span.green {
 
     text-indent: -9999px;
     overflow: hidden;
+
+    transition: transform .5s;
 }
 .winged_img_1 {
     display: block;
@@ -2376,6 +2391,7 @@ footer {}
     .scroll_down_btn:hover {
         opacity: 1;
     }
+
 
     /* service 1280 */
     #service {
