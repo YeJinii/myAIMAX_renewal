@@ -149,7 +149,7 @@
 
             const $counters = $('.count_num');
             const $chars = $('.span_2');
-            const $highlight = $('.hl_box');
+            const $highlight = $('tbody');
             const $winged_txt = $('.winged_img');
 
             const exposurePercentage = 100;
@@ -261,7 +261,7 @@
                 
                 });
 
-                // performance highlight_box
+                // performance highlight_circle
                 $highlight.each(function() {
 
                     const $el = $(this);
@@ -271,10 +271,13 @@
                     const contentHeight = rect.bottom - rect.top;
                             
                     if (rect.top <= winHeight - (contentHeight * exposurePercentage / 100) && rect.bottom >= (contentHeight * exposurePercentage / 100)) {
-                        $('.hl_box').delay(1000).addClass('on');
-                    }
-                    if (loop && (rect.bottom <= 0 || rect.top >= window.innerHeight)) {
-                        $('.hl_box').removeClass('on');
+                        $('.winged_yes_1').addClass('on');
+                        $('.winged_yes_2').addClass('on');
+                        $('.winged_yes_3').addClass('on');
+                        $('.winged_yes_4').addClass('on');
+                        $('.winged_yes_5').addClass('on');
+                        $('.winged_yes_6').addClass('on');
+                        $('.winged_yes_7').addClass('on');
                     }
 
                 });
@@ -409,6 +412,9 @@
                             <a href="#partners">Partners</a>
                         </li>
                         <li>
+                            <a href="#winged_intro">Winged Video</a>
+                        </li>
+                        <li>
                             <a href="#performance">Performance</a>
                         </li>
                         <li>
@@ -468,6 +474,7 @@
                         </div> <!-- e: content_wrap -->
                     </div>
                 </div>
+                <a href="#winged_copy" class="scroll_down_btn desktop"></a>
             </div> <!-- e: main_banner -->
             <div id="winged_copy">
                 <div class="marquee">
@@ -501,7 +508,6 @@
                         <p>일시적 과부하 / 예산부족</p>
                     </div>
                     <div>
-                        
                         <div class="p_icon_wrap right">
                             <span class="icon icon_f icon_2"></span>
                             <span class="icon icon_b icon_2"></span>
@@ -658,7 +664,9 @@
                                     <th scope="col">A</th>
                                     <th scope="col">B</th>
                                     <th scope="col">C</th>
-                                    <th scope="col" style="background-color: #fff;">WINGed</th>
+                                    <th scope="col" style="background-color: #fff;">
+                                        <span class="winged_logo">Winged</span>
+                                    </th>
                                 </tr>
                             </thread>
         
@@ -668,49 +676,49 @@
                                     <td><span class="yes">O</span></td>
                                     <td></td>
                                     <td></td>
-                                    <td><span class="yes winged_yes">O</span></td>
+                                    <td style="background-color: rgba(250, 250, 250, 0.2);"><span class="yes winged_yes winged_yes_1">O</span></td>
                                 </tr>
                                 <tr class="tr_child">
                                     <th scope="row" class="text_align_left check_list">AP서버, DB서버 동시처리</th>
                                     <td><span class="yes">O</span></td>
                                     <td><span class="yes">O</span></td>
                                     <td></td>
-                                    <td><span class="yes winged_yes">O</span></td>
+                                    <td style="background-color: rgba(250, 250, 250, 0.2);"><span class="yes winged_yes winged_yes_2">O</span></td>
                                 </tr>
                                 <tr class="tr_child">
                                     <th scope="row" class="text_align_left check_list">IN-MEMORY 방식</th>
                                     <td></td>
                                     <td><span class="yes">O</span></td>
                                     <td><span class="yes">O</span></td>
-                                    <td><span class="yes winged_yes">O</span></td>
+                                    <td style="background-color: rgba(250, 250, 250, 0.2);"><span class="yes winged_yes winged_yes_3">O</span></td>
                                 </tr>
                                 <tr class="tr_child">
                                     <th scope="row" class="text_align_left check_list">설치시 시스템 무중단<span class="desktop" style="display: inline;"> (장애발생 영향)</span></th>
                                     <td></td>
                                     <td></td>
                                     <td></td>
-                                    <td><span class="yes winged_yes">O</span></td>
+                                    <td style="background-color: rgba(250, 250, 250, 0.2);"><span class="yes winged_yes winged_yes_4">O</span></td>
                                 </tr>
                                 <tr class="tr_child">
                                     <th scope="row" class="text_align_left check_list">장비증설 없음</th>
                                     <td><span class="yes">O</span></td>
                                     <td></td>
                                     <td></td>
-                                    <td><span class="yes winged_yes">O</span></td>
+                                    <td style="background-color: rgba(250, 250, 250, 0.2);"><span class="yes winged_yes winged_yes_5">O</span></td>
                                 </tr>
                                 <tr class="tr_child">
                                     <th scope="row" class="text_align_left check_list">인공지능 플랫폼 적용</th>
                                     <td></td>
                                     <td></td>
                                     <td></td>
-                                    <td><span class="yes winged_yes">O</span></td>
+                                    <td style="background-color: rgba(255, 255, 255, 0.2);"><span class="yes winged_yes winged_yes_6">O</span></td>
                                 </tr>
                                 <tr class="tr_child">
                                     <th scope="row" class="text_align_left check_list">SOURCE 수정없는 매니지먼트</th>
                                     <td><span class="yes">O</span></td>
                                     <td></td>
                                     <td></td>
-                                    <td><span class="yes winged_yes">O</span></td>
+                                    <td style="background-color: rgba(255, 255, 255, 0.2);"><span class="yes winged_yes winged_yes_7">O</span></td>
                                 </tr>
                             </tbody>
                         </table>

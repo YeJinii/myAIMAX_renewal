@@ -379,7 +379,7 @@ main {
     color: #ffffff;
 }
 .slide .content_wrap h2 {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     font-weight: bold;
     line-height: 26px;
     margin-bottom: 20px;
@@ -882,10 +882,19 @@ caption {
 tr {
     height: 18px !important;
 }
-th {}
 .tr_parent {
     height: 30px !important;
     background-color: #f2f2f2;
+}
+.tr_parent .winged_logo {
+    display: block;
+    text-indent: -9999px;
+    overflow: hidden;
+    width: 40px;
+    height: 20px;
+    margin: 0 auto;
+    background: url(../img/logo/winged.png) no-repeat center/contain;
+    background-size: 40px 20px;
 }
 .tr_child {
     height: 18px;
@@ -906,8 +915,53 @@ span.yes {
     overflow: hidden;
 }
 span.winged_yes {
-    background-color: #1E888A;
+    background-color: #fefefe;
 }
+
+.winged_yes_1 {
+    transition: background-color .3s;
+}
+.winged_yes_2 {
+    transition: background-color .3s .3s;
+}
+.winged_yes_3 {
+    transition: background-color .3s .6s;
+}
+.winged_yes_4 {
+    transition: background-color .3s .9s;
+}
+.winged_yes_5 {
+    transition: background-color .3s 1.2s;
+}
+.winged_yes_6 {
+    transition: background-color .3s 1.5s;
+}
+.winged_yes_7 {
+    transition: background-color .3s 1.8s;
+}
+
+.winged_yes_1.on {
+    background-color: red;
+}
+.winged_yes_2.on {
+    background-color: red;
+}
+.winged_yes_3.on {
+    background-color: red;
+}
+.winged_yes_4.on {
+    background-color: red;
+}
+.winged_yes_5.on {
+    background-color: red;
+}
+.winged_yes_6.on {
+    background-color: red;
+}
+.winged_yes_7.on {
+    background-color: red;
+}
+
 .check_list {
     font-size: 0.8rem;
     font-weight: medium;
@@ -2246,6 +2300,9 @@ footer {}
     }
 
     /* main_banner 1280 */
+    #main_banner {
+        position: relative;
+    }
     .content_wrap {
         width: 92.188%; /* 1188 / 1280 */
     }
@@ -2298,6 +2355,26 @@ footer {}
     .txt_wrap p {
         font-size: 2rem;
         line-height: 30px;
+    }
+
+    .scroll_down_btn {
+        display: block;
+        position: absolute;
+        bottom: 10%; left: 50%;
+        transform: translateX(-50%);
+        width: 23.59px;
+        height: 50px;
+        cursor: pointer;
+
+        background: url(../img/icon/scroll_down.png) no-repeat center/contain;
+
+        opacity: .3;
+
+        translate: all .3s;
+    }
+
+    .scroll_down_btn:hover {
+        opacity: 1;
     }
 
     /* service 1280 */
@@ -2469,6 +2546,11 @@ footer {}
     .tr_parent {
         height: 35px !important;
         background-color: #f2f2f2;
+    }
+    .tr_parent .winged_logo {
+        width: 56px;
+        height: 25px;
+        background-size: 56px 25px;
     }
     .tr_child {
         height: 30px;
