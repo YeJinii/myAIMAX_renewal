@@ -42,11 +42,49 @@
 
             // header hover event -> white mode on
             $('header').hover(function(){
-                // when mouse over
-                $('header').removeClass('on');
+                if(open_menu_btn) {
+                    // when mouse over
+                    $('header').removeClass('on');
+                }
             },function(){
                 // when mouse out
                 $('header').addClass('on');
+            });
+
+            // menu btn
+            let open_menu_btn = true;
+            $('.open_menu_btn').click(function(){
+                if(open_menu_btn){
+
+                    $('#menu').addClass('on');
+                    $('header').addClass('on');
+
+                    $('.open_menu_btn span:nth-child(1), .open_menu_btn span:nth-child(2), .open_menu_btn span:nth-child(3)').addClass('trans');
+                    
+                    open_menu_btn = false;
+
+                } else {
+
+                    $('#menu').removeClass('on');
+                    //$('header').removeClass('on');
+
+                    $('.open_menu_btn span:nth-child(1), .open_menu_btn span:nth-child(2), .open_menu_btn span:nth-child(3)').removeClass('trans');
+                    
+                    open_menu_btn = true;
+
+                }
+            });
+
+            // when menu list click -> move to target section
+            $('.menu_btn').click(function(){
+                $('#menu').removeClass('on');
+
+                if($(window).scrollTop() == 0) {
+                    $('header').removeClass('on');
+                }
+
+                $('.open_menu_btn span:nth-child(1), .open_menu_btn span:nth-child(2), .open_menu_btn span:nth-child(3)').removeClass('trans');
+            
             });
 
             // quick menu folding btn
@@ -120,7 +158,9 @@
                 if($(window).scrollTop()){
                     $('header').addClass('on');
                 }else{
-                    $('header').removeClass('on');
+                    if(open_menu_btn){
+                        $('header').removeClass('on');
+                    }
                 }
 
                 // solution
@@ -142,10 +182,7 @@
                         }
                     }
                     if (loop && (rect.bottom <= 0 || rect.top >= window.innerHeight)) {
-                        // $('.winged_img_1').removeClass('on');
-                        // $('.winged_img_2').removeClass('on');
-                        // $('.winged_img_3').removeClass('on');
-                    
+
                     }
                 });
 
@@ -184,26 +221,26 @@
                     if (loop && (rect.bottom <= 0 || rect.top >= window.innerHeight)) {
                         // IF you want "color_on motion" once,
                         // comment out the code below. 
-                        $('span.char:nth-of-type(1)').removeClass('on');
-                        $('span.char:nth-of-type(2)').removeClass('on');
-                        $('span.char:nth-of-type(3)').removeClass('on');
-                        $('span.char:nth-of-type(4)').removeClass('on');
-                        $('span.char:nth-of-type(5)').removeClass('on');
-                        $('span.char:nth-of-type(6)').removeClass('on');
-                        $('span.char:nth-of-type(7)').removeClass('on');
-                        $('span.char:nth-of-type(8)').removeClass('on');
-                        $('span.char:nth-of-type(9)').removeClass('on');
-                        $('span.char:nth-of-type(10)').removeClass('on');
-                        $('span.char:nth-of-type(11)').removeClass('on');
-                        $('span.char:nth-of-type(12)').removeClass('on');
-                        $('span.char:nth-of-type(13)').removeClass('on');
-                        $('span.char:nth-of-type(14)').removeClass('on');
-                        $('span.char:nth-of-type(15)').removeClass('on');
-                        $('span.char:nth-of-type(16)').removeClass('on');
-                        $('span.char:nth-of-type(17)').removeClass('on');
-                        $('span.char:nth-of-type(18)').removeClass('on');
+                        // $('span.char:nth-of-type(1)').removeClass('on');
+                        // $('span.char:nth-of-type(2)').removeClass('on');
+                        // $('span.char:nth-of-type(3)').removeClass('on');
+                        // $('span.char:nth-of-type(4)').removeClass('on');
+                        // $('span.char:nth-of-type(5)').removeClass('on');
+                        // $('span.char:nth-of-type(6)').removeClass('on');
+                        // $('span.char:nth-of-type(7)').removeClass('on');
+                        // $('span.char:nth-of-type(8)').removeClass('on');
+                        // $('span.char:nth-of-type(9)').removeClass('on');
+                        // $('span.char:nth-of-type(10)').removeClass('on');
+                        // $('span.char:nth-of-type(11)').removeClass('on');
+                        // $('span.char:nth-of-type(12)').removeClass('on');
+                        // $('span.char:nth-of-type(13)').removeClass('on');
+                        // $('span.char:nth-of-type(14)').removeClass('on');
+                        // $('span.char:nth-of-type(15)').removeClass('on');
+                        // $('span.char:nth-of-type(16)').removeClass('on');
+                        // $('span.char:nth-of-type(17)').removeClass('on');
+                        // $('span.char:nth-of-type(18)').removeClass('on');
 
-                        check_3 = true;
+                        // check_3 = true;
                         // : end
                     }
                 });
@@ -219,7 +256,7 @@
                     if (rect.top <= winHeight - (contentHeight * exposurePercentage / 100) && rect.bottom >= (contentHeight * exposurePercentage / 100)) {
                         if(check){
                             $({ val : 0 }).animate({ val : 7352 }, {
-                            duration: 1700,
+                            duration: 3000,
                             step: function() {
                                 var num = numberWithCommas(Math.floor(this.val));
                                 $('.count_num').text(num);
@@ -231,7 +268,7 @@
                             });
 
                             $({ val : 0 }).animate({ val : 73 }, {
-                            duration: 1700,
+                            duration: 3000,
                             step: function() {
                                 var num = numberWithCommas(Math.floor(this.val));
                                 $('.count_num2').text(num);
@@ -247,7 +284,7 @@
                     if (loop && (rect.bottom <= 0 || rect.top >= window.innerHeight)) {
                         // IF you want "num_counting motion" once,
                         // comment out the code below. 
-                        check = true;
+                        // check = true;
                         // : end
                     }  
                 
@@ -355,7 +392,6 @@
             return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         }
 
-
     </script>
 </head>
 <body>
@@ -373,19 +409,19 @@
                 <div id="menu" class="mobile">
                     <ul>
                         <li>
-                            <a href="#solution">Solution</a>
+                            <a href="#solution" class="menu_btn">Solution</a>
                         </li>
                         <li>
-                            <a href="#performance">Performance</a>
+                            <a href="#performance" class="menu_btn">Performance</a>
                         </li>
                         <li>
-                            <a href="#winged_intro">Winged Video</a>
+                            <a href="#winged_intro" class="menu_btn">Winged Video</a>
                         </li>
                         <li>
-                            <a href="#partners">Partner</a>
+                            <a href="#partners" class="menu_btn">Partners</a>
                         </li>
                         <li>
-                            <a href="#contact">Contact</a>
+                            <a href="#contact" class="menu_btn">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -399,7 +435,7 @@
                             <a href="#contact">Contact</a>
                         </li>
                         <li>
-                            <a href="#partners">Partner</a>
+                            <a href="#partners">Partners</a>
                         </li>
                         <li>
                             <a href="#performance">Performance</a>
@@ -756,7 +792,7 @@
                     <div class="winged_video test">
                         <h3>WINGed 시연 영상</h3>
                         <div class="video_wrap">
-                            <iframe src="https://www.youtube.com/embed/2ItPjIb_6Lk?si=5odCWPYd8X7t-vMT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                            <iframe src="https://www.youtube.com/embed/OAD9KdDRvdg?si=8FeBEqgYAQ1QpMGf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>
