@@ -6,7 +6,7 @@
 
 ## 고도화 목록
   * [header]
-    * header.on 적용시 text-color #fff로 변경
+    * menu 기능 구현
 
   * [main_banner]
     * 마우스 이모지 추가
@@ -28,6 +28,9 @@
   * 최상위로 이동하는 버튼 구현
 
 ## 커밋 히스토리
+  * FIX_240215
+    * header.on 상황에서 text color -> white로 변경
+
   * FIX_240214
     * Quick Menu [desktop mode]에서 클릭시 태그가 안넘어가는 이슈 해결
 
