@@ -32,6 +32,9 @@
     * 최상위로 이동하는 버튼 구현
 
 ## 커밋 히스토리
+  * REFACTOR_240215
+    * animation 1번만 실행되게 변경
+
   * FIX_240215
     * header.on 상황에서 text color -> white로 변경
 
