@@ -495,7 +495,6 @@ main {
     width: 100%;
     height: 185.625px;
     background-color: #000;
-    border: 1px solid rgba(255, 255, 255, .1);
 }
 .video_wrap iframe {
     position: absolute;
@@ -568,7 +567,7 @@ span.green {
 /* solution 375 */
 #solution {
     width: 100%;
-    background-color: #E5F3F3;
+    background: linear-gradient(180deg, #e5f3f3, #dcebf7 40%, #E5F3F3);
     text-align: center;
     padding: 60px 0;
 }
@@ -1342,6 +1341,10 @@ footer {}
         margin-bottom: 5px;
     }
 
+    .slick-dots {
+        display: block;
+    }
+    
     /* main_banner 768 */
     .content_wrap {
         width: 88.021%; /* 676 / 768 */
@@ -1365,6 +1368,7 @@ footer {}
     }
 
     .slick-dots {
+        display: none;
         bottom: 32%;
     }
 
