@@ -22,6 +22,12 @@
   * 전체적으로 스크롤시 fadein 효과
 
 ## 커밋 히스토리
+  * FEAT_240216
+    * youtube 썸네일 변경
+    * web hosting test
+      * http://ai-max.co.kr/APMAX_Home/apmax_index.html -> legacy
+      * 
+
   * REFACTOR_240215
     * animation 1번만 실행되게 변경
 

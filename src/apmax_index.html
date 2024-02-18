@@ -5,7 +5,7 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no, maximum-scale=1, width=device-width" />
     <meta content="yes" name="apple-mobile-web-app-capable" />  
     <meta content="minimum-scale=1.0, width=device-width, maximum-scale=1, user-scalable=no" name="viewport" />
-    <title>에이아이맥스 | 초연결 사회의 필수품 윙드</title>
+    <title>에이아이맥스(주) | 초연결 사회의 필수품 윙드</title>
 
     <!-- favicon -->
     <link rel="shortcut icon" href="./img/favicon/favicon.ico" type="image/x-icon">
@@ -35,9 +35,10 @@
     <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
 
     <script>
-        let check = true;
+        let check_1 = true;
         let check_2 = true;
         let check_3 = true;
+        let is_mb = true;
         $(document).ready(function(){ 
 
             // header hover event -> white mode on
@@ -46,9 +47,12 @@
                     // when mouse over
                     $('header').removeClass('on');
                 }
+                $('header').addClass('on');
             },function(){
                 // when mouse out
-                $('header').addClass('on');
+                if(is_mb){
+                    $('header').removeClass('on');
+                }
             });
 
             // menu btn
@@ -57,7 +61,8 @@
                 if(open_menu_btn){
 
                     $('#menu').addClass('on');
-                    $('header').addClass('on');
+                    $('header').removeClass('on');
+                    $('header').addClass('menu_on');
 
                     $('.open_menu_btn span:nth-child(1), .open_menu_btn span:nth-child(2), .open_menu_btn span:nth-child(3)').addClass('trans');
                     
@@ -66,7 +71,13 @@
                 } else {
 
                     $('#menu').removeClass('on');
-                    //$('header').removeClass('on');
+                    $('header').removeClass('menu_on');
+                    
+                    if(is_mb){
+                        $('header').removeClass('on');
+                    } else {
+                        $('header').addClass('on');
+                    }
 
                     $('.open_menu_btn span:nth-child(1), .open_menu_btn span:nth-child(2), .open_menu_btn span:nth-child(3)').removeClass('trans');
                     
@@ -78,13 +89,17 @@
             // when menu list click -> move to target section
             $('.menu_btn').click(function(){
                 $('#menu').removeClass('on');
-
-                if($(window).scrollTop() == 0) {
-                    $('header').removeClass('on');
-                }
-
+                
                 $('.open_menu_btn span:nth-child(1), .open_menu_btn span:nth-child(2), .open_menu_btn span:nth-child(3)').removeClass('trans');
             
+                // 애니메이션 실행하기
+                // 기존 것 초기화 하고
+                check_1 = true;
+                check_2 = true;
+                check_3 = true;
+
+                // 애니메이션 적용
+
             });
 
             // quick menu folding btn
@@ -93,13 +108,13 @@
                 if(quick_menu_btn){
                     
                     $('#quick_menu').addClass('on');
-                    $('#quick_menu .menu_0 p').text('닫기');
+                    $('#quick_menu .menu_0 p').text('Close');
                     quick_menu_btn = false;
 
                 } else {
 
                     $('#quick_menu').removeClass('on');
-                    $('#quick_menu .menu_0 p').text('윙드 바로가기');
+                    $('#quick_menu .menu_0 p').text('Quick View');
                     quick_menu_btn = true;
 
                 }
@@ -136,30 +151,25 @@
                 }
             });
 
-            // pager
-            $('.pager span:nth-of-type(1)').click(function(){
-                $('.slider').slick('slickGoTo', 0);
-            });
-            $('.pager span:nth-of-type(2)').click(function(){
-                $('.slider').slick('slickGoTo', 1);
-            });
-            $('.pager span:nth-of-type(3)').click(function(){
-                $('.slider').slick('slickGoTo', 2);
-            });
-
+            const $header = $('#main_banner');
             const $counters = $('.count_num');
             const $chars = $('.span_2');
             const $highlight = $('tbody');
             const $winged_txt = $('.winged_img');
+            const $video_stop = $('#winged_videos');
 
             const exposurePercentage = 100;
             const loop = true;
 
             $(window).on('scroll', function() {
+
                 // header
-                if($(window).scrollTop()){
+                var main_top = $('#winged_copy').offset().top;
+                if($(window).scrollTop() >= main_top - 80){
+                    is_mb = false;
                     $('header').addClass('on');
-                }else{
+                } else {
+                    is_mb = true;
                     if(open_menu_btn){
                         $('header').removeClass('on');
                     }
@@ -176,19 +186,19 @@
                             
                     if (rect.top <= winHeight - (contentHeight * exposurePercentage / 100) && rect.bottom >= (contentHeight * exposurePercentage / 100)) {
                         if(check_2){
-                            $('.winged_img_1').delay(1000).addClass('on');
-                            $('.winged_img_2').delay(1000).addClass('on');
-                            $('.winged_img_3').delay(1000).addClass('on');
+
+                            for(let i = 1; i <= 3; i++){
+                                $('.winged_img_' + i ).delay(1000).addClass('on');
+                            }
                             
-                            check_2=false;
+                            check_2 = false;
+
                         }
                     }
-                    if (loop && (rect.bottom <= 0 || rect.top >= window.innerHeight)) {
 
-                    }
                 });
 
-                // performance EXCELLENT AND STABLE
+                // performance STABLE AND PERFORMANCE
                 $chars.each(function() {
                     const $el = $(this);
             
@@ -198,24 +208,10 @@
                     
                     if (rect.top <= winHeight - (contentHeight * exposurePercentage / 100) && rect.bottom >= (contentHeight * exposurePercentage / 100)) {
                         if(check_3){
-                            $('span.char:nth-of-type(1)').addClass('on');
-                            $('span.char:nth-of-type(2)').addClass('on');
-                            $('span.char:nth-of-type(3)').addClass('on');
-                            $('span.char:nth-of-type(4)').addClass('on');
-                            $('span.char:nth-of-type(5)').addClass('on');
-                            $('span.char:nth-of-type(6)').addClass('on');
-                            $('span.char:nth-of-type(7)').addClass('on');
-                            $('span.char:nth-of-type(8)').addClass('on');
-                            $('span.char:nth-of-type(9)').addClass('on');
-                            $('span.char:nth-of-type(10)').addClass('on');
-                            $('span.char:nth-of-type(11)').addClass('on');
-                            $('span.char:nth-of-type(12)').addClass('on');
-                            $('span.char:nth-of-type(13)').addClass('on');
-                            $('span.char:nth-of-type(14)').addClass('on');
-                            $('span.char:nth-of-type(15)').addClass('on');
-                            $('span.char:nth-of-type(16)').addClass('on');
-                            $('span.char:nth-of-type(17)').addClass('on');
-                            $('span.char:nth-of-type(18)').addClass('on');
+
+                            for (let i = 1; i <= 20; i++) {
+                                $('span.char:nth-of-type(' + i + ')').addClass('on');
+                            }
 
                             check_3 = false;
                         }                       
@@ -231,7 +227,7 @@
                     const contentHeight = rect.bottom - rect.top;
                     
                     if (rect.top <= winHeight - (contentHeight * exposurePercentage / 100) && rect.bottom >= (contentHeight * exposurePercentage / 100)) {
-                        if(check){
+                        if(check_1){
                             $({ val : 0 }).animate({ val : 7352 }, {
                             duration: 3000,
                             step: function() {
@@ -255,7 +251,7 @@
                                 $('.count_num2').text(num);
                             }
                             });
-                            check = false;
+                            check_1 = false;
                         } 
                     }
                 
@@ -271,13 +267,27 @@
                     const contentHeight = rect.bottom - rect.top;
                             
                     if (rect.top <= winHeight - (contentHeight * exposurePercentage / 100) && rect.bottom >= (contentHeight * exposurePercentage / 100)) {
-                        $('.winged_yes_1').addClass('on');
-                        $('.winged_yes_2').addClass('on');
-                        $('.winged_yes_3').addClass('on');
-                        $('.winged_yes_4').addClass('on');
-                        $('.winged_yes_5').addClass('on');
-                        $('.winged_yes_6').addClass('on');
-                        $('.winged_yes_7').addClass('on');
+                       
+                        for(let i = 1; i <= 7; i++) {
+                            $('.winged_yes_'+ i).addClass('on');
+                        }
+
+                    }
+                });
+
+                $video_stop.each(function() {
+
+                    const $el = $(this);
+
+                    const rect = $el[0].getBoundingClientRect();
+                    const winHeight = window.innerHeight;
+                    const contentHeight = rect.bottom - rect.top;
+                            
+                    if (rect.top <= winHeight - (contentHeight * exposurePercentage / 100) && rect.bottom >= (contentHeight * exposurePercentage / 100)) {
+                        
+                    }
+                    if (loop && (rect.bottom <= 0 || rect.top >= window.innerHeight)) {
+                        $('iframe')[1].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
                     }
 
                 });
@@ -379,7 +389,7 @@
                     <span></span>
                 </button>
                 
-                <button class="youtube_btn mobile" type="button" onclick="window.open('https://www.youtube.com/@aimax_winged')">에이아이맥스 유튜브 바로가기</button>
+                <button class="youtube_btn mobile" type="button" onclick="window.open('https://www.youtube.com/@aimax_winged')">에이아이맥스(주) 유튜브 바로가기</button>
                 <div id="menu" class="mobile">
                     <ul>
                         <li>
@@ -389,7 +399,7 @@
                             <a href="#performance" class="menu_btn">Performance</a>
                         </li>
                         <li>
-                            <a href="#winged_intro" class="menu_btn">Winged Video</a>
+                            <a href="#winged_intro" class="menu_btn">Quick View</a>
                         </li>
                         <li>
                             <a href="#partners" class="menu_btn">Partners</a>
@@ -412,7 +422,7 @@
                             <a href="#partners">Partners</a>
                         </li>
                         <li>
-                            <a href="#winged_intro">Winged Video</a>
+                            <a href="#winged_intro">Quick View</a>
                         </li>
                         <li>
                             <a href="#performance">Performance</a>
@@ -428,7 +438,7 @@
         <div id="quick_menu" class="clear">
             <span class="menu menu_0">
                 <span></span>
-                <p>윙드 바로가기</p>
+                <p>Quick View</p>
             </span>
             <div class="after">
                 <i></i>
@@ -442,7 +452,7 @@
                     <p>윙드 시연 영상</p>
                 </a>
                 <i></i>
-                <a href="./doc/Winged_pdf.pdf" class="menu menu_3" download="WINGed 제품 소개서_2024">
+                <a href="./doc/Winged_pdf.pdf" class="menu menu_3" download="'윙드' 제품 소개서_2024">
                     <span></span>
                     <p>자료 다운로드</p>
                 </a>
@@ -453,14 +463,14 @@
                 <div class="slider mb_height" >
                     <div class="slide banner_1 mb_height" >
                         <div class="content_wrap">
-                            <h2>초연결 시대 새로운 재앙 “디지털 블랙아웃”</h2>
-                            <span>‘윙드’는 초과도 연결하여 우리의 일상을 지켜줍니다.</span>
-                            <p>에이아이맥스는 ‘윙드’ 솔루션을 통해</br>보다 안정적이고 압도적인 퍼포먼스를 발휘할 수 있는</br>효율적인 해결방안을 제시합니다.</p>
+                            <h2>초연결 시대 새로운 재앙 '디지털 블랙아웃'</h2>
+                            <span>‘윙드’는 트래픽 초과도 연결하여 우리의 일상을 지켜줍니다.</span>
+                            <p>에이아이맥스(주)는 인공지능 과부하 방지 시스템 ‘윙드’를 통해</br>보다 안정적이고 압도적인 퍼포먼스를 발휘할 수 있는</br>효율적인 해결방안을 제시합니다.</p>
                         </div> <!-- e: content_wrap -->
                     </div> <!-- e: slide banner_1 -->
                     <div class="slide banner_2 mb_height" >
                         <div class="content_wrap">
-                            <h2>“과부하” 사고는 순간입니다.</h2>
+                            <h2>'과부하' 사고는 순간입니다.</h2>
                             <span>서비스가 증가하면 장애도 증가합니다.</span>
                             <p class="mobile">서비스의 성장은 데이터의 증가, 다양한 서비스와 기능 확대,<br>일시적 동시접속의 증가 등 시스템의 성능문제를 가져옵니다.<br>이는 서비스의 응답속도 저하, 장애 발생 등으로<br>민원 발생 및 시스템 신뢰 하락으로 이어집니다.</p>
                             <p class="desktop">서비스의 성장은 데이터의 증가, 다양한 서비스와 기능 확대, 일시적 동시접속의 증가 등 시스템의 성능문제를 가져옵니다.<br>이는 서비스의 응답속도 저하, 장애 발생 등으로 민원 발생 및 시스템 신뢰 하락으로 이어집니다.</p>
@@ -469,8 +479,8 @@
                     <div class="slide banner_3 mb_height" >
                         <div class="content_wrap">
                             <h2>평균 20배 ~ 100배 과부하 해소</h2>
-                            <span>동적캐싱과 인공지능의 만남,<br>최고 미래기술 WINGed가 해결해드립니다.</span>
-                            <p>세계적인 과부하방지 시스템을 위하여<br>에이아이맥스는 세상으로 한 발짝 나아가도록 하겠습니다. </p>
+                            <span>동적캐싱과 인공지능의 만남,<br>최고 미래기술 '윙드'가 해결해드립니다.</span>
+                            <p>세계적인 인공지능 과부하방지 시스템을 위하여<br>에이아이맥스(주)는 세상으로 한 발짝 나아가도록 하겠습니다. </p>
                         </div> <!-- e: content_wrap -->
                     </div>
                 </div>
@@ -484,14 +494,14 @@
                     </div>
                 </div>
                 <div class="txt_wrap">
-                    <h2>백신, 방화벽 같은 IT 인프라의 필수품 “윙드”</h2>
-                    <p class="desktop"><span class="bold">윙드(WINGed)</span> 는 예기치 못한 이벤트로 인하여 동시 사용자가 급속하게 폭주해도 원활한 접속과 일관된 응답시간을 보장(유지)합니다.<br><span class="bold">윙드(WINGed)</span> 는 <span class="bold green">시스템 부하를 초래하는 어떠한 상황에서도</span><span class="bold green"> CPU 및 메모리 사용률을 안정적으로 유지</span>해주는 솔루션입니다.</p>
-                    <p class="mobile"><span class="bold">윙드(WINGed)</span> 는 예기치 못한 이벤트로 인하여<br class="phone"> 동시 사용자가 급속하게 폭주해도<br>원활한 접속과 일관된 응답시간을 보장(유지)합니다.<br><span class="bold">윙드(WINGed)</span> 는 <span class="bold green">시스템 부하를 초래하는 어떠한 상황에서도</span><br><span class="bold green">CPU 및 메모리 사용률을 안정적으로 유지</span>해주는 솔루션입니다.</p>
+                    <h2>'백신', '방화벽' 같은 IT 인프라의 필수품 '윙드'</h2>
+                    <p class="desktop">'윙드' 는 예기치 못한 이벤트로 인하여 동시 사용자가 폭주해도 원활한 접속과 일관된 응답시간을 보장합니다.<br>'윙드' 는 <span class="green">시스템 부하를 초래하는 어떠한 상황에서도</span><span class="green"> CPU 및 메모리 사용률을 안정적으로 유지</span>해주는 인공지능 과부하방지 시스템입니다.</p>
+                    <p class="mobile">'윙드' 는 예기치 못한 이벤트로 인하여<br class="phone"> 동시 사용자가 폭주해도<br>원활한 접속과 일관된 응답시간을 보장합니다.<br>'윙드'</span> 는 <span class="green">시스템 부하를 초래하는 어떠한 상황에서도</span><br><span class="green">CPU 및 메모리 사용률을 안정적으로 유지</span>해주는 인공지능 과부하방지 시스템입니다.</p>
                 </div>
             </div> <!-- e: winged_copy -->
             <div id="solution">
                 <h2>Solution</h2>
-                <p>인공지능 과부하방지 솔루션 "윙드"</p>
+                <p>인공지능 과부하방지 시스템 '윙드'</p>
                 <span class="winged_illustration">
                     <span class="winged_img winged_img_1">언제 어디서든지 대용량의 데이터를 손실 없이 빠르게!</span>
                     <span class="winged_img winged_img_2">WINGed Agent</span>
@@ -561,17 +571,16 @@
                 </div>
             </div> <!-- e: service -->
             <div id="performance">
-                <h2>Absolute Performance</h2>
-                <span class="span_1">WINGed 퍼포먼스 데이터 현장검증!</span>
+                <span class="span_1">'윙드' 퍼포먼스 데이터 현장검증!</span>
                 <span class="span_2">
-                    <span class="char">E</span><span class="char">X</span><span class="char">C</span><span class="char">E</span><span class="char">L</span><span class="char">L</span><span class="char">E</span><span class="char">N</span><span class="char">T</span>
-                    <span class="char">A</span><span class="char">N</span><span class="char">D</span>
                     <span class="char">S</span><span class="char">T</span><span class="char">A</span><span class="char">B</span><span class="char">L</span><span class="char">E</span>
+                    <span class="char">A</span><span class="char">N</span><span class="char">D</span>
+                    <span class="char">P</span><span class="char">E</span><span class="char">R</span><span class="char">F</span><span class="char">O</span><span class="char">R</span><span class="char">M</span><span class="char">A</span><span class="char">N</span><span class="char">C</span><span class="char">E</span>
                 </span>
 
                 <h3 class="mobile">PERFORMANCE RATE</h3>
-                <p class="mobile phone">세계적인 과부하방지시스템을 위하여<br>세상으로 한 발짝 나아가도록 하겠습니다.</p>
-                <p class="mobile not_phone">세계적인 과부하방지시스템을 위하여 세상으로 한 발짝 나아가도록 하겠습니다.</p>
+                <p class="mobile phone">세계적인 과부하방지 시스템을 위하여<br>세상으로 한 발짝 나아가도록 하겠습니다.</p>
+                <p class="mobile not_phone">세계적인 과부하방지 시스템을 위하여 세상으로<br>한 발짝 나아가도록 하겠습니다.</p>
                 <div class="rates_wrap mobile">
                     <div class="rate rate_1">
                         <div class="rate_wrap clear">
@@ -610,7 +619,7 @@
                 <div class="pm_wrap">
                     <div class="pm_left desktop">
                         <h3 class="desktop">PERFORMANCE RATE</h3>
-                        <p class="desktop">세계적인 과부하방지시스템을 위하여 세상으로 한 발짝 나아가도록 하겠습니다.</p>
+                        <p class="desktop">세계적인 과부하방지시스템을 위하여 세상으로<br>한 발짝 나아가도록 하겠습니다.</p>
                         <div class="rates_wrap desktop">
                             <div class="rate rate_1">
                                 <div class="rate_wrap clear">
@@ -693,7 +702,7 @@
                                     <td style="background-color: rgba(250, 250, 250, 0.2);"><span class="yes winged_yes winged_yes_3">O</span></td>
                                 </tr>
                                 <tr class="tr_child">
-                                    <th scope="row" class="text_align_left check_list">설치시 시스템 무중단<span class="desktop" style="display: inline;"> (장애발생 영향)</span></th>
+                                    <th scope="row" class="text_align_left check_list">설치시 시스템 무중단</th>
                                     <td></td>
                                     <td></td>
                                     <td></td>
@@ -714,7 +723,7 @@
                                     <td style="background-color: rgba(255, 255, 255, 0.2);"><span class="yes winged_yes winged_yes_6">O</span></td>
                                 </tr>
                                 <tr class="tr_child">
-                                    <th scope="row" class="text_align_left check_list">SOURCE 수정없는 매니지먼트</th>
+                                    <th scope="row" class="text_align_left check_list">손쉬운 매니지먼트 기능</th>
                                     <td><span class="yes">O</span></td>
                                     <td></td>
                                     <td></td>
@@ -729,19 +738,19 @@
             <div id="winged_videos">
                 <div class="videos_wrap clear">
                     <h2>WINGed</h2>
-                    <p>유비쿼터스 시대를 리드하는 에이아이맥스</p>
+                    <p>초연결 시대를 리드하는 에이아이맥스(주)</p>
                     <div id="winged_intro" class="video_tag"></div>
                     <div class="winged_video intro">
-                        <h3>WINGed 소개 영상</h3>
+                        <h3>'윙드' 소개 영상</h3>
                         <div class="video_wrap">
-                            <iframe src="https://www.youtube.com/embed/axRh-ZJJ-7s?si=ohympVyqWJcUeicd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                            <iframe src="https://www.youtube.com/embed/axRh-ZJJ-7s?si=ohympVyqWJcUeicd?enablejsapi=1&version=3&playerapiid=ytplayer" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         </div>
                     </div>
                     <div id="winged_test" class="video_tag"></div>
                     <div class="winged_video test">
-                        <h3>WINGed 시연 영상</h3>
+                        <h3>'윙드' 시연 영상</h3>
                         <div class="video_wrap">
-                            <iframe src="https://www.youtube.com/embed/OAD9KdDRvdg?si=8FeBEqgYAQ1QpMGf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                            <iframe src="https://www.youtube.com/embed/OAD9KdDRvdg?si=8FeBEqgYAQ1QpMGf?enablejsapi=1&version=3&playerapiid=ytplayer" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>
@@ -749,8 +758,8 @@
             <div id="partners">
                 <div class="partners_wrap">
                     <h2>Partners</h2>
-                    <p class="phone">에이아이맥스(주)는<br>고객의 만족과 기업의 퀄리티를 중시합니다.</p>
-                    <p class="not_phone">에이아이맥스(주)는 고객의 만족과 기업의 퀄리티를 중시합니다.</p>
+                    <p class="phone">에이아이맥스(주)는<br>고객 시스템의 중단 없는 서비스를 중시합니다.</p>
+                    <p class="not_phone">에이아이맥스(주)는 고객 시스템의 중단 없는 서비스를 중시합니다.</p>
                     <div class="p_logo_slider">
                         <div class="p_logo p_logo_39">
                             <span class="p_logo_img">학교체육포털</span>
@@ -797,7 +806,6 @@
                     <p class="phone">파트너쉽을 위한 문의사항은<br>전화상담을 통해 답변 드리도록 하겠습니다.</p>
                     <p class="not_phone">파트너쉽을 위한 문의사항은 전화상담을 통해 답변 드리도록 하겠습니다.</p>
                     <div class="mobile">
-                        <h3>Directions</h3>
                         <div class="map_wrap">
                             <!-- 375 -->
                             <div id="daumRoughmapContainer1707204764881" class="root_daum_roughmap root_daum_roughmap_landing map_375"></div>
@@ -808,15 +816,14 @@
                             <!-- 1024 -->
                             <div id="daumRoughmapContainer1707205808909" class="root_daum_roughmap root_daum_roughmap_landing map_1024"></div>
                         </div>
-                        <h3>Contact us</h3>
                         <div class="cu_text phone">
-                            솔루션 관련 상담이나 견적 문의는<br>아래의 연락처를 통해 문의주시기 바랍니다.<br>클라이언트의 만족과 에이아이맥스(주)의<br>효율적인 솔루션 제시를 통해,<br>고객에게 최고의 비지니스 가치를 창출하겠습니다. 
+                            클라이언트의 만족과 에이아이맥스(주)의<br>효율적인 솔루션 제시를 통해,<br>최고의 비지니스 가치를 창출하겠습니다. 
                         </div>
                         <div class="cu_text tablet">
-                            솔루션 관련 상담이나 견적 문의는 아래의 연락처를 통해 문의주시기 바랍니다.<br>클라이언트의 만족과 에이아이맥스(주)의 효율적인 솔루션 제시를 통해,<br>고객에게 최고의 비지니스 가치를 창출하겠습니다. 
+                            클라이언트의 만족과 에이아이맥스(주)의 효율적인 솔루션 제시를 통해, 최고의 비지니스 가치를 창출하겠습니다. 
                         </div>
                         <div class="cu_text notebook">
-                            솔루션 관련 상담이나 견적 문의는 아래의 연락처를 통해 문의주시기 바랍니다.<br>클라이언트의 만족과 에이아이맥스(주)의 효율적인 솔루션 제시를 통해, 고객에게 최고의 비지니스 가치를 창출하겠습니다. 
+                            클라이언트의 만족과 에이아이맥스(주)의 효율적인 솔루션 제시를 통해, 최고의 비지니스 가치를 창출하겠습니다. 
                         </div>
                         <div class="info_box">
                             <div class="text_wrap">
@@ -835,7 +842,6 @@
                         </div> <!-- e: info_box -->
                     </div> <!-- e: mobile contact -->
                     <div class="desktop left">
-                        <h3>Directions</h3>
                         <div class="map_wrap">   
                             <!-- 1280 -->
                             <div id="daumRoughmapContainer1707206549615" class="root_daum_roughmap root_daum_roughmap_landing map_1280"></div>
@@ -845,9 +851,8 @@
                         </div>
                     </div>
                     <div class="desktop right">
-                        <h3>Contact us</h3>
                         <div class="cu_text">
-                            솔루션 관련 상담이나 견적 문의는 아래의 연락처를 통해 문의주시기 바랍니다.<br>클라이언트의 만족과 에이아이맥스(주)의 효율적인 솔루션 제시를 통해,<br>고객에게 최고의 비지니스 가치를 창출하겠습니다. 
+                            에이아이맥스(주)의 효율적인 솔루션 제시를 통해, <br>고객에게 최고의 비지니스 가치를 창출하겠습니다. 
                         </div>
                         <div class="info_box">
                             <div class="text_wrap">
@@ -878,7 +883,7 @@
                 <p class="phone"><span>사업자등록번호.</span> 883-88-02584</p>
                 <p class="phone"><span>TEL.</span> 02-597-0785&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<span>FAX. 0507-804-2157</span></p>
                 <p class="not_phone"><span>사업자등록번호.</span> 883-88-02584&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<span>TEL.</span> 02-597-0785&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<span>FAX.</span> 0507-804-2157</p>
-                <p>Copyright© 2024 에이아이맥스(주) All Right Reserved.</p>
+                <p>Copyright© 에이아이맥스(주) All Right Reserved.</p>
             </div>
             <div class="f_wrap f_ver_2 clear">
                 <a href="#">에이아이맥스(주) 하단 로고</a>
@@ -886,7 +891,7 @@
                     <p><span>사업자명.</span> 에이아이맥스(주)&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<span>대표.</span> 오병율</p>
                     <p><span>주소.</span> 서울시 금천구 가산디지털2로 98, 1동 1201호 (가산동, 롯데아이티캐슬)</p>
                     <p><span>사업자등록번호.</span> 883-88-02584&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<span>TEL.</span> 02-597-0785&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<span>FAX.</span> 0507-804-2157</p>
-                    <p>Copyright© 2024 에이아이맥스(주) All Right Reserved.</p>
+                    <p>Copyright© 에이아이맥스(주) All Right Reserved.</p>
                 </div>
                 
             </div>

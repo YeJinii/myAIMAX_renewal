@@ -127,49 +127,38 @@ header .open_menu_btn span:nth-child(3).trans {
 }
 
 header.on {
-    height: 60px;
-    background-color: #000;
+    background-color: #fff;
     box-shadow: 0 2px 4px -4px rgba(0, 0, 0, 1);
 }
-header.on .header_inner {
-    padding-top: 16px;
-}
+
 header.on .header_inner > a {
-    width: 100px;
-    height: 32px;
-    background-size: 100px 32px;
-    background-image: url(../img/logo/aimax_header_white.png);
+    background-image: url(../img/logo/aimax_header_color.png);
 }
+
 header.on .youtube_btn {
-    width: 25px;
-    height: 18px;
-    margin-top: 5px;
-    margin-right: 30px;
     background-image: url(../img/icon/youtube_color.png);
 }
-header.on .open_menu_btn {
-    width: 20px;
-    height: 19px;
-    margin-top: 4.5px;
-}
-header.on .open_menu_btn span {
-    width: 20px;
-    height: 3px;
-    background-color: #ffffff;
-    margin-bottom: 5px;
 
-    transition: transform .3s ease-in-out;
+header.on .open_menu_btn > span {
+    background-color: #333333;
 }
 
-header.on .open_menu_btn span:nth-child(1).trans {
-    transform: translateY(8px) rotate(45deg);
+header.menu_on {
+    background-color: #000;
 }
-header.on .open_menu_btn span:nth-child(2).trans {
-    opacity: 0;
+
+header.menu_on .header_inner > a {
+    background-image: url(../img/logo/aimax_header_white.png);
 }
-header.on .open_menu_btn span:nth-child(3).trans {
-    transform: translateY(-8px) rotate(-45deg);
+
+header.menu_on .youtube_btn {
+    background-image: url(../img/icon/youtube_white.png);
 }
+
+header.menu_on .open_menu_btn > span {
+    background-color: #fff;
+}
+
 
 #menu {
     display: none;
@@ -179,7 +168,7 @@ header.on .open_menu_btn span:nth-child(3).trans {
 #menu.on {
     position: absolute;
     display: block;
-    top: 60px;
+    top: 80px;
     left: 0;
     width: 100vw;
     height: calc(100vh - 60px);
@@ -495,6 +484,7 @@ main {
     width: 100%;
     height: 185.625px;
     background-color: #000;
+    border: 1px solid rgba(255, 255, 255, .1);
 }
 .video_wrap iframe {
     position: absolute;
@@ -567,7 +557,7 @@ span.green {
 /* solution 375 */
 #solution {
     width: 100%;
-    background: linear-gradient(180deg, #e5f3f3, #dcebf7 40%, #E5F3F3);
+    background: linear-gradient(180deg, #e5f3f3, #fafdff 40%, #dcebf7);
     text-align: center;
     padding: 60px 0;
 }
@@ -586,9 +576,9 @@ span.green {
     position: relative;
     display: block;
     width: 375px;
-    height: 798.75px;
-    margin: 0 auto;
-    background: url(../img/winged/winged_illust_bg_v.png) no-repeat center/contain;
+    height: 508.13px;
+    margin: 40px auto;
+    background: url(../img/winged/winged_illust_bg.png) no-repeat center/contain;
 }
 .winged_img {
     position: absolute;
@@ -605,46 +595,33 @@ span.green {
 .winged_img_1 {
     display: block;
     opacity: 0;
-    width: 176px;
-    height: 109px;
+    width: 87.5px;
+    height: 70px;
 
-    top: 171px;
-    left: 190px;
+    top: 158px;
+    left: 183px;
 
-    background: url(../img/winged/winged_txt_1.png) no-repeat center/contain;
+    background: url(../img/winged/winged_agent.png) no-repeat center/contain;
 }
 .winged_img_2 {
     display: block;
     opacity: 0;
-    width: 213px;
-    height: 106px;
+    width: 99.47px;
+    height: 70px;
 
-    top: 357px;
-    left: 15px;
+    top: 395px;
+    left: 151px;
 
-    background: url(../img/winged/winged_txt_2.png) no-repeat center/contain;
+    background: url(../img/winged/winged_cs.png) no-repeat center/contain;
 }
-.winged_img_3 {
-    display: block;
-    opacity: 0;
-    width: 152px;
-    height: 132px;
 
-    top: 524px;
-    left: 214px;
-
-    background: url(../img/winged/winged_txt_3.png) no-repeat center/contain;
-}
 .winged_img_1.on {
     animation: fadein .8s ease-in-out forwards;
+    animation-delay: 1s;
 }
 .winged_img_2.on {
     animation: fadein .8s ease-in-out forwards;
-    animation-delay: .5s;
-}
-.winged_img_3.on {
-    animation: fadein .8s ease-in-out forwards;
-    animation-delay: 1s;
+    animation-delay: 1.5s;
 }
 
 /* service 375 */
@@ -761,7 +738,7 @@ span.green {
 /* performance 375 */
 #performance {
     width: 100%; /* 330 / 375 */
-    padding: 60px 6%;
+    padding: 60px 0;
     background: linear-gradient(180deg, #ffffff, #ffffff 95%, #eeeeee);
     text-align: center;
 }
@@ -1035,6 +1012,12 @@ span.char:nth-of-type(17).on {
 span.char:nth-of-type(18).on {
     animation: coloron .1s 1.7s forwards;
 }
+span.char:nth-of-type(19).on {
+    animation: coloron .1s 1.8s forwards;
+}
+span.char:nth-of-type(20).on {
+    animation: coloron .1s 1.9s forwards;
+}
 
 /* partners 375 */
 #partners {
@@ -1138,6 +1121,7 @@ span.char:nth-of-type(18).on {
 .contact_wrap > p {
     font-size: 1.5rem;
     line-height: 22px;
+    margin-bottom: 40px;
 }
 .contact_wrap > div > h3 {
     width: 330px;
@@ -1157,7 +1141,9 @@ span.char:nth-of-type(18).on {
     width: 330px;
     height: 200px;
     margin: 0 auto;
-    border: 1px solid rgba(255, 255, 255, .4);
+    border: 1px solid rgba(255, 255, 255, .1);
+
+    margin-bottom: 40px;
 }
 #daumRoughmapContainer1707204764881,
 #daumRoughmapContainer1707205237950,
@@ -1191,33 +1177,38 @@ span.char:nth-of-type(18).on {
     width: 330px;
     height: 135px;
     margin: 0 auto;
-    border: 1px solid rgba(255, 255, 255, .4);
+    border: 1px solid rgba(255, 255, 255, .1);
 }
 .text_wrap {
     margin: 20px auto;
     text-align: left;
 }
 .contact_tel {
+    width: 196px;
+    height: 36px;
     margin-bottom: 16px;
+    margin: 0 auto 15px;
 }
 .contact_tel > span {
     display: block;
     float: left;
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
     background: url(../img/icon/tel_num.png) no-repeat center/contain;
-    background-size: 24px 24px;
-    margin: 7px 10px 0 48px;
+    background-size: 20px 20px;
+    margin: 8px 10px 0 0;
 }
 .contact_tel > p {
     display: block;
     float: left;
-    font-size: 2.5rem;
+    width: 165px;
+    font-size: 2rem;
     font-weight: 800;
     line-height: 36px;
 }
 .contact_email {
-    margin-left: 21px;
+    width: 136px;
+    margin: 0 auto 5px;
     margin-bottom: 5px;
 }
 .contact_email > span {
@@ -1233,7 +1224,9 @@ span.char:nth-of-type(18).on {
     line-height: 19px;
 }
 .contact_address {
-    margin-left: 21px;
+    width: 287px;
+    text-align: center;
+    margin: 0 auto;
 }
 .contact_address > p {
     font-size: 1.3rem;
@@ -1309,42 +1302,10 @@ footer {}
         border-radius: 2px;
     }
 
-    header.on {
-        height: 60px;
-        background-color: #000;
-        box-shadow: 0 2px 4px -4px rgba(0, 0, 0, 1);
-    }
-    header.on .header_inner {
-        padding-top: 16px;
-    }
-    header.on .header_inner > a {
-        width: 100px;
-        height: 32px;
-        background-size: 100px 32px;
-    }
-    header.on .youtube_btn {
-        width: 25px;
-        height: 18px;
-        margin-top: 5px;
-        margin-right: 40px;
-        background-image: url(../img/icon/youtube_color.png);
-    }
-    header.on .open_menu_btn {
-        width: 20px;
-        height: 19px;
-        margin-top: 4.5px;
-    }
-    header.on .open_menu_btn span {
-        width: 20px;
-        height: 3px;
-        background-color: #ffffff;
-        margin-bottom: 5px;
-    }
-
     .slick-dots {
         display: block;
     }
-    
+
     /* main_banner 768 */
     .content_wrap {
         width: 88.021%; /* 676 / 768 */
@@ -1531,28 +1492,21 @@ footer {}
     }
     #solution .winged_illustration {
         width: 768px;
-        height: 1635.84px;
+        height: 1040.64px;
     }
     .winged_img_1 {
-        width: 306px;
-        height: 190px;
+        width: 187.5px;
+        height: 150px;
 
-        top: 384px;
-        left: 396px;
+        top: 318px;
+        left: 384px;
     }
     .winged_img_2 {
-        width: 359px;
-        height: 179px;
+        width: 213.16px;
+        height: 150px;
 
-        top: 749px;
-        left: 81px;
-    }
-    .winged_img_3 {
-        width: 267px;
-        height: 232px;
-
-        top: 1103px;
-        left: 435px;
+        top: 817px;
+        left: 297px;
     }
 
     /* performance 768 */
@@ -1767,8 +1721,7 @@ footer {}
     .map_wrap {
         width: 580px;
         height: 360px;
-        margin: 0 auto;
-        border: 1px solid #ffffff;
+        margin: 0 auto 60px;
     }
     .tablet {
         display: block;
@@ -1782,7 +1735,7 @@ footer {}
         font-size: 1.4rem;
         line-height: 20px;
         text-align: left;
-        margin: 0 auto 30px;
+        margin: 0 auto 20px;
     }
     .info_box {
         width: 580px;
@@ -1794,22 +1747,28 @@ footer {}
         text-align: left;
     }
     .contact_tel {
-        margin-bottom: 20px;
+        width: 215px;
+        height: 36px;
+        margin-bottom: 16px;
+        margin: 0 auto 20px;
     }
     .contact_tel > span {
-        width: 43px;
-        height: 43px;
-        background-size: 43px 43px;
-        margin: 0px 20px 0 30px;
+        width: 30px;
+        height: 30px;
+        background-size: 30px 30px;
+        margin: 3px 20px 0 0;
     }
     .contact_tel > p {
-        font-size: 3rem;
+        display: block;
+        float: left;
+        width: 165px;
+        font-size: 2rem;
         font-weight: 800;
-        line-height: 43px;
+        line-height: 36px;
     }
     .contact_email {
-        margin-left: 30px;
-        margin-bottom: 5px;
+        width: 155px;
+        margin: 0 auto 5px;
     }
     .contact_email > span {
         display: block;
@@ -1825,7 +1784,8 @@ footer {}
         line-height: 22px;
     }
     .contact_address {
-        margin-left: 30px;
+        width: 310px;
+        margin: 0 auto;
     }
     .contact_address > p {
         font-size: 1.4rem;
@@ -1896,38 +1856,6 @@ footer {}
         header:hover span {
             background-color: #333333;
         }
-    }
-
-    header.on {
-        height: 60px;
-        background-color: #000;
-        box-shadow: 0 2px 4px -4px rgba(0, 0, 0, 1);
-    }
-    header.on .header_inner {
-        padding-top: 16px;
-    }
-    header.on .header_inner > a {
-        width: 100px;
-        height: 32px;
-        background-size: 100px 32px;
-    }
-    header.on .youtube_btn {
-        width: 25px;
-        height: 18px;
-        margin-top: 5px;
-        margin-right: 50px;
-        background-image: url(../img/icon/youtube_color.png);
-    }
-    header.on .open_menu_btn {
-        width: 20px;
-        height: 19px;
-        margin-top: 4.5px;
-    }
-    header.on .open_menu_btn span {
-        width: 20px;
-        height: 3px;
-        background-color: #ffffff;
-        margin-bottom: 5px;
     }
 
     /* main_banner 1024 */
@@ -2088,8 +2016,7 @@ footer {}
     .map_wrap {
         width: 768px;
         height: 450px;
-        margin: 0 auto;
-        border: 1px solid #ffffff;
+        margin: 0 auto 60px;
     }
     .tablet {
         display: none;
@@ -2103,7 +2030,7 @@ footer {}
         font-size: 1.5rem;
         line-height: 22px;
         text-align: left;
-        margin: 0 auto 40px;
+        margin: 0 auto 20px;
     }
     .info_box {
         width: 768px;
@@ -2115,23 +2042,25 @@ footer {}
         text-align: left;
     }
     .contact_tel {
-        margin-bottom: 25px;
+        width: 327px;
+        margin-bottom: 53px;
     }
     .contact_tel > span {
-        width: 63px;
-        height: 63px;
-        background-size: 63px 63px;
-        margin: 5px 20px 0 30px;
+        width: 40px;
+        height: 40px;
+        background-size: 40px 40px;
+        margin: 5px 20px 0 0;
     }
     .contact_tel > p {
-        font-size: 5rem;
+        width: 247px;
+        font-size: 3rem;
         font-weight: 800;
-        line-height: 72px;
+        line-height: 50px;
         color: #ffffff !important;
     }
     .contact_email {
-        margin-left: 30px;
-        margin-bottom: 10px;
+        width: 189px;
+        margin: 0 auto 10px;
     }
     .contact_email > span {
         width: 25px;
@@ -2144,7 +2073,8 @@ footer {}
         line-height: 26px;
     }
     .contact_address {
-        margin-left: 30px;
+        width: 398px;
+        margin: 0 auto;
     }
     .contact_address > p {
         font-size: 1.8rem;
@@ -2240,7 +2170,10 @@ footer {}
         background: url(../img/icon/youtube_white.png) no-repeat center/contain;
     }
     header.on nav ul li a {
-        color: #ffffff !important;
+        color: #333333 !important;
+    }
+    header.on nav ul li:first-of-type a {
+        background: url(../img/icon/youtube_color.png);
     }
 
     @media (hover: hover) and (pointer: fine) {
@@ -2250,17 +2183,6 @@ footer {}
         header:hover nav ul li:first-of-type a {
             background-image: url(../img/icon/youtube_color.png);
         }
-    }
-
-    header.on nav ul {
-        margin-top: -3px;
-    }
-    header.on nav ul li a {
-        font-size: 1.8rem;
-        line-height: 32px;
-    }
-    header.on .for_add_margin_top {
-        margin-top: 4px;
     }
 
     /* quick_menu 1280 ~ 1920 */
@@ -2433,7 +2355,7 @@ footer {}
         font-size: 1.8rem;
     }
 
-    /* solution 1024 */
+    /* solution 1280 */
     #solution {
         padding: 100px 0;
     }
@@ -2445,6 +2367,24 @@ footer {}
     #solution > p {
         font-size: 1.7rem;
         line-height: 25px;
+    }
+    #solution .winged_illustration {
+        width: 1024px;
+        height: 1387.52px;
+    }
+    .winged_img_1 {
+        width: 312.5px;
+        height: 250px;
+
+        top: 368px;
+        left: 533px;
+    }
+    .winged_img_2 {
+        width: 355.26px;
+        height: 250px;
+
+        top: 1143px;
+        left: 339px;
     }
 
     /* performance 1280 */
@@ -2649,6 +2589,7 @@ footer {}
     .contact_wrap > p {
         font-size: 1.7rem;
         line-height: 25px;
+        margin-bottom: 70px;
     }
 
     .contact_wrap > .left {
@@ -2687,7 +2628,8 @@ footer {}
         font-weight: 500;
         line-height: 22px;
         text-align: left;
-        margin: 0 auto 19px;
+        margin: 0 auto 31px;
+        padding-top: 10px;
     }
     .info_box {
         width: 100%;
@@ -2695,26 +2637,28 @@ footer {}
         margin: 0 auto;
     }
     .text_wrap {
-        margin: 18px 0 0 23px;
+        margin: 24px 0 0;
         text-align: left;
     }
     .contact_tel {
-        margin-bottom: 20px;
+        width: 297px;
+        height: 50px;
+        margin: 0 auto 20px;
     }
     .contact_tel > span {
-        width: 63px;
-        height: 63px;
-        background-size: 63px 63px;
-        margin: 5px 20px 0 0;
+        width: 30px;
+        height: 30px;
+        background-size: 30px 30px;
+        margin: 10px 20px 0 0;
     }
     .contact_tel > p {
-        font-size: 4rem;
+        font-size: 3rem;
         font-weight: 800;
-        line-height: 72px;
+        line-height: 50px;
     }
     .contact_email {
-        margin-left: 0;
-        margin-bottom: 5px;
+        width: 156px;
+        margin: 0 auto 5px;
     }
     .contact_email > span {
         width: 17px;
@@ -2727,7 +2671,8 @@ footer {}
         line-height: 22px;
     }
     .contact_address {
-        margin-left: 0;
+        width: 332px;
+        margin: 0 auto;
     }
     .contact_address > p {
         font-size: 1.5rem;
@@ -2984,8 +2929,8 @@ footer {}
         height: 75px;
         line-height: 25px;
         font-size: 1.5rem;
-        margin: 0 auto 40px;
-        padding-top: 11px;
+        margin: 0 auto 41px;
+        padding-top: 20px;
     }
     .info_box {
         width: 100%;
@@ -2993,26 +2938,28 @@ footer {}
         margin: 0 auto;
     }
     .text_wrap {
-        margin: 18px 0 0 23px;
+        margin: 24px 0 0;
         text-align: left;
     }
     .contact_tel {
-        margin-bottom: 20px;
+        width: 297px;
+        height: 50px;
+        margin: 0 auto 20px;
     }
     .contact_tel > span {
-        width: 63px;
-        height: 63px;
-        background-size: 63px 63px;
-        margin: 5px 20px 0 0;
+        width: 30px;
+        height: 30px;
+        background-size: 30px 30px;
+        margin: 10px 20px 0 0;
     }
     .contact_tel > p {
-        font-size: 4rem;
+        font-size: 3rem;
         font-weight: 800;
-        line-height: 72px;
+        line-height: 50px;
     }
     .contact_email {
-        margin-left: 0;
-        margin-bottom: 5px;
+        width: 156px;
+        margin: 0 auto 5px;
     }
     .contact_email > span {
         width: 17px;
@@ -3025,7 +2972,8 @@ footer {}
         line-height: 22px;
     }
     .contact_address {
-        margin-left: 0;
+        width: 332px;
+        margin: 0 auto;
     }
     .contact_address > p {
         font-size: 1.5rem;
