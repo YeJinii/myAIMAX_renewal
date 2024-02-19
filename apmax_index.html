@@ -35,12 +35,49 @@
     <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
 
     <script>
+        
+        var tag = document.createElement('script');
+
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        var youtubePlayer_1;
+        var youtubePlayer_2;
+
+        function onYouTubeIframeAPIReady() {
+            youtubePlayer_1 = new YT.Player('player_1', {
+                playerVars:{
+                    rel:0 //관련영상 표시하지 않기.
+                },
+            });
+            youtubePlayer_2 = new YT.Player('player_2', {
+                playerVars:{
+                    rel:0 //관련영상 표시하지 않기.
+                },
+            });
+        }
+
+        function playVideo() {
+            youtubePlayer_1.playVideo();//재생
+            youtubePlayer_2.playVideo();//재생
+        }
+
+        function pauseVideo() {
+            youtubePlayer_1.pauseVideo();// 일시정지
+            youtubePlayer_2.pauseVideo();// 일시정지
+        }
+
         let check_1 = true;
         let check_2 = true;
         let check_3 = true;
+        let check_4 = true;
         let is_mb = true;
+
+        
         $(document).ready(function(){ 
 
+            
             // header hover event -> white mode on
             $('header').hover(function(){
                 if(open_menu_btn) {
@@ -63,6 +100,7 @@
                     $('#menu').addClass('on');
                     $('header').removeClass('on');
                     $('header').addClass('menu_on');
+                    $('.qv_btn').removeClass('on');
 
                     $('.open_menu_btn span:nth-child(1), .open_menu_btn span:nth-child(2), .open_menu_btn span:nth-child(3)').addClass('trans');
                     
@@ -90,15 +128,14 @@
             $('.menu_btn').click(function(){
                 $('#menu').removeClass('on');
                 
+                $('header').removeClass('menu_on');
+                $('header').addClass('on');
+                
                 $('.open_menu_btn span:nth-child(1), .open_menu_btn span:nth-child(2), .open_menu_btn span:nth-child(3)').removeClass('trans');
-            
-                // 애니메이션 실행하기
-                // 기존 것 초기화 하고
-                check_1 = true;
-                check_2 = true;
-                check_3 = true;
 
-                // 애니메이션 적용
+                performance_animate();
+                performance_animate_2();
+                performance_animate_3();
 
             });
 
@@ -113,6 +150,15 @@
                     quick_view_btn = true;
                 }
             });
+
+            $('.qv_btn').click(function(){
+                $('#menu').removeClass('on');
+                
+                $('header').removeClass('menu_on');
+                $('header').addClass('on');
+
+                $('.open_menu_btn span:nth-child(1), .open_menu_btn span:nth-child(2), .open_menu_btn span:nth-child(3)').removeClass('trans');
+            })
 
             // main_banner slick-slide
             $('.slider').slick({
@@ -146,23 +192,37 @@
             });
 
             const $header = $('#main_banner');
-            const $counters = $('.count_num');
+            const $counters = $('.pm_wrap');
             const $chars = $('.span_2');
             const $highlight = $('tbody');
             const $winged_txt = $('.winged_img');
-            const $video_stop = $('#winged_videos');
+            const $winged_videos = $('#winged_videos');
 
             const exposurePercentage = 100;
             const loop = true;
+
+            let isVisible = false;
 
             $(window).on('scroll', function() {
 
                 // header
                 var main_top = $('#winged_copy').offset().top;
+                // if($(window).scrollTop() >= main_top ){
+                //     is_mb = false;
+                //     $('header').addClass('on');
+                //     if(open_menu_btn == true) {
+                //         $('#quick_view').addClass('on');
+                //     }
+                    
+                // }
+
                 if($(window).scrollTop() >= main_top - 80){
                     is_mb = false;
                     $('header').addClass('on');
-                    $('#quick_view').addClass('on');
+                    if(open_menu_btn == true) {
+                        $('#quick_view').addClass('on');
+                    }
+                    
                 } else {
                     is_mb = true;
                     if(open_menu_btn){
@@ -181,17 +241,13 @@
                     const contentHeight = rect.bottom - rect.top;
                             
                     if (rect.top <= winHeight - (contentHeight * exposurePercentage / 100) && rect.bottom >= (contentHeight * exposurePercentage / 100)) {
-                        if(check_2){
-
-                            for(let i = 1; i <= 3; i++){
-                                $('.winged_img_' + i ).delay(1000).addClass('on');
+                        if(check_1){
+                            for(let i = 1; i <= 2; i++){
+                                $('.winged_img_' + i ).delay(500).addClass('on');
                             }
-                            
-                            check_2 = false;
-
+                            check_1 = false;
                         }
                     }
-
                 });
 
                 // performance STABLE AND PERFORMANCE
@@ -203,15 +259,17 @@
                     const contentHeight = rect.bottom - rect.top;
                     
                     if (rect.top <= winHeight - (contentHeight * exposurePercentage / 100) && rect.bottom >= (contentHeight * exposurePercentage / 100)) {
-                        if(check_3){
-
-                            for (let i = 1; i <= 20; i++) {
-                                $('span.char:nth-of-type(' + i + ')').addClass('on');
-                            }
-
-                            check_3 = false;
-                        }                       
+                        
+                        if(check_2){
+                            performance_animate();
+                            check_2 = false;
+                        }
+                                      
                     }
+                    if (loop && (rect.bottom <= 0 || rect.top >= window.innerHeight)) {
+                        check_2 = true;
+                    }  
+
                 });
 
                 // performance number counting
@@ -223,7 +281,8 @@
                     const contentHeight = rect.bottom - rect.top;
                     
                     if (rect.top <= winHeight - (contentHeight * exposurePercentage / 100) && rect.bottom >= (contentHeight * exposurePercentage / 100)) {
-                        if(check_1){
+                        
+                        if(check_3){
                             $({ val : 0 }).animate({ val : 7352 }, {
                             duration: 3000,
                             step: function() {
@@ -234,9 +293,9 @@
                                 var num = numberWithCommas(Math.floor(this.val));
                                 $('.count_num').text(num);
                             }
-                            });
+                        });
 
-                            $({ val : 0 }).animate({ val : 73 }, {
+                        $({ val : 0 }).animate({ val : 73 }, {
                             duration: 3000,
                             step: function() {
                                 var num = numberWithCommas(Math.floor(this.val));
@@ -246,11 +305,14 @@
                                 var num = numberWithCommas(Math.floor(this.val));
                                 $('.count_num2').text(num);
                             }
-                            });
-                            check_1 = false;
+                        }); 
+                            check_3 = false;
                         } 
                     }
-                
+                    if (loop && (rect.bottom <= 0 || rect.top >= window.innerHeight)) {
+                        
+                        // check_3 = true;
+                    }  
                 });
 
                 // performance highlight_circle
@@ -263,30 +325,24 @@
                     const contentHeight = rect.bottom - rect.top;
                             
                     if (rect.top <= winHeight - (contentHeight * exposurePercentage / 100) && rect.bottom >= (contentHeight * exposurePercentage / 100)) {
-                       
-                        for(let i = 1; i <= 7; i++) {
-                            $('.winged_yes_'+ i).addClass('on');
-                        }
-
-                    }
-                });
-
-                $video_stop.each(function() {
-
-                    const $el = $(this);
-
-                    const rect = $el[0].getBoundingClientRect();
-                    const winHeight = window.innerHeight;
-                    const contentHeight = rect.bottom - rect.top;
-                            
-                    if (rect.top <= winHeight - (contentHeight * exposurePercentage / 100) && rect.bottom >= (contentHeight * exposurePercentage / 100)) {
-                        
+                        if(check_4){
+                            performance_animate_3();
+                            check_4 = false;
+                        } 
                     }
                     if (loop && (rect.bottom <= 0 || rect.top >= window.innerHeight)) {
-                        $('iframe')[1].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
-                    }
-
+                        check_4 = true;
+                    } 
                 });
+                
+                if (checkVisible($('.videos_wrap > h2'))&&!isVisible) {
+                    isVisible=true;
+                    // playVideo();
+                } else if(!checkVisible($('.videos_wrap > h2'))&&isVisible) {
+                    isVisible=false;
+                    pauseVideo();
+                }
+                
 
             }).scroll();
 
@@ -370,6 +426,66 @@
 
         function numberWithCommas(x) {
             return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+
+        function performance_animate() {
+            for (let i = 1; i <= 20; i++) {
+                $('span.char:nth-of-type(' + i + ')').removeClass('on');
+            }
+            setTimeout(function(){
+                for (let i = 1; i <= 20; i++) {
+                    $('span.char:nth-of-type(' + i + ')').addClass('on');
+                }
+            }, 300 );
+        }
+
+        function performance_animate_2 () {
+            $({ val : 0 }).animate({ val : 7352 }, {
+                duration: 3000,
+                step: function() {
+                    var num = numberWithCommas(Math.floor(this.val));
+                    $('.count_num').text(num);
+                },
+                complete: function() {
+                    var num = numberWithCommas(Math.floor(this.val));
+                    $('.count_num').text(num);
+                }
+            });
+
+            $({ val : 0 }).animate({ val : 73 }, {
+                duration: 3000,
+                step: function() {
+                    var num = numberWithCommas(Math.floor(this.val));
+                    $('.count_num2').text(num);
+                },
+                complete: function() {
+                    var num = numberWithCommas(Math.floor(this.val));
+                    $('.count_num2').text(num);
+                }
+            });            
+        }
+
+        function performance_animate_3 () {
+            for(let i = 1; i <= 7; i++) {
+                $('.winged_yes_'+ i).removeClass('on');
+            }
+            setTimeout(function(){
+                for(let i = 1; i <= 7; i++) {
+                    $('.winged_yes_'+ i).addClass('on');
+                }
+            }, 300 );
+            
+        }
+
+        function checkVisible( elm, eval ) {
+            eval = eval || "object visible";
+            var viewportHeight = $(window).height(), // Viewport Height
+                scrolltop = $(window).scrollTop(), // Scroll Top
+                y = $(elm).offset().top,
+                elementHeight = $(elm).height();
+
+            if (eval == "object visible") return ((y < (viewportHeight + scrolltop)) && (y > (scrolltop - elementHeight)));
+            if (eval == "above") return ((y < (viewportHeight + scrolltop)));
         }
 
     </script>
@@ -723,15 +839,29 @@
                     <div id="winged_intro" class="video_tag"></div>
                     <div class="winged_video intro">
                         <h3>'윙드' 소개 영상</h3>
-                        <div class="video_wrap">
-                            <iframe src="https://www.youtube.com/embed/axRh-ZJJ-7s?si=ohympVyqWJcUeicd?enablejsapi=1&version=3&playerapiid=ytplayer" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <div id="video-container" class="video_wrap">
+                            <iframe 
+                                id="player_1" 
+                                src="https://www.youtube.com/embed/axRh-ZJJ-7s?si=ohympVyqWJcUeicd&enablejsapi=1" 
+                                title="YouTube video player" 
+                                frameborder="0" 
+                                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                allowfullscreen>
+                            </iframe>
                         </div>
                     </div>
                     <div id="winged_test" class="video_tag"></div>
                     <div class="winged_video test">
                         <h3>'윙드' 시연 영상</h3>
-                        <div class="video_wrap">
-                            <iframe src="https://www.youtube.com/embed/OAD9KdDRvdg?si=8FeBEqgYAQ1QpMGf?enablejsapi=1&version=3&playerapiid=ytplayer" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <div id="video-container" class="video_wrap">
+                            <iframe 
+                                id="player_2" 
+                                src="https://www.youtube.com/embed/OAD9KdDRvdg?si=8FeBEqgYAQ1QpMGf&enablejsapi=1" 
+                                title="YouTube video player" 
+                                frameborder="0" 
+                                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                allowfullscreen>
+                            </iframe>
                         </div>
                     </div>
                 </div>
