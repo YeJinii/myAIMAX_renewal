@@ -102,21 +102,15 @@
 
             });
 
-            // quick menu folding btn
-            let quick_menu_btn = true;
-            $('#quick_menu').click(function(){
-                if(quick_menu_btn){
-                    
-                    $('#quick_menu').addClass('on');
-                    $('#quick_menu .menu_0 p').text('Close');
-                    quick_menu_btn = false;
-
+            let quick_view_btn = true;
+            // when menu list click -> move to target section
+            $('.quick_view_btn').click(function(){
+                if(quick_view_btn){
+                    $('.qv_btn').addClass('on');
+                    quick_view_btn = false;
                 } else {
-
-                    $('#quick_menu').removeClass('on');
-                    $('#quick_menu .menu_0 p').text('Quick View');
-                    quick_menu_btn = true;
-
+                    $('.qv_btn').removeClass('on');
+                    quick_view_btn = true;
                 }
             });
 
@@ -168,10 +162,12 @@
                 if($(window).scrollTop() >= main_top - 80){
                     is_mb = false;
                     $('header').addClass('on');
+                    $('#quick_view').addClass('on');
                 } else {
                     is_mb = true;
                     if(open_menu_btn){
                         $('header').removeClass('on');
+                        $('#quick_view').removeClass('on');
                     }
                 }
 
@@ -434,29 +430,14 @@
                 </nav>
             </div> <!-- e: header_inner -->
         </header>
-        <!-- WINGed QUICK MENU -->
-        <div id="quick_menu" class="clear">
-            <span class="menu menu_0">
-                <span></span>
-                <p>Quick View</p>
+        <!-- WINGed QUICK view -->
+        <div id="quick_view" class="clear">
+            <span class="quick_view_btn">
+                QUICK VIEW
             </span>
-            <div class="after">
-                <i></i>
-                <a href="#winged_intro" class="menu menu_1">
-                    <span></span>
-                    <p>윙드 소개 영상</p>
-                </a>
-                <i></i>
-                <a href="#winged_test" class="menu menu_2">
-                    <span></span>
-                    <p>윙드 시연 영상</p>
-                </a>
-                <i></i>
-                <a href="./doc/Winged_pdf.pdf" class="menu menu_3" download="'윙드' 제품 소개서_2024">
-                    <span></span>
-                    <p>자료 다운로드</p>
-                </a>
-            </div>
+            <a href="#winged_intro" class="qv_btn"><p>소개 영상</p><span class="qv_icon"></span></a>
+            <a href="#winged_test" class="qv_btn"><p>시연 영상</p><span class="qv_icon"></span></a>
+            <a href="./doc/Winged_pdf.pdf" download="'윙드' 제품 소개서_2024" class="qv_btn"><p>관련 자료</p><span class="qv_icon"></span></a>
         </div>
         <main>
             <div id="main_banner" class="mb_height" >
