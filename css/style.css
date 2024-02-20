@@ -161,18 +161,18 @@ header.menu_on .open_menu_btn > span {
 
 /* quick view */
 #quick_view {
-    display: none;
+    display: block;
     position: fixed;
     right: 0;
     bottom: 5%;
-    width: 201px;
+    width: 230px;
     height: 190px;
     z-index: 200;
     
     cursor: pointer;
 }
-#quick_view.on {
-    display: block;
+#quick_view.hide {
+    display: none;
 }
 #quick_view .quick_view_btn {
     writing-mode: vertical-lr;
@@ -200,7 +200,7 @@ header.menu_on .open_menu_btn > span {
 #quick_view .qv_btn {
     position: relative;
     display: none;
-    width: 136px;
+    width: 165px;
     height: 50px;
     margin-bottom: 20px;
     line-height: 50px;
@@ -241,7 +241,7 @@ header.menu_on .open_menu_btn > span {
 @media (hover: hover) and (pointer: fine) {
     #quick_view .qv_btn:hover > span {
         position: absolute;
-        width:  136px;
+        width:  165px;
         height: 50px;
         border-radius: 25px;
         background: #fff url(../img/icon/qm_icon_1.png) no-repeat center/contain;
@@ -258,7 +258,7 @@ header.menu_on .open_menu_btn > span {
 @media screen and (any-pointer:coarse){
     #quick_view .qv_btn > span {
         position: absolute;
-        width:  136px;
+        width:  165px;
         height: 50px;
         border-radius: 25px;
         background: #fff url(../img/icon/qm_icon_1.png) no-repeat center/contain;
@@ -445,6 +445,7 @@ main {
 #winged_videos {
     width: 100%;
     background-color: #00000c;
+    padding: 40px 0;
 }
 .videos_wrap {
     width: 330px;
@@ -452,18 +453,10 @@ main {
     margin: 0 auto;
 }
 .videos_wrap h2 {
-    text-indent: -9999px;
-    overflow: hidden;
-    width: 160px;
-    height: 72px;
-    background: url(../img/logo/winged_white.png) no-repeat center/contain;
-    background-size: 160px 72px;
-    margin: 0 auto 10px;
-}
-.videos_wrap > p {
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: rgba(255, 255, 255, .8);
+    font-size: 3rem;
+    line-height: 43px;
+    
+    color: #fff;
     text-align: center;
 }
 .video_tag {
@@ -563,7 +556,7 @@ span.green {
     width: 100%;
     background: linear-gradient(180deg, #e5f3f3, #fafdff 40%, #dcebf7);
     text-align: center;
-    padding: 60px 0;
+    padding: 100px 0;
 }
 #solution > h2 {
     font-size: 3rem;
@@ -580,7 +573,7 @@ span.green {
     position: relative;
     display: block;
     width: 375px;
-    height: 474.13px;
+    height: 400.88px;
     margin: 40px auto;
     background: url(../img/winged/winged_illust_bg.png) no-repeat center/contain;
 }
@@ -599,22 +592,22 @@ span.green {
 .winged_img_1 {
     display: block;
     opacity: 0;
-    width: 50.92px;
-    height: 63px;
+    width: 59px;
+    height: 72.67px;
 
-    top: 220px;
-    left: 232px;
+    top: 146px;
+    left: 239px;
 
     background: url(../img/winged/winged_agent.png) no-repeat center/contain;
 }
 .winged_img_2 {
     display: block;
     opacity: 0;
-    width: 168px;
-    height: 73px;
+    width: 193px;
+    height: 84px;
 
-    top: 398px;
-    left: 188px;
+    top: 313px;
+    left: 175px;
 
     background: url(../img/winged/winged_cs.png) no-repeat center/contain;
 }
@@ -634,12 +627,21 @@ span.green {
     height: 547px;
     background: url(../img/background/bg_4_m.png) no-repeat center center/cover;
     background-size: 100%;
+    padding-top: 30px;
+}
+#service > span {
+    display: block;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: #fff;
+    font-size: 1.7rem;
+    font-weight: 600;
 }
 .p_service_wrap {
     width: 88%; /* 330 / 375 */
-    height: 547px;
-    margin: 0 auto;
-    padding: 60px 0;
+    margin: 20px auto 0;
 }
 .p_service_wrap > div {
     width: 100%;
@@ -742,7 +744,7 @@ span.green {
 /* performance 375 */
 #performance {
     width: 100%; /* 330 / 375 */
-    padding: 60px 0;
+    padding: 100px 0;
     background: linear-gradient(180deg, #ffffff, #ffffff 95%, #eeeeee);
     text-align: center;
 }
@@ -835,7 +837,7 @@ span.green {
 
 .strengths_wrap {
     width: 330px;
-    margin: 30px auto 50px;
+    margin: 30px auto 30px;
 }
 .strength {
     float: left;
@@ -1030,7 +1032,7 @@ span.char:nth-of-type(20).on {
 .partners_wrap {
     width: 100%;
     margin: 0px auto;
-    padding: 60px 0;
+    padding: 100px 0;
     text-align: center;
 }
 .partners_wrap > h2 {
@@ -1113,7 +1115,7 @@ span.char:nth-of-type(20).on {
     text-align: center;
 }
 .contact_wrap {
-    padding: 60px 0;
+    padding: 100px 0;
     margin: 0 auto;
 }
 .contact_wrap > h2 {
@@ -1146,8 +1148,6 @@ span.char:nth-of-type(20).on {
     height: 200px;
     margin: 0 auto;
     border: 1px solid rgba(255, 255, 255, .1);
-
-    margin-bottom: 40px;
 }
 #daumRoughmapContainer1707204764881,
 #daumRoughmapContainer1707205237950,
@@ -1394,11 +1394,19 @@ footer {}
         height: 297px;
         background: url(../img/background/bg_4.png) no-repeat center center/cover;
         background-size: 100%;
+        padding-top: 45px;
+    }
+    #service > span {
+        display: block;
+        width: 100%;
+        height: auto;
+        line-height: 1;
+        font-size: 3rem;
     }
     .service_wrap {
         width: 582px;
         margin: 0 auto;
-        padding: 80px 0;
+        padding-top: 30px;
     }
     .service_wrap > div {
         float: left;
@@ -1506,21 +1514,21 @@ footer {}
     }
     #solution .winged_illustration {
         width: 768px;
-        height: 971.01px;
+        height: 820.99px;
     }
     .winged_img_1 {
-        width: 107px;
-        height: 132.39px;
+        width: 120px;
+        height: 149.17px;
 
-        top: 448px;
-        left: 471px;
+        top: 283px;
+        left: 460px;
     }
     .winged_img_2 {
-        width: 314.07px;
-        height: 136.47px;
+        width: 380px;
+        height: 164.79px;
 
-        top: 820px;
-        left: 396px;
+        top: 643px;
+        left: 374px;
     }
 
     /* performance 768 */
@@ -1648,14 +1656,8 @@ footer {}
         padding: 80px 0;
     }
     .videos_wrap h2 {
-        width: 160px;
-        height: 72px;
-        background-size: 160px 72px;
-        margin: 0 auto 20px;
-    }
-    .videos_wrap > p {
-        font-size: 1.7rem;
-        line-height: 25px;
+        font-size: 4.5rem;
+        line-height: 65px;
     }
     .video_tag {
         width: 100%;
@@ -1970,16 +1972,6 @@ footer {}
         width: 768px;
         padding: 80px 0;
     }
-    .videos_wrap h2 {
-        width: 242px;
-        height: 109px;
-        background-size: 242px 109px;
-        margin: 0 auto 20px;
-    }
-    .videos_wrap > p {
-        font-size: 1.7rem;
-        line-height: 25px;
-    }
     .video_tag {
         width: 100%;
         height: 10px;
@@ -2292,10 +2284,12 @@ footer {}
 
     /* service 1280 */
     #service {
-        height: 342px;
+        height: 402px;
+        padding-top: 60px;
     }
     .service_wrap {
         width: 1120px;
+        padding-top: 55px;
     }
     .service_wrap > div {
         width: 190px;
@@ -2480,11 +2474,15 @@ footer {}
     }
 
     /* winged_video 1280 */
+    .videos_wrap  h2 {
+        margin-bottom: 70px;
+    }
     .videos_wrap {
         position: relative;
         width: 1024px;
         padding: 80px 0;
     }
+
     .videos_wrap > p {
         margin-bottom: 80px;
     }
@@ -2543,93 +2541,6 @@ footer {}
         font-size: 1.7rem;
         line-height: 25px;
         margin-bottom: 70px;
-    }
-
-    .contact_wrap > .left {
-        float: left;
-        width: 480px;
-    }
-    .contact_wrap > .right {
-        float: right;
-        width: 502px;
-    }
-
-    .contact_wrap > div > h3 {
-        width: 100%;
-        text-align: left;
-        font-size: 3rem;
-        line-height: 26px;
-        margin: 80px auto 20px;
-    }
-    
-    .map_1280 {
-        display: block;
-    }
-    .map_1920 {
-        display: none;
-    }
-    .map_wrap {
-        width: 480px;
-        height: 270px;
-        margin: 0 auto;
-    }
-
-    .cu_text {
-        width: 502px;
-        padding-left: 0;
-        font-size: 1.5rem;
-        font-weight: 500;
-        line-height: 22px;
-        text-align: left;
-        margin: 0 auto 31px;
-        padding-top: 10px;
-    }
-    .info_box {
-        width: 100%;
-        height: 185px;
-        margin: 0 auto;
-    }
-    .text_wrap {
-        margin: 24px 0 0;
-        text-align: left;
-    }
-    .contact_tel {
-        width: 297px;
-        height: 50px;
-        margin: 0 auto 20px;
-    }
-    .contact_tel > span {
-        width: 30px;
-        height: 30px;
-        background-size: 30px 30px;
-        margin: 10px 20px 0 0;
-    }
-    .contact_tel > p {
-        font-size: 3rem;
-        font-weight: 800;
-        line-height: 50px;
-    }
-    .contact_email {
-        width: 156px;
-        margin: 0 auto 5px;
-    }
-    .contact_email > span {
-        width: 17px;
-        height: 14px;
-        background-size: 17px 14px;
-        margin: 5px 10px 0 0;
-    }
-    .contact_email > p {
-        font-size: 1.5rem;
-        line-height: 22px;
-    }
-    .contact_address {
-        width: 332px;
-        margin: 0 auto;
-    }
-    .contact_address > p {
-        font-size: 1.5rem;
-        line-height: 22px;
     }
 
     /* footer 1280 */
@@ -2832,7 +2743,6 @@ footer {}
     /* contact 1920 */
     .contact_wrap {
         width: 1269px;
-        height: 745px;
         padding: 100px 0;
         margin: 0 auto;
     }
@@ -2844,93 +2754,6 @@ footer {}
     .contact_wrap > p {
         font-size: 1.7rem;
         line-height: 25px;
-    }
-
-    .contact_wrap > .left {
-        float: left;
-        width: 635px;
-        height: 365px;
-    }
-    .contact_wrap > .right {
-        float: right;
-        width: 554px;
-        height: 365px;
-    }
-
-    .contact_wrap > div > h3 {
-        width: 100%;
-        text-align: left;
-        font-size: 3rem;
-        line-height: 26px;
-        margin: 80px auto 20px;
-    }
-
-    .map_1280 {
-        display: none;
-    }
-    .map_1920 {
-        display: block;
-    }
-    .map_wrap {
-        width: 632px;
-        height: 302px;
-        margin: 0 auto;
-    }
-
-    .cu_text {
-        width: 554px;
-        height: 75px;
-        line-height: 25px;
-        font-size: 1.5rem;
-        margin: 0 auto 41px;
-        padding-top: 20px;
-    }
-    .info_box {
-        width: 100%;
-        height: 185px;
-        margin: 0 auto;
-    }
-    .text_wrap {
-        margin: 24px 0 0;
-        text-align: left;
-    }
-    .contact_tel {
-        width: 297px;
-        height: 50px;
-        margin: 0 auto 20px;
-    }
-    .contact_tel > span {
-        width: 30px;
-        height: 30px;
-        background-size: 30px 30px;
-        margin: 10px 20px 0 0;
-    }
-    .contact_tel > p {
-        font-size: 3rem;
-        font-weight: 800;
-        line-height: 50px;
-    }
-    .contact_email {
-        width: 156px;
-        margin: 0 auto 5px;
-    }
-    .contact_email > span {
-        width: 17px;
-        height: 14px;
-        background-size: 17px 14px;
-        margin: 5px 10px 0 0;
-    }
-    .contact_email > p {
-        font-size: 1.5rem;
-        line-height: 22px;
-    }
-    .contact_address {
-        width: 332px;
-        margin: 0 auto;
-    }
-    .contact_address > p {
-        font-size: 1.5rem;
-        line-height: 22px;
     }
     
     /* footer 1920 */

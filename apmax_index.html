@@ -5,6 +5,13 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no, maximum-scale=1, width=device-width" />
     <meta content="yes" name="apple-mobile-web-app-capable" />  
     <meta content="minimum-scale=1.0, width=device-width, maximum-scale=1, user-scalable=no" name="viewport" />
+    
+    <!-- 페이지 로드시마다 페이지를 캐싱하지 않음. (HTTP 1.0) -->
+    <meta http-equiv="Pragma" content="no-cache" />
+
+    <!-- 페이지 로드시마다 페이지를 캐싱하지 않음. (HTTP 1.1) -->
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    
     <title>에이아이맥스(주) | 초연결 사회의 필수품 윙드</title>
 
     <!-- favicon -->
@@ -101,6 +108,7 @@
                     $('header').removeClass('on');
                     $('header').addClass('menu_on');
                     $('.qv_btn').removeClass('on');
+                    $('#quick_view').addClass('hide');
 
                     $('.open_menu_btn span:nth-child(1), .open_menu_btn span:nth-child(2), .open_menu_btn span:nth-child(3)').addClass('trans');
                     
@@ -110,6 +118,7 @@
 
                     $('#menu').removeClass('on');
                     $('header').removeClass('menu_on');
+                    $('#quick_view').removeClass('hide');
                     
                     if(is_mb){
                         $('header').removeClass('on');
@@ -133,7 +142,9 @@
                 
                 $('.open_menu_btn span:nth-child(1), .open_menu_btn span:nth-child(2), .open_menu_btn span:nth-child(3)').removeClass('trans');
 
-                performance_animate();
+                $('#quick_view').removeClass('hide');
+
+                performance_animate_1();
                 performance_animate_2();
                 performance_animate_3();
 
@@ -156,6 +167,7 @@
                 
                 $('header').removeClass('menu_on');
                 $('header').addClass('on');
+                $('#quick_view').removeClass('hide');
 
                 $('.open_menu_btn span:nth-child(1), .open_menu_btn span:nth-child(2), .open_menu_btn span:nth-child(3)').removeClass('trans');
             })
@@ -207,21 +219,11 @@
 
                 // header
                 var main_top = $('#winged_copy').offset().top;
-                // if($(window).scrollTop() >= main_top ){
-                //     is_mb = false;
-                //     $('header').addClass('on');
-                //     if(open_menu_btn == true) {
-                //         $('#quick_view').addClass('on');
-                //     }
-                    
-                // }
 
                 if($(window).scrollTop() >= main_top - 80){
                     is_mb = false;
                     $('header').addClass('on');
-                    if(open_menu_btn == true) {
-                        $('#quick_view').addClass('on');
-                    }
+                    
                     
                 } else {
                     is_mb = true;
@@ -261,7 +263,7 @@
                     if (rect.top <= winHeight - (contentHeight * exposurePercentage / 100) && rect.bottom >= (contentHeight * exposurePercentage / 100)) {
                         
                         if(check_2){
-                            performance_animate();
+                            performance_animate_1();
                             check_2 = false;
                         }
                                       
@@ -283,35 +285,13 @@
                     if (rect.top <= winHeight - (contentHeight * exposurePercentage / 100) && rect.bottom >= (contentHeight * exposurePercentage / 100)) {
                         
                         if(check_3){
-                            $({ val : 0 }).animate({ val : 7352 }, {
-                            duration: 3000,
-                            step: function() {
-                                var num = numberWithCommas(Math.floor(this.val));
-                                $('.count_num').text(num);
-                            },
-                            complete: function() {
-                                var num = numberWithCommas(Math.floor(this.val));
-                                $('.count_num').text(num);
-                            }
-                        });
-
-                        $({ val : 0 }).animate({ val : 73 }, {
-                            duration: 3000,
-                            step: function() {
-                                var num = numberWithCommas(Math.floor(this.val));
-                                $('.count_num2').text(num);
-                            },
-                            complete: function() {
-                                var num = numberWithCommas(Math.floor(this.val));
-                                $('.count_num2').text(num);
-                            }
-                        }); 
+                            performance_animate_2();
                             check_3 = false;
                         } 
                     }
                     if (loop && (rect.bottom <= 0 || rect.top >= window.innerHeight)) {
                         
-                        // check_3 = true;
+                        check_3 = true;
                     }  
                 });
 
@@ -428,7 +408,7 @@
             return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         }
 
-        function performance_animate() {
+        function performance_animate_1() {
             for (let i = 1; i <= 20; i++) {
                 $('span.char:nth-of-type(' + i + ')').removeClass('on');
             }
@@ -436,7 +416,7 @@
                 for (let i = 1; i <= 20; i++) {
                     $('span.char:nth-of-type(' + i + ')').addClass('on');
                 }
-            }, 300 );
+            }, 500 );
         }
 
         function performance_animate_2 () {
@@ -473,7 +453,7 @@
                 for(let i = 1; i <= 7; i++) {
                     $('.winged_yes_'+ i).addClass('on');
                 }
-            }, 300 );
+            }, 500 );
             
         }
 
@@ -511,7 +491,7 @@
                             <a href="#performance" class="menu_btn">Performance</a>
                         </li>
                         <li>
-                            <a href="#winged_intro" class="menu_btn">Quick View</a>
+                            <a href="#winged_videos" class="menu_btn">Quick View</a>
                         </li>
                         <li>
                             <a href="#partners" class="menu_btn">Partners</a>
@@ -534,7 +514,7 @@
                             <a href="#partners">Partners</a>
                         </li>
                         <li>
-                            <a href="#winged_intro">Quick View</a>
+                            <a href="#winged_videos">Quick View</a>
                         </li>
                         <li>
                             <a href="#performance">Performance</a>
@@ -551,9 +531,9 @@
             <span class="quick_view_btn">
                 QUICK VIEW
             </span>
-            <a href="#winged_intro" class="qv_btn"><p>소개 영상</p><span class="qv_icon"></span></a>
-            <a href="#winged_test" class="qv_btn"><p>시연 영상</p><span class="qv_icon"></span></a>
-            <a href="./doc/Winged_pdf.pdf" download="'윙드' 제품 소개서_2024" class="qv_btn"><p>관련 자료</p><span class="qv_icon"></span></a>
+            <a href="#winged_intro" class="qv_btn"><p>제품 소개영상</p><span class="qv_icon"></span></a>
+            <a href="#winged_test" class="qv_btn"><p>제품 시연영상</p><span class="qv_icon"></span></a>
+            <a href="./doc/Winged_pdf.pdf" download="'윙드' 제품 소개서_2024" class="qv_btn"><p>자료 다운로드</p><span class="qv_icon"></span></a>
         </div>
         <main>
             <div id="main_banner" class="mb_height" >
@@ -562,7 +542,7 @@
                         <div class="content_wrap">
                             <h2>초연결 시대 새로운 재앙 '디지털 블랙아웃'</h2>
                             <span>‘윙드’는 트래픽 초과도 연결하여 우리의 일상을 지켜줍니다.</span>
-                            <p>에이아이맥스(주)는 인공지능 과부하 방지 시스템 ‘윙드’를 통해</br>보다 안정적이고 압도적인 퍼포먼스를 발휘할 수 있는</br>효율적인 해결방안을 제시합니다.</p>
+                            <p>에이아이맥스(주)는 인공지능 과부하방지 시스템 ‘윙드’를 통해</br>보다 안정적이고 압도적인 퍼포먼스를 발휘할 수 있는</br>효율적인 해결방안을 제시합니다.</p>
                         </div> <!-- e: content_wrap -->
                     </div> <!-- e: slide banner_1 -->
                     <div class="slide banner_2 mb_height" >
@@ -606,6 +586,7 @@
                 </span>
             </div> <!-- e: solution -->
             <div id="service">
+                <span>BUSINESS SCOPE</span>
                 <div class="p_service_wrap phone">
                     <div>
                         <div class="p_icon_wrap left">
@@ -834,8 +815,7 @@
             </div> <!-- e: performance -->
             <div id="winged_videos">
                 <div class="videos_wrap clear">
-                    <h2>WINGed</h2>
-                    <p>초연결 시대를 리드하는 에이아이맥스(주)</p>
+                    <h2>Quick View</h2>
                     <div id="winged_intro" class="video_tag"></div>
                     <div class="winged_video intro">
                         <h3>'윙드' 소개 영상</h3>
@@ -916,7 +896,7 @@
                     <h2>Contact</h2>
                     <p class="phone">파트너쉽을 위한 문의사항은<br>전화상담을 통해 답변 드리도록 하겠습니다.</p>
                     <p class="not_phone">파트너쉽을 위한 문의사항은 전화상담을 통해 답변 드리도록 하겠습니다.</p>
-                    <div class="mobile">
+                    <div>
                         <div class="map_wrap">
                             <!-- 375 -->
                             <div id="daumRoughmapContainer1707204764881" class="root_daum_roughmap root_daum_roughmap_landing map_375"></div>
@@ -927,60 +907,8 @@
                             <!-- 1024 -->
                             <div id="daumRoughmapContainer1707205808909" class="root_daum_roughmap root_daum_roughmap_landing map_1024"></div>
                         </div>
-                        <div class="cu_text phone">
-                            클라이언트의 만족과 에이아이맥스(주)의<br>효율적인 솔루션 제시를 통해,<br>최고의 비지니스 가치를 창출하겠습니다. 
-                        </div>
-                        <div class="cu_text tablet">
-                            클라이언트의 만족과 에이아이맥스(주)의 효율적인 솔루션 제시를 통해, 최고의 비지니스 가치를 창출하겠습니다. 
-                        </div>
-                        <div class="cu_text notebook">
-                            클라이언트의 만족과 에이아이맥스(주)의 효율적인 솔루션 제시를 통해, 최고의 비지니스 가치를 창출하겠습니다. 
-                        </div>
-                        <div class="info_box">
-                            <div class="text_wrap">
-                                <div class="contact_tel clear">
-                                    <span></span>
-                                    <p>Tel. 02-597-0785</p>
-                                </div>
-                                <div class="contact_email clear">
-                                    <span></span>
-                                    <p>info@ai-max.co.kr</p>
-                                </div>
-                                <div class="contact_address clear">
-                                    <p>[본 사] 서울시 금천구 가산디지털2로 98, 1동 1201호</p>
-                                </div>
-                            </div> <!-- e: text_wrap -->
-                        </div> <!-- e: info_box -->
                     </div> <!-- e: mobile contact -->
-                    <div class="desktop left">
-                        <div class="map_wrap">   
-                            <!-- 1280 -->
-                            <div id="daumRoughmapContainer1707206549615" class="root_daum_roughmap root_daum_roughmap_landing map_1280"></div>
-    
-                            <!-- 1920 -->
-                            <div id="daumRoughmapContainer1707206712520" class="root_daum_roughmap root_daum_roughmap_landing map_1920"></div>
-                        </div>
-                    </div>
-                    <div class="desktop right">
-                        <div class="cu_text">
-                            에이아이맥스(주)의 효율적인 솔루션 제시를 통해, <br>고객에게 최고의 비지니스 가치를 창출하겠습니다. 
-                        </div>
-                        <div class="info_box">
-                            <div class="text_wrap">
-                                <div class="contact_tel clear">
-                                    <span></span>
-                                    <p>Tel. 02-597-0785</p>
-                                </div>
-                                <div class="contact_email clear">
-                                    <span></span>
-                                    <p>info@ai-max.co.kr</p>
-                                </div>
-                                <div class="contact_address clear">
-                                    <p>[본 사] 서울시 금천구 가산디지털2로 98, 1동 1201호</p>
-                                </div>
-                            </div> <!-- e: text_wrap -->
-                        </div> <!-- e: info_box -->
-                    </div> <!-- e: mobile contact -->
+                    
                 </div>
             </div> <!-- e: contact -->
         </main>
