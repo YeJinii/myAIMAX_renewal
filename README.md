@@ -4,25 +4,29 @@
   * [partners] 기업 목록 계열사별 노출 여부
   * GS 인증 마크 추가
 
-## 고도화 목록
-  * [main_banner]
-    * 타이핑 모션 추가
-    
-  * [partners]
-    * 더보기 버튼을 추가해, 한번에 기업목록을 다 볼 수 있는 기능 추가 
-
-  * [footer]
-    * fax 정보 수정
-
-  * 최상위로 이동하는 버튼 구현
-  * 전체적으로 스크롤시 fadein 효과
-
 ## 커밋 히스토리
+
+  * FIX_240220
+    * Quick View.on default로 변경
+    * Quick View text 변경
+    * 인공지능 '과부하-방지' 텍스트 수정
+    * business scope title 추가
+    * Quick View h2 달기
+    * Contact 글씨와 연락처 정보 제거
+
+  * FIX_240219
+    * Header 오류 수정
+
+  * FEAT_240219
+    * solution 이미지 수정하기
+      -> WAS 연결구도 변경 및 캐시서버 이미지 변경
+    * Quick View 개발
+    * 스크롤시 영상이 멈추는 기능 구현
+
   * FEAT_240216
     * youtube 썸네일 변경
     * web hosting test
       * http://ai-max.co.kr/APMAX_Home/apmax_index.html -> legacy
-      * 
 
   * REFACTOR_240215
     * animation 1번만 실행되게 변경
