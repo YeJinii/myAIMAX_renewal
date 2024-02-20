@@ -183,7 +183,7 @@ header.menu_on .open_menu_btn > span {
     float: right;
     margin-top: 33px;
     border-radius: 0 10px 10px 0;
-    background-color: #00166B;
+    background-color: #2f4187;
     line-height: 37px;
     text-align: center;
     font-size: 1.2rem;
@@ -272,7 +272,7 @@ header.menu_on .open_menu_btn > span {
 }
 
 #quick_view .qv_btn:nth-of-type(2) > span {
-    background-color: #00166B;
+    background-color: #2f4287;
     background-image: url(../img/icon/qm_icon_2.png);
 }
 #quick_view .qv_btn:nth-of-type(3) > span {
@@ -1662,7 +1662,7 @@ footer {}
     .video_tag {
         width: 100%;
         height: 10px;
-        margin-bottom: 50px;
+        margin-bottom: 80px;
     }
     .winged_video > h3 {
         font-size: 1.4rem;
